@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ACC06250A20560071EF7B /* AppDelegate.swift */; };
-		759ACC09250A20560071EF7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ACC08250A20560071EF7B /* SceneDelegate.swift */; };
 		759ACC0B250A20560071EF7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ACC0A250A20560071EF7B /* ViewController.swift */; };
 		759ACC0E250A20560071EF7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC0C250A20560071EF7B /* Main.storyboard */; };
 		759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC0F250A205C0071EF7B /* Assets.xcassets */; };
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		759ACC03250A20560071EF7B /* iBench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBench.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		759ACC06250A20560071EF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		759ACC08250A20560071EF7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		759ACC0A250A20560071EF7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		759ACC0D250A20560071EF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		759ACC0F250A205C0071EF7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 			children = (
 				75E2DE5C250FBE1C000B10BC /* Views */,
 				759ACC06250A20560071EF7B /* AppDelegate.swift */,
-				759ACC08250A20560071EF7B /* SceneDelegate.swift */,
 				75E2DE46250FBAEC000B10BC /* ViewControllers */,
 			);
 			path = UI;
@@ -255,7 +252,6 @@
 				75E2DE57250FBD71000B10BC /* HTTPMethod.swift in Sources */,
 				75E2DE61250FBE5D000B10BC /* UIView+Toast.swift in Sources */,
 				75E2DE5F250FBE3C000B10BC /* UILabel+Rotation.swift in Sources */,
-				759ACC09250A20560071EF7B /* SceneDelegate.swift in Sources */,
 				75E2DE63250FBE8A000B10BC /* UIView+Attributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,7 +398,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = iBench/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,7 +416,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = iBench/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
