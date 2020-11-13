@@ -10,14 +10,23 @@
 		755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 755A00DC2556D32A009ABE2B /* GoogleService-Info.plist */; };
 		755A02762556DE43009ABE2B /* UIStoryboard+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02752556DE43009ABE2B /* UIStoryboard+UIViewController.swift */; };
 		755A027A2556DE6F009ABE2B /* UINavigationController+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02792556DE6F009ABE2B /* UINavigationController+Completion.swift */; };
-		755A027D2556DE8B009ABE2B /* UIStoryboard+NameDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A027C2556DE8B009ABE2B /* UIStoryboard+NameDescribable.swift */; };
 		755A02812556DF33009ABE2B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02802556DF33009ABE2B /* NibLoadable.swift */; };
 		755A02842556DF41009ABE2B /* UIView+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02832556DF41009ABE2B /* UIView+NibLoadable.swift */; };
 		755A028B2556E226009ABE2B /* FirebaseAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A028A2556E226009ABE2B /* FirebaseAuthenticationService.swift */; };
 		755A028E2556E264009ABE2B /* CurrentUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A028D2556E264009ABE2B /* CurrentUserManager.swift */; };
+		7578456E255EFC4800DB9DA0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578456D255EFC4800DB9DA0 /* RegisterViewController.swift */; };
+		75784571255EFCB400DB9DA0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75784570255EFCB400DB9DA0 /* BaseViewController.swift */; };
+		75784576255EFCE900DB9DA0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75784575255EFCE900DB9DA0 /* BaseViewModel.swift */; };
+		7578457B255EFD5200DB9DA0 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578457A255EFD5200DB9DA0 /* RegisterViewModel.swift */; };
+		7578457E255EFDB300DB9DA0 /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7578457D255EFDB300DB9DA0 /* RegisterViewController.storyboard */; };
+		7578459E255EFF8F00DB9DA0 /* UIColor+iBench.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578459D255EFF8E00DB9DA0 /* UIColor+iBench.swift */; };
+		757845DE255F053600DB9DA0 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845DD255F053600DB9DA0 /* AuthenticationError.swift */; };
+		757845E1255F056B00DB9DA0 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E0255F056B00DB9DA0 /* Validators.swift */; };
+		757845E4255F066E00DB9DA0 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E3255F066E00DB9DA0 /* CurrentUser.swift */; };
+		757845E8255F084B00DB9DA0 /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E7255F084B00DB9DA0 /* Listener.swift */; };
+		757845EB255F085100DB9DA0 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EA255F085100DB9DA0 /* Signal.swift */; };
+		757845ED255F085700DB9DA0 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EC255F085700DB9DA0 /* Property.swift */; };
 		759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ACC06250A20560071EF7B /* AppDelegate.swift */; };
-		759ACC0B250A20560071EF7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ACC0A250A20560071EF7B /* ViewController.swift */; };
-		759ACC0E250A20560071EF7B /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC0C250A20560071EF7B /* ViewController.storyboard */; };
 		759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC0F250A205C0071EF7B /* Assets.xcassets */; };
 		759ACC13250A205C0071EF7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC11250A205C0071EF7B /* LaunchScreen.storyboard */; };
 		75E2DE49250FBB98000B10BC /* NameDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2DE48250FBB98000B10BC /* NameDescribable.swift */; };
@@ -39,15 +48,24 @@
 		755A00DC2556D32A009ABE2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		755A02752556DE43009ABE2B /* UIStoryboard+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+UIViewController.swift"; sourceTree = "<group>"; };
 		755A02792556DE6F009ABE2B /* UINavigationController+Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Completion.swift"; sourceTree = "<group>"; };
-		755A027C2556DE8B009ABE2B /* UIStoryboard+NameDescribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+NameDescribable.swift"; sourceTree = "<group>"; };
 		755A02802556DF33009ABE2B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		755A02832556DF41009ABE2B /* UIView+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoadable.swift"; sourceTree = "<group>"; };
 		755A028A2556E226009ABE2B /* FirebaseAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationService.swift; sourceTree = "<group>"; };
 		755A028D2556E264009ABE2B /* CurrentUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserManager.swift; sourceTree = "<group>"; };
+		7578456D255EFC4800DB9DA0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		75784570255EFCB400DB9DA0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		75784575255EFCE900DB9DA0 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		7578457A255EFD5200DB9DA0 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		7578457D255EFDB300DB9DA0 /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
+		7578459D255EFF8E00DB9DA0 /* UIColor+iBench.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+iBench.swift"; sourceTree = "<group>"; };
+		757845DD255F053600DB9DA0 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		757845E0255F056B00DB9DA0 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		757845E3255F066E00DB9DA0 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		757845E7255F084B00DB9DA0 /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
+		757845EA255F085100DB9DA0 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		757845EC255F085700DB9DA0 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		759ACC03250A20560071EF7B /* iBench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBench.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		759ACC06250A20560071EF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		759ACC0A250A20560071EF7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		759ACC0D250A20560071EF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ViewController.storyboard; sourceTree = "<group>"; };
 		759ACC0F250A205C0071EF7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		759ACC12250A205C0071EF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		759ACC14250A205C0071EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,8 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				755A02752556DE43009ABE2B /* UIStoryboard+UIViewController.swift */,
-				755A027C2556DE8B009ABE2B /* UIStoryboard+NameDescribable.swift */,
 				755A02792556DE6F009ABE2B /* UINavigationController+Completion.swift */,
+				7578459D255EFF8E00DB9DA0 /* UIColor+iBench.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -101,8 +119,37 @@
 			isa = PBXGroup;
 			children = (
 				755A028D2556E264009ABE2B /* CurrentUserManager.swift */,
+				757845E3255F066E00DB9DA0 /* CurrentUser.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		7578456C255EFC3400DB9DA0 /* AuthenticationFlow */ = {
+			isa = PBXGroup;
+			children = (
+				75784579255EFD3D00DB9DA0 /* RegisterViewController */,
+			);
+			path = AuthenticationFlow;
+			sourceTree = "<group>";
+		};
+		75784579255EFD3D00DB9DA0 /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7578457A255EFD5200DB9DA0 /* RegisterViewModel.swift */,
+				7578456D255EFC4800DB9DA0 /* RegisterViewController.swift */,
+				7578457D255EFDB300DB9DA0 /* RegisterViewController.storyboard */,
+			);
+			path = RegisterViewController;
+			sourceTree = "<group>";
+		};
+		757845E6255F082F00DB9DA0 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				757845E7255F084B00DB9DA0 /* Listener.swift */,
+				757845EA255F085100DB9DA0 /* Signal.swift */,
+				757845EC255F085700DB9DA0 /* Property.swift */,
+			);
+			path = Bindings;
 			sourceTree = "<group>";
 		};
 		759ACBFA250A20560071EF7B = {
@@ -152,9 +199,10 @@
 		75E2DE46250FBAEC000B10BC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				759ACC0A250A20560071EF7B /* ViewController.swift */,
-				759ACC0C250A20560071EF7B /* ViewController.storyboard */,
+				75784570255EFCB400DB9DA0 /* BaseViewController.swift */,
+				75784575255EFCE900DB9DA0 /* BaseViewModel.swift */,
 				759ACC11250A205C0071EF7B /* LaunchScreen.storyboard */,
+				7578456C255EFC3400DB9DA0 /* AuthenticationFlow */,
 				755A02742556DE3B009ABE2B /* Extensions */,
 			);
 			path = Modules;
@@ -164,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				75E2DE48250FBB98000B10BC /* NameDescribable.swift */,
+				757845E0255F056B00DB9DA0 /* Validators.swift */,
+				757845E6255F082F00DB9DA0 /* Bindings */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -201,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				755A028A2556E226009ABE2B /* FirebaseAuthenticationService.swift */,
+				757845DD255F053600DB9DA0 /* AuthenticationError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,6 +296,7 @@
 				759ACC00250A20560071EF7B /* Frameworks */,
 				759ACC01250A20560071EF7B /* Resources */,
 				C6B25D298175481D7E2D2035 /* [CP] Embed Pods Frameworks */,
+				B223F3148F6D5F111FD60B9D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,10 +345,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7578457E255EFDB300DB9DA0 /* RegisterViewController.storyboard in Resources */,
 				755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */,
 				759ACC13250A205C0071EF7B /* LaunchScreen.storyboard in Resources */,
 				759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */,
-				759ACC0E250A20560071EF7B /* ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +377,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B223F3148F6D5F111FD60B9D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iBench/Pods-iBench-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iBench/Pods-iBench-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iBench/Pods-iBench-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C6B25D298175481D7E2D2035 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,25 +418,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				755A027D2556DE8B009ABE2B /* UIStoryboard+NameDescribable.swift in Sources */,
 				755A02812556DF33009ABE2B /* NibLoadable.swift in Sources */,
+				757845EB255F085100DB9DA0 /* Signal.swift in Sources */,
+				75784576255EFCE900DB9DA0 /* BaseViewModel.swift in Sources */,
 				755A02842556DF41009ABE2B /* UIView+NibLoadable.swift in Sources */,
 				75E2DE4F250FBCB9000B10BC /* RequestResponseDefaultLogger.swift in Sources */,
 				75E2DE53250FBD48000B10BC /* NetworkResponse.swift in Sources */,
-				759ACC0B250A20560071EF7B /* ViewController.swift in Sources */,
 				75E2DE59250FBDAE000B10BC /* NetworkLogging.swift in Sources */,
 				75E2DE51250FBCFA000B10BC /* LoggingURLProtocol.swift in Sources */,
 				755A028B2556E226009ABE2B /* FirebaseAuthenticationService.swift in Sources */,
+				7578456E255EFC4800DB9DA0 /* RegisterViewController.swift in Sources */,
 				75E2DE4C250FBC88000B10BC /* NetworkClient.swift in Sources */,
+				757845E8255F084B00DB9DA0 /* Listener.swift in Sources */,
 				75E2DE49250FBB98000B10BC /* NameDescribable.swift in Sources */,
 				759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */,
+				757845E4255F066E00DB9DA0 /* CurrentUser.swift in Sources */,
+				75784571255EFCB400DB9DA0 /* BaseViewController.swift in Sources */,
+				757845ED255F085700DB9DA0 /* Property.swift in Sources */,
 				75E2DE55250FBD55000B10BC /* NetworkRequest.swift in Sources */,
 				75E2DE57250FBD71000B10BC /* HTTPMethod.swift in Sources */,
+				7578457B255EFD5200DB9DA0 /* RegisterViewModel.swift in Sources */,
+				7578459E255EFF8F00DB9DA0 /* UIColor+iBench.swift in Sources */,
 				755A027A2556DE6F009ABE2B /* UINavigationController+Completion.swift in Sources */,
+				757845E1255F056B00DB9DA0 /* Validators.swift in Sources */,
 				75E2DE61250FBE5D000B10BC /* UIView+Toast.swift in Sources */,
 				755A028E2556E264009ABE2B /* CurrentUserManager.swift in Sources */,
 				75E2DE5F250FBE3C000B10BC /* UILabel+Rotation.swift in Sources */,
 				75E2DE63250FBE8A000B10BC /* UIView+Attributes.swift in Sources */,
+				757845DE255F053600DB9DA0 /* AuthenticationError.swift in Sources */,
 				755A02762556DE43009ABE2B /* UIStoryboard+UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,14 +453,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		759ACC0C250A20560071EF7B /* ViewController.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				759ACC0D250A20560071EF7B /* Base */,
-			);
-			name = ViewController.storyboard;
-			sourceTree = "<group>";
-		};
 		759ACC11250A205C0071EF7B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
