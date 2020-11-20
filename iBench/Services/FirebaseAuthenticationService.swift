@@ -11,19 +11,45 @@ import Firebase
 import GoogleSignIn
 
 protocol FirebaseAuthenticationServiceable {
+    var currentUser: User? { get }
+    var userRegistared: Bool { get }
+    
     func googleLogin(user: GIDGoogleUser!, error: Error!, completion: @escaping (Result<User, Error>) -> Void)
     func register(withEmail email: String?, password: String?, completion: @escaping (Result<User, Error>) -> ())
     func login(withEmail email: String?, password: String?, completion: @escaping (Result<User, Error>) -> ())
+    func signOut() -> Error?
 }
 
 class FirebaseAuthenticationService {
     static let shared = FirebaseAuthenticationService()
-    private init() {}
+    private init() {
+        self.authStateDidChangeListenerHandle = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            guard let self = self else {
+                return
+            }
+            
+            self.authenticationChanged.value = self.userRegistared
+        }
+    }
     
-    private let auth = Auth.auth()
+    deinit {
+        Auth.auth().removeStateDidChangeListener(authStateDidChangeListenerHandle)
+    }
+    
+    var authStateDidChangeListenerHandle: AuthStateDidChangeListenerHandle!
+    let authenticationChanged = Emitter(false)
+    
 }
 
 extension FirebaseAuthenticationService: FirebaseAuthenticationServiceable {
+    var currentUser: User? {
+        Auth.auth().currentUser
+    }
+    
+    var userRegistared: Bool {
+        currentUser != nil
+    }
+    
     func googleLogin(user: GIDGoogleUser!, error: Error!, completion: @escaping (Result<User, Error>) -> ()) {
         if let error = error {
             completion(.failure(error))
@@ -54,7 +80,7 @@ extension FirebaseAuthenticationService: FirebaseAuthenticationServiceable {
             return
         }
         
-        auth.createUser(withEmail: email!, password: password!) { (result, error) in
+        Auth.auth().createUser(withEmail: email!, password: password!) { (result, error) in
             guard let result = result else {
                 completion(.failure(error!))
                 return
@@ -69,12 +95,22 @@ extension FirebaseAuthenticationService: FirebaseAuthenticationServiceable {
             return
         }
         
-        auth.signIn(withEmail: email, password: password) { (result, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             guard let result = result else {
                 completion(.failure(error!))
                 return
             }
             completion(.success(result.user))
+        }
+    }
+    
+    func signOut() -> Error? {
+        do {
+            try Auth.auth().signOut()
+            return nil
+        } catch let signOutError {
+            print ("ERROR: signing out: %@", signOutError)
+            return signOutError
         }
     }
 }
