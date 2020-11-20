@@ -14,6 +14,7 @@
 		755A02842556DF41009ABE2B /* UIView+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02832556DF41009ABE2B /* UIView+NibLoadable.swift */; };
 		755A028B2556E226009ABE2B /* FirebaseAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A028A2556E226009ABE2B /* FirebaseAuthenticationService.swift */; };
 		755A028E2556E264009ABE2B /* CurrentUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A028D2556E264009ABE2B /* CurrentUserManager.swift */; };
+		756576D825682F50005E250A /* UserLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756576D725682F50005E250A /* UserLocationService.swift */; };
 		7578456E255EFC4800DB9DA0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578456D255EFC4800DB9DA0 /* RegisterViewController.swift */; };
 		75784571255EFCB400DB9DA0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75784570255EFCB400DB9DA0 /* BaseViewController.swift */; };
 		75784576255EFCE900DB9DA0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75784575255EFCE900DB9DA0 /* BaseViewModel.swift */; };
@@ -52,6 +53,7 @@
 		755A02832556DF41009ABE2B /* UIView+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoadable.swift"; sourceTree = "<group>"; };
 		755A028A2556E226009ABE2B /* FirebaseAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationService.swift; sourceTree = "<group>"; };
 		755A028D2556E264009ABE2B /* CurrentUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserManager.swift; sourceTree = "<group>"; };
+		756576D725682F50005E250A /* UserLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationService.swift; sourceTree = "<group>"; };
 		7578456D255EFC4800DB9DA0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		75784570255EFCB400DB9DA0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		75784575255EFCE900DB9DA0 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -118,10 +120,35 @@
 		755A02892556E1DA009ABE2B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				756576D425682F28005E250A /* CurrentUserManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		756576D225682F1C005E250A /* FirebaseAuthenticationService */ = {
+			isa = PBXGroup;
+			children = (
+				755A028A2556E226009ABE2B /* FirebaseAuthenticationService.swift */,
+				757845DD255F053600DB9DA0 /* AuthenticationError.swift */,
+			);
+			path = FirebaseAuthenticationService;
+			sourceTree = "<group>";
+		};
+		756576D425682F28005E250A /* CurrentUserManager */ = {
+			isa = PBXGroup;
+			children = (
 				755A028D2556E264009ABE2B /* CurrentUserManager.swift */,
 				757845E3255F066E00DB9DA0 /* CurrentUser.swift */,
 			);
-			path = Managers;
+			path = CurrentUserManager;
+			sourceTree = "<group>";
+		};
+		756576D625682F31005E250A /* UserLocationService */ = {
+			isa = PBXGroup;
+			children = (
+				756576D725682F50005E250A /* UserLocationService.swift */,
+			);
+			path = UserLocationService;
 			sourceTree = "<group>";
 		};
 		7578456C255EFC3400DB9DA0 /* AuthenticationFlow */ = {
@@ -250,8 +277,8 @@
 		75E2DE5B250FBDEA000B10BC /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				755A028A2556E226009ABE2B /* FirebaseAuthenticationService.swift */,
-				757845DD255F053600DB9DA0 /* AuthenticationError.swift */,
+				756576D625682F31005E250A /* UserLocationService */,
+				756576D225682F1C005E250A /* FirebaseAuthenticationService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -439,6 +466,7 @@
 				75E2DE57250FBD71000B10BC /* HTTPMethod.swift in Sources */,
 				7578457B255EFD5200DB9DA0 /* RegisterViewModel.swift in Sources */,
 				7578459E255EFF8F00DB9DA0 /* UIColor+iBench.swift in Sources */,
+				756576D825682F50005E250A /* UserLocationService.swift in Sources */,
 				755A027A2556DE6F009ABE2B /* UINavigationController+Completion.swift in Sources */,
 				757845E1255F056B00DB9DA0 /* Validators.swift in Sources */,
 				75E2DE61250FBE5D000B10BC /* UIView+Toast.swift in Sources */,
