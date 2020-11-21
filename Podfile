@@ -9,5 +9,8 @@ target 'iBench' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
+  pod 'FirebaseUI/Google'
+  pod 'GoogleSignIn'
+
 
 end
