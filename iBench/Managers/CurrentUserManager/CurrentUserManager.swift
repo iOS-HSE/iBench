@@ -18,7 +18,7 @@ protocol CurrentUserManaging {
     func googleAuthenticate(user: GIDGoogleUser!, error: Error!, completion: @escaping (_ errorMessage: String?) -> Void)
 }
 
-class CurrentUserManager {
+class CurrentUserManager: NSObject {
     
     private let authenticationService: FirebaseAuthenticationServiceable
     
@@ -62,5 +62,17 @@ extension CurrentUserManager: CurrentUserManaging {
         authenticationService.googleLogin(user: user, error: error) { (result) in
             
         }
+    }
+}
+
+extension CurrentUserManager: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        authenticationService.googleLogin(user: user, error: error) { (result) in
+            
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
     }
 }
