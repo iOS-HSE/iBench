@@ -23,7 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let initialVC = RegisterViewController.initFromItsStoryboard()
-        window?.rootViewController = initialVC
+        let router = AuthenticationFlowRouter(initialVC: initialVC)
+        initialVC.viewModel = RegisterViewModel()
+        initialVC.router = router
+        window?.rootViewController = router.navigationController
         window?.makeKeyAndVisible()
         
         return true
