@@ -10,4 +10,50 @@ import Foundation
 
 final class RegisterViewModel: BaseViewModel {
     
+    var email: String?
+    var name: String?
+    var password: String?
+    
+    let currentUserManager: CurrentUserManaging
+    
+    private var didAuthenticateSubscriptionToken: SignalSubscriptionToken?
+    
+    var didRegisterSuccessfully: (() -> Void)?
+    
+    init(
+        currentUserManager: CurrentUserManaging = CurrentUserManager.shared
+    ) {
+        self.currentUserManager = currentUserManager
+        super.init()
+        didAuthenticateSubscriptionToken = currentUserManager.didAuthenticateSuccessfully.signal.addListener(skipCurrent: true, skipRepeats: false) { [weak self] (isSuccessfullAuthentication) in
+            if isSuccessfullAuthentication {
+                self?.didRegisterSuccessfully?()
+            }
+        }
+    }
+    
+    deinit {
+        currentUserManager.didAuthenticateSuccessfully.signal.removeListener(didAuthenticateSubscriptionToken)
+    }
+    
+}
+
+extension RegisterViewModel: RegisterViewModeling {
+    func register() {
+        guard let email = email,
+              let name = name,
+              let password = password else {
+            didGetError?("Пожалуйста, проверьте правильность введенных данных")
+            return
+        }
+        isLoading = true
+        currentUserManager.createUser(name: name, email: email, password: password) { [weak self] (error) in
+            self?.isLoading = false
+            if let error = error as NSError? {
+                let message = self?.currentUserManager.mapErrorMessage(for: error) ?? "no error"
+                self?.didGetError?(message)
+                return
+            }
+        }
+    }
 }

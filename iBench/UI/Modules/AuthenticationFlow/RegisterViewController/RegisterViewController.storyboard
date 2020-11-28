@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dgF-qn-ZX8">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dgF-qn-ZX8">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,73 +15,159 @@
             <objects>
                 <viewController id="dgF-qn-ZX8" customClass="RegisterViewController" customModule="iBench" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CKT-mp-nW3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вход" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fT-0e-02e">
-                                <rect key="frame" x="168.5" y="190" width="77" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fT-0e-02e">
+                                <rect key="frame" x="96.333333333333329" y="201" width="197.33333333333337" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" name="iBench.marine"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wwH-BJ-1DK">
-                                <rect key="frame" x="30" y="381" width="354" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpU-Rq-GFz">
-                                <rect key="frame" x="30" y="423" width="354" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwz-97-3zk" customClass="DesignableButton" customModule="iBench" customModuleProvider="target">
-                                <rect key="frame" x="30" y="520" width="354" height="50"/>
-                                <color key="backgroundColor" name="iBench.marine"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Gya-FZ-YfH">
+                                <rect key="frame" x="30" y="311.66666666666669" width="330" height="281.00000000000006"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Eb2-6b-w5r">
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="118"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя пользователя*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wwH-BJ-1DK">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                <connections>
+                                                    <action selector="nameEditingChanged" destination="dgF-qn-ZX8" eventType="editingChanged" id="TU0-d5-qYT"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpU-Rq-GFz">
+                                                <rect key="frame" x="0.0" y="42" width="330" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                <connections>
+                                                    <action selector="emailEditingChanged" destination="dgF-qn-ZX8" eventType="editingChanged" id="vsE-iN-G87"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEm-VH-jxv">
+                                                <rect key="frame" x="0.0" y="84" width="330" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <connections>
+                                                    <action selector="passwordEditingChanged" destination="dgF-qn-ZX8" eventType="editingChanged" id="w6Z-EC-fgg"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tBy-jH-nSN">
+                                        <rect key="frame" x="0.0" y="158" width="330" height="123"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwz-97-3zk" customClass="DesignableButton" customModule="iBench" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="45"/>
+                                                <color key="backgroundColor" name="iBench.marine"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="ZUo-aH-wTD"/>
+                                                </constraints>
+                                                <state key="normal" title="Зарегистрироваться">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="registerButtonTapped" destination="dgF-qn-ZX8" eventType="touchUpInside" id="Ksc-cg-IsZ"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="или" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="407-v8-G9G">
+                                                <rect key="frame" x="152.66666666666666" y="52.999999999999943" width="24.666666666666657" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOg-fo-nLW" customClass="GIDSignInButton">
+                                                <rect key="frame" x="0.0" y="77.999999999999943" width="330" height="45"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="e7s-oL-6fF"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="GOg-fo-nLW" firstAttribute="leading" secondItem="tBy-jH-nSN" secondAttribute="leading" id="426-ib-O3K"/>
+                                            <constraint firstAttribute="trailing" secondItem="GOg-fo-nLW" secondAttribute="trailing" id="6C5-dV-IVM"/>
+                                            <constraint firstItem="Lwz-97-3zk" firstAttribute="leading" secondItem="tBy-jH-nSN" secondAttribute="leading" id="gJg-RJ-ftT"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lwz-97-3zk" secondAttribute="trailing" id="ibc-Up-ev8"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="P2T-cn-CZQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eb2-6b-w5r" secondAttribute="trailing" id="1dA-uB-BRq"/>
+                                    <constraint firstItem="Eb2-6b-w5r" firstAttribute="leading" secondItem="Gya-FZ-YfH" secondAttribute="leading" id="Bit-3e-7dr"/>
+                                    <constraint firstAttribute="trailing" secondItem="tBy-jH-nSN" secondAttribute="trailing" id="lNm-1L-IlS"/>
+                                    <constraint firstItem="tBy-jH-nSN" firstAttribute="leading" secondItem="Gya-FZ-YfH" secondAttribute="leading" id="vWN-zK-pzh"/>
                                 </constraints>
-                                <state key="normal" title="Войти">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="или" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="407-v8-G9G">
-                                <rect key="frame" x="194.5" y="578" width="25" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" systemColor="systemGray2Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOg-fo-nLW" customClass="GIDSignInButton">
-                                <rect key="frame" x="30" y="603" width="354" height="52"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
-                            </view>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-F6-lyA">
+                                <rect key="frame" x="185" y="521" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-JO-4gT">
+                                <rect key="frame" x="87" y="776.33333333333337" width="216" height="28.666666666666629"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уже зарегестрированы?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKS-9H-fND">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9oO-jk-tXu">
+                                        <rect key="frame" x="175" y="0.0" width="41" height="28.666666666666668"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Войти">
+                                                    <attributes>
+                                                        <color key="NSColor" name="iBench.marine"/>
+                                                        <font key="NSFont" metaFont="system" size="14"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInButtonTapped" destination="dgF-qn-ZX8" eventType="touchUpInside" id="wYI-te-gfT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l4a-ph-HJ1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wwH-BJ-1DK" firstAttribute="top" secondItem="9fT-0e-02e" secondAttribute="bottom" constant="150" id="8Fk-cb-40N"/>
-                            <constraint firstItem="9fT-0e-02e" firstAttribute="centerX" secondItem="CKT-mp-nW3" secondAttribute="centerX" id="EN4-yp-iSn"/>
-                            <constraint firstItem="407-v8-G9G" firstAttribute="top" secondItem="Lwz-97-3zk" secondAttribute="bottom" constant="8" symbolic="YES" id="Eat-Z9-VY2"/>
-                            <constraint firstItem="wwH-BJ-1DK" firstAttribute="leading" secondItem="l4a-ph-HJ1" secondAttribute="leading" constant="30" id="Fgy-jY-VVj"/>
-                            <constraint firstItem="hpU-Rq-GFz" firstAttribute="top" secondItem="wwH-BJ-1DK" secondAttribute="bottom" constant="8" symbolic="YES" id="FmM-c0-wwW"/>
-                            <constraint firstItem="Lwz-97-3zk" firstAttribute="top" secondItem="hpU-Rq-GFz" secondAttribute="bottom" constant="63" id="Jq9-TX-DLQ"/>
-                            <constraint firstItem="hpU-Rq-GFz" firstAttribute="leading" secondItem="wwH-BJ-1DK" secondAttribute="leading" id="SMM-wQ-Q63"/>
-                            <constraint firstItem="Lwz-97-3zk" firstAttribute="trailing" secondItem="wwH-BJ-1DK" secondAttribute="trailing" id="SWL-Mc-x5Y"/>
-                            <constraint firstItem="407-v8-G9G" firstAttribute="centerX" secondItem="Lwz-97-3zk" secondAttribute="centerX" id="ZZA-SY-MAO"/>
-                            <constraint firstItem="GOg-fo-nLW" firstAttribute="trailing" secondItem="Lwz-97-3zk" secondAttribute="trailing" id="b2t-a7-PhX"/>
-                            <constraint firstItem="GOg-fo-nLW" firstAttribute="leading" secondItem="Lwz-97-3zk" secondAttribute="leading" id="b6D-Rs-e2V"/>
-                            <constraint firstItem="GOg-fo-nLW" firstAttribute="height" secondItem="Lwz-97-3zk" secondAttribute="height" multiplier="1.04" id="bMy-21-gXN"/>
-                            <constraint firstItem="GOg-fo-nLW" firstAttribute="top" secondItem="407-v8-G9G" secondAttribute="bottom" constant="8" symbolic="YES" id="ctm-nz-xzb"/>
-                            <constraint firstItem="l4a-ph-HJ1" firstAttribute="trailing" secondItem="wwH-BJ-1DK" secondAttribute="trailing" constant="30" id="ikR-S2-QXr"/>
-                            <constraint firstItem="Lwz-97-3zk" firstAttribute="leading" secondItem="wwH-BJ-1DK" secondAttribute="leading" id="s8q-q0-Kgz"/>
-                            <constraint firstItem="hpU-Rq-GFz" firstAttribute="trailing" secondItem="wwH-BJ-1DK" secondAttribute="trailing" id="w0A-TJ-dO9"/>
-                            <constraint firstItem="wwH-BJ-1DK" firstAttribute="centerY" secondItem="CKT-mp-nW3" secondAttribute="centerY" constant="-50" id="z11-iE-SIq"/>
+                            <constraint firstItem="l4a-ph-HJ1" firstAttribute="trailing" secondItem="Gya-FZ-YfH" secondAttribute="trailing" constant="30" id="1tQ-o6-zpi"/>
+                            <constraint firstItem="Gya-FZ-YfH" firstAttribute="top" secondItem="9fT-0e-02e" secondAttribute="bottom" constant="70" id="So8-TG-Jb5"/>
+                            <constraint firstItem="Gya-FZ-YfH" firstAttribute="centerY" secondItem="CKT-mp-nW3" secondAttribute="centerY" constant="30" id="eDH-p7-f8D"/>
+                            <constraint firstItem="l4a-ph-HJ1" firstAttribute="bottom" secondItem="ROA-JO-4gT" secondAttribute="bottom" constant="5" id="gws-hr-SFo"/>
+                            <constraint firstItem="tMG-F6-lyA" firstAttribute="centerX" secondItem="tBy-jH-nSN" secondAttribute="centerX" id="hf2-bJ-2AO"/>
+                            <constraint firstItem="9fT-0e-02e" firstAttribute="centerX" secondItem="CKT-mp-nW3" secondAttribute="centerX" id="iuT-Au-TCk"/>
+                            <constraint firstItem="Gya-FZ-YfH" firstAttribute="leading" secondItem="l4a-ph-HJ1" secondAttribute="leading" constant="30" id="lsb-GE-Fnc"/>
+                            <constraint firstItem="tMG-F6-lyA" firstAttribute="centerY" secondItem="tBy-jH-nSN" secondAttribute="centerY" id="nad-lq-uxP"/>
+                            <constraint firstItem="ROA-JO-4gT" firstAttribute="centerX" secondItem="l4a-ph-HJ1" secondAttribute="centerX" id="spE-7V-upU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="tMG-F6-lyA" id="enA-5p-hai"/>
+                        <outlet property="buttonsStackView" destination="tBy-jH-nSN" id="b1V-nz-fAx"/>
+                        <outlet property="containerView" destination="Gya-FZ-YfH" id="fYb-mk-5E5"/>
+                        <outlet property="containerViewYPositionAnchor" destination="eDH-p7-f8D" id="J3Z-Ds-wbq"/>
+                        <outlet property="emailTextField" destination="hpU-Rq-GFz" id="lCS-OR-Kvj"/>
+                        <outlet property="googleButton" destination="GOg-fo-nLW" id="B8b-eN-xtF"/>
+                        <outlet property="nameTextField" destination="wwH-BJ-1DK" id="1qx-Dg-pJ0"/>
+                        <outlet property="passwordTextField" destination="eEm-VH-jxv" id="APO-G5-kx1"/>
+                        <outlet property="registerButton" destination="Lwz-97-3zk" id="EP3-0u-PfQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhx-7o-bUu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,10 +176,13 @@
     </scenes>
     <designables>
         <designable name="Lwz-97-3zk">
-            <size key="intrinsicContentSize" width="44" height="30"/>
+            <size key="intrinsicContentSize" width="149" height="30"/>
         </designable>
     </designables>
     <resources>
+        <namedColor name="iBench.marine">
+            <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="iBench.marine">
             <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -55,7 +55,7 @@ extension FirebaseAuthenticationService: FirebaseAuthenticationServiceable {
             completion(.failure(error))
         }
         
-        guard let auth = user.authentication else {
+        guard let auth = user?.authentication else {
             return
         }
         let credential = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
