@@ -39,5 +39,17 @@ extension AuthenticationFlowRouter: RegisterViewControllerRouting {
         }
     }
     
+    //move to extension signInViewControllerRouting protocol when it will be added
+    func presentRegisterViewController(_ completion: (() -> Void)?) {
+        if let registerVC = navigationController.viewControllers.first(where: { $0 is RegisterViewController }) {
+            navigationController.popToViewController(registerVC, animated: true)
+        } else {
+            let vc = RegisterViewController.initFromItsStoryboard()
+            vc.router = self
+            vc.viewModel = RegisterViewModel()
+            navigationController.pushViewController(vc, animated: true)
+        }
+    }
+    
     
 }

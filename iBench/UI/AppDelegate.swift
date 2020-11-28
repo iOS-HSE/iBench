@@ -21,12 +21,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = CurrentUserManager.shared
         
+        PersistantStoreService.shared.incrementLaunchesCount()
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let initialVC = RegisterViewController.initFromItsStoryboard()
-        let router = AuthenticationFlowRouter(initialVC: initialVC)
-        initialVC.viewModel = RegisterViewModel()
-        initialVC.router = router
-        window?.rootViewController = router.navigationController
+        
+        if PersistantStoreService.shared.isFirstLaunch {
+            //onboarding preparations
+            //return
+        }
+        
+        let initialVC: UIViewController
+        if CurrentUserManager.shared.isSignedIn {
+            //move to mapVIewController
+            initialVC = UIViewController()
+        } else {
+            let vc = RegisterViewController.initFromItsStoryboard()
+            let router = AuthenticationFlowRouter(initialVC: vc)
+            vc.router = router
+            vc.viewModel = RegisterViewModel()
+            initialVC = router.navigationController
+        }
+        
+        window?.rootViewController = initialVC
         window?.makeKeyAndVisible()
         
         return true

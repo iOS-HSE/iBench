@@ -29,12 +29,14 @@ final class RegisterViewController: BaseViewController {
     
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var googleButton: GIDSignInButton!
-    @IBOutlet weak var signInButton: UIButton!
+//    @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var containerViewYPositionAnchor: NSLayoutConstraint!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var buttonsStackView: UIStackView!
     
     let containerViewYPositionOffsetDefaultValue: CGFloat = 30
     
@@ -85,7 +87,7 @@ final class RegisterViewController: BaseViewController {
     //MARK: Setup
     
     private func setup() {
-        
+        activityIndicator.isActive = false
     }
     
     //MARK: Update
@@ -95,6 +97,7 @@ final class RegisterViewController: BaseViewController {
             return
         }
         updateRegisterButton()
+        updateActivityIndicator()
     }
     
     private func updateRegisterButton() {
@@ -106,6 +109,11 @@ final class RegisterViewController: BaseViewController {
             !viewModel.password!.isEmpty
         registerButton.isUserInteractionEnabled = isAllowedToTap
         registerButton.backgroundColor = isAllowedToTap ? .iBenchMarine : .lightGray
+    }
+    
+    private func updateActivityIndicator() {
+        activityIndicator.isActive = viewModel.isLoading
+        buttonsStackView.isHidden = viewModel.isLoading
     }
     
 }
@@ -130,6 +138,10 @@ extension RegisterViewController {
     
     @IBAction func registerButtonTapped() {
         viewModel.register()
+    }
+    
+    @IBAction func signInButtonTapped() {
+        router?.presentSignInViewController(nil)
     }
 }
 

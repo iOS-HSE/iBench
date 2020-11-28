@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import GoogleSignIn
 
-struct CurrentUser {
+struct CurrentUser: Codable {
     var name: String
     var id: String
     let email: String?

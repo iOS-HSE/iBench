@@ -33,7 +33,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя пользователя*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wwH-BJ-1DK">
                                                 <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="username"/>
                                                 <connections>
                                                     <action selector="nameEditingChanged" destination="dgF-qn-ZX8" eventType="editingChanged" id="TU0-d5-qYT"/>
                                                 </connections>
@@ -41,7 +41,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpU-Rq-GFz">
                                                 <rect key="frame" x="0.0" y="42" width="330" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                                 <connections>
                                                     <action selector="emailEditingChanged" destination="dgF-qn-ZX8" eventType="editingChanged" id="vsE-iN-G87"/>
                                                 </connections>
@@ -49,7 +49,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEm-VH-jxv">
                                                 <rect key="frame" x="0.0" y="84" width="330" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <connections>
                                                     <action selector="passwordEditingChanged" destination="dgF-qn-ZX8" eventType="editingChanged" id="w6Z-EC-fgg"/>
                                                 </connections>
@@ -111,6 +111,37 @@
                                     <constraint firstItem="tBy-jH-nSN" firstAttribute="leading" secondItem="Gya-FZ-YfH" secondAttribute="leading" id="vWN-zK-pzh"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-F6-lyA">
+                                <rect key="frame" x="185" y="521" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-JO-4gT">
+                                <rect key="frame" x="87" y="776.33333333333337" width="216" height="28.666666666666629"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уже зарегестрированы?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKS-9H-fND">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9oO-jk-tXu">
+                                        <rect key="frame" x="175" y="0.0" width="41" height="28.666666666666668"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Войти">
+                                                    <attributes>
+                                                        <color key="NSColor" name="iBench.marine"/>
+                                                        <font key="NSFont" metaFont="system" size="14"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInButtonTapped" destination="dgF-qn-ZX8" eventType="touchUpInside" id="wYI-te-gfT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l4a-ph-HJ1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -118,11 +149,17 @@
                             <constraint firstItem="l4a-ph-HJ1" firstAttribute="trailing" secondItem="Gya-FZ-YfH" secondAttribute="trailing" constant="30" id="1tQ-o6-zpi"/>
                             <constraint firstItem="Gya-FZ-YfH" firstAttribute="top" secondItem="9fT-0e-02e" secondAttribute="bottom" constant="70" id="So8-TG-Jb5"/>
                             <constraint firstItem="Gya-FZ-YfH" firstAttribute="centerY" secondItem="CKT-mp-nW3" secondAttribute="centerY" constant="30" id="eDH-p7-f8D"/>
+                            <constraint firstItem="l4a-ph-HJ1" firstAttribute="bottom" secondItem="ROA-JO-4gT" secondAttribute="bottom" constant="5" id="gws-hr-SFo"/>
+                            <constraint firstItem="tMG-F6-lyA" firstAttribute="centerX" secondItem="tBy-jH-nSN" secondAttribute="centerX" id="hf2-bJ-2AO"/>
                             <constraint firstItem="9fT-0e-02e" firstAttribute="centerX" secondItem="CKT-mp-nW3" secondAttribute="centerX" id="iuT-Au-TCk"/>
                             <constraint firstItem="Gya-FZ-YfH" firstAttribute="leading" secondItem="l4a-ph-HJ1" secondAttribute="leading" constant="30" id="lsb-GE-Fnc"/>
+                            <constraint firstItem="tMG-F6-lyA" firstAttribute="centerY" secondItem="tBy-jH-nSN" secondAttribute="centerY" id="nad-lq-uxP"/>
+                            <constraint firstItem="ROA-JO-4gT" firstAttribute="centerX" secondItem="l4a-ph-HJ1" secondAttribute="centerX" id="spE-7V-upU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="tMG-F6-lyA" id="enA-5p-hai"/>
+                        <outlet property="buttonsStackView" destination="tBy-jH-nSN" id="b1V-nz-fAx"/>
                         <outlet property="containerView" destination="Gya-FZ-YfH" id="fYb-mk-5E5"/>
                         <outlet property="containerViewYPositionAnchor" destination="eDH-p7-f8D" id="J3Z-Ds-wbq"/>
                         <outlet property="emailTextField" destination="hpU-Rq-GFz" id="lCS-OR-Kvj"/>
@@ -143,6 +180,9 @@
         </designable>
     </designables>
     <resources>
+        <namedColor name="iBench.marine">
+            <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="iBench.marine">
             <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

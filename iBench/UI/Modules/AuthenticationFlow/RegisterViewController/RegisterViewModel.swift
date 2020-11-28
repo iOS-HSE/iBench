@@ -46,9 +46,12 @@ extension RegisterViewModel: RegisterViewModeling {
             didGetError?("Пожалуйста, проверьте правильность введенных данных")
             return
         }
+        isLoading = true
         currentUserManager.createUser(name: name, email: email, password: password) { [weak self] (error) in
-            if let error = error {
-                self?.didGetError?(error)
+            self?.isLoading = false
+            if let error = error as NSError? {
+                let message = self?.currentUserManager.mapErrorMessage(for: error) ?? "no error"
+                self?.didGetError?(message)
                 return
             }
         }
