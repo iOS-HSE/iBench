@@ -10,11 +10,17 @@ import Foundation
 
 enum FirestoreError: Error {
     case badData
-    
+    case benchNotFound(String)
+    case tooManyBenches(String)
+
     var localizedDescription: String {
         switch self {
             case .badData:
                 return "Unable to decode document data"
+            case .benchNotFound(let id):
+                return "Could not find bench with id \(id)"
+            case .tooManyBenches(let id):
+                return "Too many benches returned by an id-query with id \(id)"
         }
     }
 }

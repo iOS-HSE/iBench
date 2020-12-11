@@ -27,7 +27,7 @@ protocol CurrentUserManaging {
 class CurrentUserManager: NSObject {
     
     private let authenticationService: FirebaseAuthenticationServiceable
-    private let firestoreService: FirestoreServiceable
+    private let firestoreService: FirestoreUserServiceable
     private let userPersistantStoreService: PersistantStoreUserServiceable
     
     let currentUser = Emitter<CurrentUser?>(nil)
@@ -36,7 +36,7 @@ class CurrentUserManager: NSObject {
     static let shared = CurrentUserManager()
     private init(
         authenticationService: FirebaseAuthenticationServiceable = FirebaseAuthenticationService.shared,
-        firestoreService: FirestoreServiceable = FirestoreService.shared,
+        firestoreService: FirestoreUserServiceable = FirestoreService.shared,
         persistantStoreService: PersistantStoreUserServiceable = PersistantStoreService.shared
     ) {
         self.authenticationService = authenticationService
