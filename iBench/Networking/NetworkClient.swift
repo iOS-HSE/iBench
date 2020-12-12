@@ -34,6 +34,7 @@ class NetworkClient: NSObject {
     
     static let shared = NetworkClient()
     private override init() {
+    
         super.init()
     }
     
