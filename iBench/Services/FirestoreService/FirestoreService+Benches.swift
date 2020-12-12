@@ -91,6 +91,7 @@ extension FirestoreService: FirestoreBenchesServiceable {
             guard snapshot.documents.count == 1,
                   let benchDocument = snapshot.documents.first else {
                 completion(FirestoreError.tooManyBenches(bench.id) as NSError?)
+                return
             }
             benchDocument.reference.setData(bench.dictionaryRepresentation)
         }
