@@ -13,7 +13,7 @@
         <!--Map View Controller-->
         <scene sceneID="Nm3-9J-DbW">
             <objects>
-                <viewController id="Cf4-Ae-9Mp" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController id="Cf4-Ae-9Mp" customClass="MapViewController" customModule="iBench" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1bU-Zp-6sZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +143,9 @@
                             <constraint firstItem="bpR-wc-AOx" firstAttribute="trailing" secondItem="Aai-KY-nEB" secondAttribute="trailing" constant="20" id="wH5-7a-GGj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Fre-er-ma0" id="oXf-1W-kbM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0j-ff-iEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

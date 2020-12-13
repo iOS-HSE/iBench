@@ -22,19 +22,21 @@ final class AuthenticationFlowRouter {
     }
 }
 
-extension AuthenticationFlowRouter: RegisterViewControllerRouting {
+extension AuthenticationFlowRouter: RegisterRouting {
     func presentMapViewController(_ completion: (() -> Void)?) {
-        
+        let vc = MapViewController.initFromItsStoryboard()
+        vc.viewModel = MapViewModel()
+//        vc.router =
+        navigationController.view.window?.rootViewController = vc
     }
     
     func presentSignInViewController(_ compleiton: (() -> Void)?) {
-        //replace UIViewController type with the viewController subclass you will create
-        if let presentedVC = navigationController.viewControllers.first(where: { $0 is UIViewController }) {
+        if let presentedVC = navigationController.viewControllers.first(where: { $0 is SignInViewController }) {
             navigationController.popToViewController(presentedVC, animated: true, compleiton)
         } else {
-            //1. create viewController instance
-            let vc = UIViewController() //placeholder for type
-            //2. fill it with router `self` and viewModel
+            let vc = SignInViewController.initFromItsStoryboard()
+            vc.viewModel = SignInViewModel()
+            vc.router = self
             navigationController.pushViewController(vc, animated: true, compleiton)
         }
     }
@@ -51,5 +53,8 @@ extension AuthenticationFlowRouter: RegisterViewControllerRouting {
         }
     }
     
+}
+
+extension AuthenticationFlowRouter: SignInRouting {
     
 }

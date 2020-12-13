@@ -1,55 +1,43 @@
 //
-//  RegisterViewController.swift
+//  SignInViewController.swift
 //  iBench
 //
-//  Created by Андрей Журавлев on 13.11.2020.
+//  Created by Андрей Журавлев on 13.12.2020.
 //  Copyright © 2020 Андрей Журавлев. All rights reserved.
 //
 
 import UIKit
 import GoogleSignIn
 
-protocol AuthenticationRouting {
-    func presentMapViewController(_ completion: (() -> Void)?)
+protocol SignInRouting: AuthenticationRouting {
+    func presentRegisterViewController(_ completion: (() -> Void)?)
 }
 
-protocol RegisterRouting: AuthenticationRouting {
-    
-    func presentSignInViewController(_ compleiton: (() -> Void)?)
-}
-
-protocol RegisterViewModeling: BaseViewModeling {
-    var name: String? { get set }
+protocol SignInViewModeling: BaseViewModeling {
     var email: String? { get set }
     var password: String? { get set }
     
-    var didRegisterSuccessfully: (() -> Void)? { get set }
+    var didSignedInSuccessfully: (() -> Void)? { get set }
     
-    func register()
-    
+    func signIn()
 }
 
-final class RegisterViewController: BaseViewController {
+class SignInViewController: BaseViewController {
     
-    @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var googleButton: GIDSignInButton!
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var containerView: UIStackView!
-    @IBOutlet weak var containerViewYPositionAnchor: NSLayoutConstraint!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var buttonsStackView: UIStackView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var containerViewYPositionAnchor: NSLayoutConstraint!
     
-    let containerViewYPositionOffsetDefaultValue: CGFloat = 30
+    let containerViewYPositionOffsetDefaultValue: CGFloat = 0
     
-    var router: RegisterRouting?
-    var viewModel: RegisterViewModeling! {
+    var router: SignInRouting?
+    var viewModel: SignInViewModeling! {
         didSet {
-            /// `weak self` для того, чтобы не происходило цикла ссылок и утечек памяти. Стоит писать всегда для
-            /// вещей, которые  происходят в отдельном потоке
             viewModel.didChange = { [weak self] in
-                /// `DispatchQueue.main` поток для изменения UI. Изменения UI не в `main` потоке вызовет краш.
                 DispatchQueue.main.async { [weak self] in
                     self?.update()
                 }
@@ -59,12 +47,12 @@ final class RegisterViewController: BaseViewController {
                     self?.showErrorAlert(title: "Ошибка", message: message, okHandler: nil)
                 }
             }
-            viewModel.didRegisterSuccessfully = { [weak self] in
+            viewModel.didSignedInSuccessfully = { [weak self] in
                 DispatchQueue.main.async { [weak self] in
                     guard self?.isViewLoaded ?? false, self?.view.window != nil else {
                         return
                     }
-//                    self?.showMessageAlert(message: "Successful registration")
+//                    self?.showMessageAlert(message: "Successful")
                     self?.router?.presentMapViewController(nil)
                 }
             }
@@ -90,48 +78,33 @@ final class RegisterViewController: BaseViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = nil
     }
     
-    //MARK: Setup
-    
     private func setup() {
-        activityIndicator.isActive = false
+        
     }
-    
-    //MARK: Update
     
     private func update() {
-        guard isViewLoaded else {
-            return
-        }
-        updateRegisterButton()
         updateActivityIndicator()
+        updateSignInButton()
     }
     
-    private func updateRegisterButton() {
-        let isAllowedToTap = viewModel.name != nil &&
-            viewModel.email != nil &&
+    private func updateSignInButton() {
+        let isAllowedToTap = viewModel.email != nil &&
             viewModel.password != nil &&
-            !viewModel.name!.isEmpty &&
             !viewModel.email!.isEmpty &&
             !viewModel.password!.isEmpty
-        registerButton.isUserInteractionEnabled = isAllowedToTap
-        registerButton.backgroundColor = isAllowedToTap ? .iBenchMarine : .lightGray
+        signInButton.isUserInteractionEnabled = isAllowedToTap
+        signInButton.backgroundColor = isAllowedToTap ? .iBenchMarine : .lightGray
     }
     
     private func updateActivityIndicator() {
         activityIndicator.isActive = viewModel.isLoading
         buttonsStackView.isHidden = viewModel.isLoading
     }
-    
 }
 
 //MARK: Actions
 
-extension RegisterViewController {
-    @IBAction func nameEditingChanged() {
-        viewModel.name = nameTextField.text
-        update()
-    }
-    
+extension SignInViewController {
     @IBAction func emailEditingChanged() {
         viewModel.email = emailTextField.text
         update()
@@ -142,16 +115,18 @@ extension RegisterViewController {
         update()
     }
     
-    @IBAction func registerButtonTapped() {
-        viewModel.register()
+    @IBAction func signInButtonTapped() {
+        viewModel.signIn()
     }
     
-    @IBAction func signInButtonTapped() {
-        router?.presentSignInViewController(nil)
+    @IBAction func registerButtonTapped() {
+        router?.presentRegisterViewController(nil)
     }
 }
 
-extension RegisterViewController {
+//MARK: Keyboard
+
+extension SignInViewController {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
@@ -167,7 +142,7 @@ extension RegisterViewController {
                 self.containerView.layoutIfNeeded()
                 self.view.layoutIfNeeded()
             }
-
+            
         }
     }
     
