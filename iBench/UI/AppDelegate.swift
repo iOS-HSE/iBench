@@ -32,8 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let initialVC: UIViewController
         if CurrentUserManager.shared.isSignedIn {
-            //move to mapVIewController
-            initialVC = UIViewController()
+            //route to mapVIewController
+            let vc = MapViewController.initFromItsStoryboard()
+            vc.viewModel = MapViewModel()
+            initialVC = vc
         } else {
             let vc = RegisterViewController.initFromItsStoryboard()
             let router = AuthenticationFlowRouter(initialVC: vc)

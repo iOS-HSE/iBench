@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		754763DE25864C7400A29645 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754763DD25864C7400A29645 /* SignInViewController.swift */; };
+		754763E125864C7D00A29645 /* SignInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754763E025864C7D00A29645 /* SignInViewController.storyboard */; };
+		754763E725865E4200A29645 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754763E625865E4200A29645 /* SignInViewModel.swift */; };
 		755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 755A00DC2556D32A009ABE2B /* GoogleService-Info.plist */; };
 		755A02762556DE43009ABE2B /* UIStoryboard+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02752556DE43009ABE2B /* UIStoryboard+UIViewController.swift */; };
 		755A027A2556DE6F009ABE2B /* UINavigationController+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02792556DE6F009ABE2B /* UINavigationController+Completion.swift */; };
@@ -63,6 +66,9 @@
 
 /* Begin PBXFileReference section */
 		3A8E868742046BB8FAAEB5F2 /* Pods-iBench.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBench.debug.xcconfig"; path = "Target Support Files/Pods-iBench/Pods-iBench.debug.xcconfig"; sourceTree = "<group>"; };
+		754763DD25864C7400A29645 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		754763E025864C7D00A29645 /* SignInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInViewController.storyboard; sourceTree = "<group>"; };
+		754763E625865E4200A29645 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		755A00DC2556D32A009ABE2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		755A02752556DE43009ABE2B /* UIStoryboard+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+UIViewController.swift"; sourceTree = "<group>"; };
 		755A02792556DE6F009ABE2B /* UINavigationController+Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Completion.swift"; sourceTree = "<group>"; };
@@ -141,6 +147,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		754763DC25864C4C00A29645 /* SignInViewController */ = {
+			isa = PBXGroup;
+			children = (
+				754763E625865E4200A29645 /* SignInViewModel.swift */,
+				754763DD25864C7400A29645 /* SignInViewController.swift */,
+				754763E025864C7D00A29645 /* SignInViewController.storyboard */,
+			);
+			path = SignInViewController;
+			sourceTree = "<group>";
+		};
 		755A02742556DE3B009ABE2B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				75653153256F95B700549FD3 /* AuthenticationFlowRouter.swift */,
+				754763DC25864C4C00A29645 /* SignInViewController */,
 				75784579255EFD3D00DB9DA0 /* RegisterViewController */,
 			);
 			path = AuthenticationFlow;
@@ -458,6 +475,7 @@
 				75E81B1C257A5BAF00218EB0 /* MapViewController.storyboard in Resources */,
 				7578457E255EFDB300DB9DA0 /* RegisterViewController.storyboard in Resources */,
 				755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */,
+				754763E125864C7D00A29645 /* SignInViewController.storyboard in Resources */,
 				759ACC13250A205C0071EF7B /* LaunchScreen.storyboard in Resources */,
 				759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */,
 			);
@@ -564,6 +582,8 @@
 				75653149256F803700549FD3 /* UIViewController+Alerts.swift in Sources */,
 				7565314D256F83F800549FD3 /* FirestoreService.swift in Sources */,
 				7578459E255EFF8F00DB9DA0 /* UIColor+iBench.swift in Sources */,
+				754763E725865E4200A29645 /* SignInViewModel.swift in Sources */,
+				754763DE25864C7400A29645 /* SignInViewController.swift in Sources */,
 				756576D825682F50005E250A /* UserLocationService.swift in Sources */,
 				75E81B19257A5BA600218EB0 /* MapViewController.swift in Sources */,
 				755A027A2556DE6F009ABE2B /* UINavigationController+Completion.swift in Sources */,

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JwH-QK-w0N">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="x2B-AC-ilz">
+            <objects>
+                <viewController id="JwH-QK-w0N" customClass="SignInViewController" customModule="iBench" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VPU-mQ-cpa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вход" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qha-7q-CCy">
+                                <rect key="frame" x="149.33333333333334" y="176" width="76.333333333333343" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" name="iBench.marine"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="NeD-O1-oVe">
+                                <rect key="frame" x="30" y="286.66666666666669" width="315" height="239.00000000000006"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eJj-Hc-7Fv">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="76"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffz-uf-kGy">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                <connections>
+                                                    <action selector="emailEditingChanged" destination="JwH-QK-w0N" eventType="editingChanged" id="ONf-Q8-PyT"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EPP-fY-Jls">
+                                                <rect key="frame" x="0.0" y="42" width="315" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <connections>
+                                                    <action selector="passwordEditingChanged" destination="JwH-QK-w0N" eventType="editingChanged" id="Enn-LD-Ady"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-LO-Tpa">
+                                        <rect key="frame" x="0.0" y="116" width="315" height="123"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-PG-hkz" customClass="DesignableButton" customModule="iBench" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="45"/>
+                                                <color key="backgroundColor" name="iBench.marine"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="w6I-oR-JaX"/>
+                                                </constraints>
+                                                <state key="normal" title="Войти">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="signInButtonTapped" destination="JwH-QK-w0N" eventType="touchUpInside" id="9kg-SR-Rle"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="или" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9v-i9-2ir">
+                                                <rect key="frame" x="145.33333333333334" y="53" width="24.666666666666657" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYN-36-k38" customClass="GIDSignInButton">
+                                                <rect key="frame" x="0.0" y="78" width="315" height="45"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="6vA-Ah-eJV"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="MYN-36-k38" firstAttribute="leading" secondItem="k9m-LO-Tpa" secondAttribute="leading" id="1KN-xP-qVz"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xv8-PG-hkz" secondAttribute="trailing" id="Lxc-OK-q0I"/>
+                                            <constraint firstItem="Xv8-PG-hkz" firstAttribute="leading" secondItem="k9m-LO-Tpa" secondAttribute="leading" id="dHx-vp-bW0"/>
+                                            <constraint firstAttribute="trailing" secondItem="MYN-36-k38" secondAttribute="trailing" id="eeL-7e-Knb"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="k9m-LO-Tpa" firstAttribute="leading" secondItem="NeD-O1-oVe" secondAttribute="leading" id="Iza-0L-dOO"/>
+                                    <constraint firstItem="eJj-Hc-7Fv" firstAttribute="leading" secondItem="NeD-O1-oVe" secondAttribute="leading" id="OWf-4V-FVO"/>
+                                    <constraint firstAttribute="trailing" secondItem="eJj-Hc-7Fv" secondAttribute="trailing" id="SoZ-3g-lgb"/>
+                                    <constraint firstAttribute="trailing" secondItem="k9m-LO-Tpa" secondAttribute="trailing" id="sGJ-ps-2Am"/>
+                                </constraints>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XQI-o3-u9j">
+                                <rect key="frame" x="177.66666666666666" y="454" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9d0-fJ-NUr">
+                                <rect key="frame" x="46" y="744.33333333333337" width="283" height="28.666666666666629"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Еще не зарегестрированы?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvv-AL-EV2">
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-Ro-of9">
+                                        <rect key="frame" x="196" y="0.0" width="87" height="28.666666666666668"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Регистрация">
+                                                    <attributes>
+                                                        <color key="NSColor" name="iBench.marine"/>
+                                                        <font key="NSFont" metaFont="system" size="14"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButtonTapped" destination="JwH-QK-w0N" eventType="touchUpInside" id="ixT-hJ-oQk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MwA-lM-kBz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XQI-o3-u9j" firstAttribute="centerX" secondItem="k9m-LO-Tpa" secondAttribute="centerX" id="01A-El-UoK"/>
+                            <constraint firstItem="MwA-lM-kBz" firstAttribute="trailing" secondItem="NeD-O1-oVe" secondAttribute="trailing" constant="30" id="2OM-5R-dpH"/>
+                            <constraint firstItem="XQI-o3-u9j" firstAttribute="centerY" secondItem="k9m-LO-Tpa" secondAttribute="centerY" id="69i-Ky-4qk"/>
+                            <constraint firstItem="Qha-7q-CCy" firstAttribute="centerX" secondItem="VPU-mQ-cpa" secondAttribute="centerX" id="7RC-om-gmQ"/>
+                            <constraint firstItem="9d0-fJ-NUr" firstAttribute="centerX" secondItem="VPU-mQ-cpa" secondAttribute="centerX" id="Djk-aN-hxw"/>
+                            <constraint firstItem="NeD-O1-oVe" firstAttribute="top" secondItem="Qha-7q-CCy" secondAttribute="bottom" constant="70" id="LXG-ci-RDY"/>
+                            <constraint firstItem="NeD-O1-oVe" firstAttribute="leading" secondItem="VPU-mQ-cpa" secondAttribute="leading" constant="30" id="MHN-4y-Rnf"/>
+                            <constraint firstItem="NeD-O1-oVe" firstAttribute="centerY" secondItem="VPU-mQ-cpa" secondAttribute="centerY" id="Z8h-Yr-mDc"/>
+                            <constraint firstItem="MwA-lM-kBz" firstAttribute="bottom" secondItem="9d0-fJ-NUr" secondAttribute="bottom" constant="5" id="o2E-5D-VJR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="XQI-o3-u9j" id="VWC-S6-YPV"/>
+                        <outlet property="buttonsStackView" destination="k9m-LO-Tpa" id="w6h-n7-2CW"/>
+                        <outlet property="containerView" destination="NeD-O1-oVe" id="wNK-1H-Zq7"/>
+                        <outlet property="containerViewYPositionAnchor" destination="Z8h-Yr-mDc" id="hOy-Wg-Agj"/>
+                        <outlet property="emailTextField" destination="Ffz-uf-kGy" id="WkH-ka-gxe"/>
+                        <outlet property="passwordTextField" destination="EPP-fY-Jls" id="CH9-3V-2r8"/>
+                        <outlet property="signInButton" destination="Xv8-PG-hkz" id="hGR-fm-fa8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21q-96-cS0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104" y="96"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Xv8-PG-hkz">
+            <size key="intrinsicContentSize" width="44" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="iBench.marine">
+            <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="iBench.marine">
+            <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
