@@ -26,8 +26,8 @@ extension AuthenticationFlowRouter: RegisterRouting {
     func presentMapViewController(_ completion: (() -> Void)?) {
         let vc = MapViewController.initFromItsStoryboard()
         vc.viewModel = MapViewModel()
-//        vc.router =
-        navigationController.view.window?.rootViewController = vc
+        let router = MapFlowRouter(initialVC: vc)
+        navigationController.view.window?.rootViewController = router.navigationController
     }
     
     func presentSignInViewController(_ compleiton: (() -> Void)?) {

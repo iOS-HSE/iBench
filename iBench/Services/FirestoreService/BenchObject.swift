@@ -42,7 +42,7 @@ struct BenchObject: Equatable {
     init(id: String = UUID().uuidString,
          lat: Double,
          lon: Double,
-         rating: Float? = 0,
+         rating: Float? = nil,
          comment: String? = nil,
          userAddedId: String,
          addedAt: Int = Int(Date().timeIntervalSince1970),

@@ -38,6 +38,10 @@
 		759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ACC06250A20560071EF7B /* AppDelegate.swift */; };
 		759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC0F250A205C0071EF7B /* Assets.xcassets */; };
 		759ACC13250A205C0071EF7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC11250A205C0071EF7B /* LaunchScreen.storyboard */; };
+		75B7D7C52587C0FE0076EE23 /* MapFlowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7D7C42587C0FE0076EE23 /* MapFlowRouter.swift */; };
+		75B7D7CF2587DCB10076EE23 /* AddNewBenchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7D7CE2587DCB10076EE23 /* AddNewBenchViewController.swift */; };
+		75B7D7D92587E17E0076EE23 /* UIView+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7D7D82587E17E0076EE23 /* UIView+TopViewController.swift */; };
+		75B7D7DD2587E2E40076EE23 /* AddNewBenchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75B7D7DC2587E2E40076EE23 /* AddNewBenchViewController.storyboard */; };
 		75E2DE49250FBB98000B10BC /* NameDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2DE48250FBB98000B10BC /* NameDescribable.swift */; };
 		75E2DE4C250FBC88000B10BC /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2DE4B250FBC88000B10BC /* NetworkClient.swift */; };
 		75E2DE4F250FBCB9000B10BC /* RequestResponseDefaultLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2DE4E250FBCB9000B10BC /* RequestResponseDefaultLogger.swift */; };
@@ -99,6 +103,10 @@
 		759ACC0F250A205C0071EF7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		759ACC12250A205C0071EF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		759ACC14250A205C0071EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75B7D7C42587C0FE0076EE23 /* MapFlowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFlowRouter.swift; sourceTree = "<group>"; };
+		75B7D7CE2587DCB10076EE23 /* AddNewBenchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBenchViewController.swift; sourceTree = "<group>"; };
+		75B7D7D82587E17E0076EE23 /* UIView+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TopViewController.swift"; sourceTree = "<group>"; };
+		75B7D7DC2587E2E40076EE23 /* AddNewBenchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewBenchViewController.storyboard; sourceTree = "<group>"; };
 		75E2DE48250FBB98000B10BC /* NameDescribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDescribable.swift; sourceTree = "<group>"; };
 		75E2DE4B250FBC88000B10BC /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		75E2DE4E250FBCB9000B10BC /* RequestResponseDefaultLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResponseDefaultLogger.swift; sourceTree = "<group>"; };
@@ -279,6 +287,15 @@
 			path = iBench;
 			sourceTree = "<group>";
 		};
+		75B7D7CD2587DC990076EE23 /* AddNewBenchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75B7D7CE2587DCB10076EE23 /* AddNewBenchViewController.swift */,
+				75B7D7DC2587E2E40076EE23 /* AddNewBenchViewController.storyboard */,
+			);
+			path = AddNewBenchViewController;
+			sourceTree = "<group>";
+		};
 		75E2DE45250FBAC6000B10BC /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +379,7 @@
 				75E2DE62250FBE8A000B10BC /* UIView+Attributes.swift */,
 				755A02802556DF33009ABE2B /* NibLoadable.swift */,
 				755A02832556DF41009ABE2B /* UIView+NibLoadable.swift */,
+				75B7D7D82587E17E0076EE23 /* UIView+TopViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -369,7 +387,9 @@
 		75E81B15257A5AC100218EB0 /* MapFlow */ = {
 			isa = PBXGroup;
 			children = (
+				75B7D7C42587C0FE0076EE23 /* MapFlowRouter.swift */,
 				75E81B17257A5B9500218EB0 /* MapViewController */,
+				75B7D7CD2587DC990076EE23 /* AddNewBenchViewController */,
 			);
 			path = MapFlow;
 			sourceTree = "<group>";
@@ -473,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E81B1C257A5BAF00218EB0 /* MapViewController.storyboard in Resources */,
+				75B7D7DD2587E2E40076EE23 /* AddNewBenchViewController.storyboard in Resources */,
 				7578457E255EFDB300DB9DA0 /* RegisterViewController.storyboard in Resources */,
 				755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */,
 				754763E125864C7D00A29645 /* SignInViewController.storyboard in Resources */,
@@ -553,6 +574,7 @@
 				75653158256F960400549FD3 /* BaseRouter.swift in Sources */,
 				75784576255EFCE900DB9DA0 /* BaseViewModel.swift in Sources */,
 				755A02842556DF41009ABE2B /* UIView+NibLoadable.swift in Sources */,
+				75B7D7D92587E17E0076EE23 /* UIView+TopViewController.swift in Sources */,
 				75E2DE4F250FBCB9000B10BC /* RequestResponseDefaultLogger.swift in Sources */,
 				75E81B3A257A676D00218EB0 /* BenchAnnotation.swift in Sources */,
 				75E2DE53250FBD48000B10BC /* NetworkResponse.swift in Sources */,
@@ -561,12 +583,14 @@
 				75E81B46257A75FF00218EB0 /* MapViewModel.swift in Sources */,
 				755A028B2556E226009ABE2B /* FirebaseAuthenticationService.swift in Sources */,
 				75F3179625728D2E00090E0E /* PersistantStoreService+User.swift in Sources */,
+				75B7D7CF2587DCB10076EE23 /* AddNewBenchViewController.swift in Sources */,
 				7578456E255EFC4800DB9DA0 /* RegisterViewController.swift in Sources */,
 				75E2DE4C250FBC88000B10BC /* NetworkClient.swift in Sources */,
 				75653150256F901500549FD3 /* FirestoreError.swift in Sources */,
 				757845E8255F084B00DB9DA0 /* Listener.swift in Sources */,
 				75E81B3D257A682D00218EB0 /* FirestoreService+User.swift in Sources */,
 				75E2DE49250FBB98000B10BC /* NameDescribable.swift in Sources */,
+				75B7D7C52587C0FE0076EE23 /* MapFlowRouter.swift in Sources */,
 				759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */,
 				75F317932572866300090E0E /* PersistantStoreService+LaunchesCounting.swift in Sources */,
 				757845E4255F066E00DB9DA0 /* CurrentUser.swift in Sources */,
@@ -733,6 +757,7 @@
 			baseConfigurationReference = 3A8E868742046BB8FAAEB5F2 /* Pods-iBench.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 825D79GKVG;
 				INFOPLIST_FILE = iBench/Info.plist;
@@ -743,6 +768,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SE2.iBench;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -10,7 +10,14 @@ import UIKit
 import MapKit
 
 protocol MapRouting {
-    
+    func presentBenchInfoViewController(object: BenchObject, mapPreview: UIImage,_ completion: (() -> Void)?)
+    func presentAddNewBenchViewController(coordinate: CLLocationCoordinate2D, _ completion: (() -> Void)?)
+}
+
+protocol BottomSheetBenchesDelegate: class {
+    func didUpdateBenchLocation(_ bench: BenchObject)
+    func didUpdateTapCoordinates(_ coordinates: CLLocationCoordinate2D)
+    func didTapOutside()
 }
 
 protocol MapViewModeling: BaseViewModeling {
@@ -30,11 +37,33 @@ class MapViewController: BaseViewController {
                     self?.update()
                 }
             }
+            viewModel.didGetError = { [weak self] message in
+                DispatchQueue.main.async { [weak self] in
+                    self?.showErrorAlert(title: "Ошибка", message: message, okHandler: nil)
+                }
+            }
         }
     }
+    weak var bottomSheetDelegate: BottomSheetBenchesDelegate?
+    
+    var selectedPin: MKPointAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        centerOnUserLocation()
+    }
+    
+    private func setup() {
+        setupMapView()
+    }
+    
+    private func setupMapView() {
+        mapView.showsCompass = false
+        mapView.userTrackingMode = .follow
     }
     
     private func update() {
@@ -42,10 +71,15 @@ class MapViewController: BaseViewController {
     }
     
     private func updateMapView() {
-        //not effective but bruh
+        //not effective but whatever
         mapView.removeAnnotations(mapView.annotations)
         let benchAnnotations = viewModel.benches.map(BenchAnnotation.init)
         mapView.addAnnotations(benchAnnotations)
+    }
+    
+    private func centerOnUserLocation() {
+        let userLoc = mapView.userLocation.coordinate
+        mapView.region = .init(center: userLoc, latitudinalMeters: 300, longitudinalMeters: 300)
     }
     
     @IBAction func settingsTapped() {
@@ -60,13 +94,73 @@ class MapViewController: BaseViewController {
         
     }
     
-    @IBAction func addNewBenchTapped() {
+    @IBAction func userLocationTapped() {
         
+    }
+    
+    @IBAction func mapLongTapped(_ gestureRecognizer: UILongPressGestureRecognizer) {
+        guard gestureRecognizer.state == .began else {
+            return
+        }
+        let touchPoint = gestureRecognizer.location(in: mapView)
+        let newCoordinates = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+        print(newCoordinates)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = newCoordinates
+        if let selected = selectedPin {
+            mapView.removeAnnotation(selected)
+        }
+        selectedPin = annotation
+        mapView.addAnnotation(annotation)
+        router?.presentAddNewBenchViewController(coordinate: newCoordinates, nil)
+    }
+    @IBAction func mapTapped(_ sender: UITapGestureRecognizer) {
+        bottomSheetDelegate?.didTapOutside()
+//        guard sender.state == .ended else {
+//            return
+//        }
+//        guard let childVC = self.children.first else {
+//            return
+//        }
+        
+//        UIView.animate(withDuration: 0.4,
+//                       delay: 0,
+//                       options: .curveEaseInOut) {
+//            childVC.view.frame.origin.y = self.view.frame.maxY
+//            self.view.layoutIfNeeded()
+//            childVC.view.layoutIfNeeded()
+//        } completion: { (_) in
+//            childVC.view.removeFromSuperview()
+//            childVC.removeFromParent()
+//        }
     }
 }
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let benchAnnotation = view.annotation as? BenchAnnotation else {
+            return
+        }
+        let coords = benchAnnotation.coordinate
         
+        let options = MKMapSnapshotter.Options()
+        options.region = MKCoordinateRegion(center: coords , latitudinalMeters: 500, longitudinalMeters: 500)
+        let height = UIScreen.main.bounds.height * 0.2
+        let width = UIScreen.main.bounds.width
+        options.size = CGSize(width: width, height: height)
+        let snapshotter = MKMapSnapshotter(options: options)
+        
+        snapshotter.start { (snapshot, error) in
+            guard error == nil, let snapshot = snapshot else {
+                return
+            }
+            
+            let snapshotImage = snapshot.image
+            self.router?.presentBenchInfoViewController(object: benchAnnotation.benchObject,
+                                                        mapPreview: snapshotImage,
+                                                        nil)
+            
+        }
     }
+    
 }
