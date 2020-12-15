@@ -58,6 +58,11 @@ class AddNewBenchViewController: BottomSheetViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,6 +88,9 @@ class AddNewBenchViewController: BottomSheetViewController {
     }
     
     private func update(){
+        guard isViewLoaded else {
+            return
+        }
         updateContainerView()
     }
     
