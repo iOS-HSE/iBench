@@ -29,10 +29,14 @@ class BottomSheetViewController: BaseViewController {
         }
     }
     
-    private func moveSheetVertically(to yCoord: CGFloat,
+    func moveSheetVertically(to yCoord: CGFloat,
                                      speed: CGFloat = 1,
                                      removeFromParent: Bool = false,
                                      completion: (() -> Void)? = nil) {
+        if speed == 0 {
+            print("⚠️WARNING⚠️, passed 0 speed value which may result in math error (division by zero)")
+            return
+        }
         let distance = abs(self.view.frame.origin.y - yCoord)
         let velocity = distance / abs(speed)
         UIView.animate(withDuration: 0.3,

@@ -20,6 +20,7 @@ protocol CurrentUserManaging {
     func login(email: String?, password: String?, _ compleiton: @escaping (_ error: Error?) -> Void)
     func googleAuthenticate(googleUser: GIDGoogleUser!, error: Error!, completion: @escaping (_ error: Error?) -> Void)
     func updateName(name: String, _ completion: @escaping (_ errorMessage: String?) -> Void)
+    func logOut(_ completion: ((_ error: NSError?) -> Void)?)
     
     func mapErrorMessage(for error: NSError) -> String
 }
@@ -42,6 +43,7 @@ class CurrentUserManager: NSObject {
         self.authenticationService = authenticationService
         self.firestoreService = firestoreService
         self.userPersistantStoreService = persistantStoreService
+        currentUser.value = userPersistantStoreService.userObject
     }
     
     private func setCurrentUser(_ user: CurrentUser?) {
@@ -137,6 +139,14 @@ extension CurrentUserManager: CurrentUserManaging {
                     completion(error.localizedDescription)
             }
         }
+    }
+    
+    func logOut(_ completion: ((NSError?) -> Void)?) {
+        if let error = authenticationService.signOut() {
+            completion?(error as NSError?)
+            return
+        }
+        userPersistantStoreService.userObject = nil
     }
     
     var isSignedIn: Bool {

@@ -4,7 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,8 +23,109 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5DJ-Ix-4cy">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="O6E-l6-Xfh">
+                                            <rect key="frame" x="30" y="40" width="354" height="134.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оценка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATN-Y6-5dJ">
+                                                    <rect key="frame" x="147" y="0.0" width="60" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="dl3-qD-uZm">
+                                                    <rect key="frame" x="0.0" y="45.5" width="354" height="32"/>
+                                                    <segments>
+                                                        <segment title="1"/>
+                                                        <segment title="2"/>
+                                                        <segment title="3"/>
+                                                        <segment title="4"/>
+                                                        <segment title="5"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="segmentedControlValueChanged:" destination="OS9-eu-oUl" eventType="valueChanged" id="RIh-0b-V2c"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Комментарий" translatesAutoresizingMaskIntoConstraints="NO" id="B1n-vt-zP6" customClass="DesignableTextView" customModule="iBench" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="101.5" width="354" height="33"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="6uu-f4-vF1"/>
+                                                    </constraints>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                                            <point key="value" x="0.0" y="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="B1n-vt-zP6" secondAttribute="trailing" id="8M3-6U-k0m"/>
+                                                <constraint firstItem="dl3-qD-uZm" firstAttribute="leading" secondItem="O6E-l6-Xfh" secondAttribute="leading" id="WMH-JX-HNs"/>
+                                                <constraint firstItem="B1n-vt-zP6" firstAttribute="leading" secondItem="O6E-l6-Xfh" secondAttribute="leading" id="ZLY-ff-kVM"/>
+                                                <constraint firstAttribute="trailing" secondItem="dl3-qD-uZm" secondAttribute="trailing" id="tPs-3i-9JC"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cog-Gw-jGn" userLabel="Settings Container View" customClass="DesignableView" customModule="iBench" customModuleProvider="target">
+                                            <rect key="frame" x="364" y="20" width="30" height="30"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE9-hz-XyI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="JKj-6O-rew"/>
+                                                        <constraint firstAttribute="height" constant="30" id="LU8-Xb-C3g"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemGray6Color"/>
+                                                    <state key="normal" image="plus" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="addTapped" destination="OS9-eu-oUl" eventType="touchUpInside" id="xNJ-iD-gS5"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" name="iBench.marine"/>
+                                            <constraints>
+                                                <constraint firstItem="gE9-hz-XyI" firstAttribute="centerX" secondItem="Cog-Gw-jGn" secondAttribute="centerX" id="Ky2-xf-yyD"/>
+                                                <constraint firstAttribute="width" constant="30" id="VWd-8c-eyY"/>
+                                                <constraint firstItem="gE9-hz-XyI" firstAttribute="centerY" secondItem="Cog-Gw-jGn" secondAttribute="centerY" id="q5Z-1D-fmF"/>
+                                                <constraint firstAttribute="height" constant="30" id="xT1-Jl-DV6"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mNd-R6-Eph">
+                                            <rect key="frame" x="197" y="97.5" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mNd-R6-Eph" firstAttribute="centerX" secondItem="O6E-l6-Xfh" secondAttribute="centerX" id="POb-xW-Twf"/>
+                                        <constraint firstItem="O6E-l6-Xfh" firstAttribute="centerX" secondItem="5DJ-Ix-4cy" secondAttribute="centerX" id="Pkl-3i-dVp"/>
+                                        <constraint firstItem="O6E-l6-Xfh" firstAttribute="leading" secondItem="5DJ-Ix-4cy" secondAttribute="leading" constant="30" id="RzD-RW-5qF"/>
+                                        <constraint firstItem="Cog-Gw-jGn" firstAttribute="top" secondItem="5DJ-Ix-4cy" secondAttribute="top" constant="20" id="XJg-F9-DOc"/>
+                                        <constraint firstItem="mNd-R6-Eph" firstAttribute="centerY" secondItem="O6E-l6-Xfh" secondAttribute="centerY" id="ab8-98-5G8"/>
+                                        <constraint firstAttribute="trailing" secondItem="Cog-Gw-jGn" secondAttribute="trailing" constant="20" id="dym-uf-cyK"/>
+                                        <constraint firstAttribute="trailing" secondItem="O6E-l6-Xfh" secondAttribute="trailing" constant="30" id="pPg-TV-GZQ"/>
+                                        <constraint firstItem="O6E-l6-Xfh" firstAttribute="top" secondItem="5DJ-Ix-4cy" secondAttribute="top" constant="40" id="s1a-Zw-YJ8"/>
+                                    </constraints>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="extraLight"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -44,10 +147,32 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="mNd-R6-Eph" id="4GH-hU-2Hd"/>
+                        <outlet property="commentTextView" destination="B1n-vt-zP6" id="mKC-fM-DT2"/>
+                        <outlet property="containerView" destination="O6E-l6-Xfh" id="1Tr-2k-mwh"/>
+                        <outlet property="ratingSegmentedControl" destination="dl3-qD-uZm" id="JDn-KY-erv"/>
+                        <outlet property="textViewHeightAnchor" destination="6uu-f4-vF1" id="iTX-Vl-dTT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQJ-Gd-iyK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-839.13043478260875" y="173.4375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="iBench.marine">
+            <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

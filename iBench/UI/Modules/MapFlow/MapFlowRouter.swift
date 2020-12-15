@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 class MapFlowRouter {
     
@@ -27,11 +26,13 @@ extension MapFlowRouter: MapRouting {
         
     }
     
-    func presentAddNewBenchViewController(coordinate: CLLocationCoordinate2D, _ completion: (() -> Void)?) {
+    func presentAddNewBenchViewController(coordinate: LocationCoordinates, _ completion: (() -> Void)?) {
         guard let mapVC = getTopViewController() as? MapViewController else {
             return
         }
         let childVC = AddNewBenchViewController.initFromItsStoryboard()
+        childVC.viewModel = AddNewBenchViewModel(coordinates: coordinate)
+        mapVC.bottomSheetDelegate = childVC
         mapVC.addChild(childVC)
         mapVC.view.addSubview(childVC.view)
         childVC.didMove(toParent: mapVC)

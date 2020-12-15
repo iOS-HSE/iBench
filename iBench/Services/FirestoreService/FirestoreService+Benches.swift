@@ -14,6 +14,9 @@ typealias BenchResultResposne = (Result<[BenchObject], NSError>) -> Void
 protocol FirestoreBenchesServiceable {
 //    var benches: Emitter<[BenchObject]> { get }
     func getBenchesListener(_ completion: @escaping BenchResultResposne) -> ListenerRegistration
+    func addBench(_ bench: BenchObject, compleiton: @escaping ((NSError?) -> Void))
+    func removeBench(_ bench: BenchObject, completion: @escaping ((NSError?) -> Void))
+    func updateBench(_ bench: BenchObject, completion: @escaping ((NSError?) -> Void))
 }
 
 extension FirestoreService: FirestoreBenchesServiceable {
@@ -52,12 +55,8 @@ extension FirestoreService: FirestoreBenchesServiceable {
     }
     
     func addBench(_ bench: BenchObject, compleiton: @escaping ((NSError?) -> Void)) {
-        benchesReference.addDocument(data: bench.dictionaryRepresentation) { (error) in
-            if let error = error {
-                compleiton(error as NSError?)
-                return
-            }
-            compleiton(nil)
+        benchesReference.document(bench.id).setData(bench.dictionaryRepresentation) { (erorr) in
+            compleiton(erorr as NSError?)
         }
     }
     

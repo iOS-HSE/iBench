@@ -11,12 +11,12 @@ import MapKit
 
 protocol MapRouting {
     func presentBenchInfoViewController(object: BenchObject, mapPreview: UIImage,_ completion: (() -> Void)?)
-    func presentAddNewBenchViewController(coordinate: CLLocationCoordinate2D, _ completion: (() -> Void)?)
+    func presentAddNewBenchViewController(coordinate: LocationCoordinates, _ completion: (() -> Void)?)
 }
 
 protocol BottomSheetBenchesDelegate: class {
     func didUpdateBenchLocation(_ bench: BenchObject)
-    func didUpdateTapCoordinates(_ coordinates: CLLocationCoordinate2D)
+    func didUpdateTapCoordinates(_ coordinates: LocationCoordinates)
     func didTapOutside()
 }
 
@@ -79,7 +79,8 @@ class MapViewController: BaseViewController {
     
     private func centerOnUserLocation() {
         let userLoc = mapView.userLocation.coordinate
-        mapView.region = .init(center: userLoc, latitudinalMeters: 300, longitudinalMeters: 300)
+        let region = MKCoordinateRegion(center: userLoc, latitudinalMeters: 300, longitudinalMeters: 300)
+        mapView.setRegion(region, animated: true)
     }
     
     @IBAction func settingsTapped() {
@@ -95,7 +96,7 @@ class MapViewController: BaseViewController {
     }
     
     @IBAction func userLocationTapped() {
-        
+        centerOnUserLocation()
     }
     
     @IBAction func mapLongTapped(_ gestureRecognizer: UILongPressGestureRecognizer) {
@@ -107,15 +108,24 @@ class MapViewController: BaseViewController {
         print(newCoordinates)
         let annotation = MKPointAnnotation()
         annotation.coordinate = newCoordinates
+        let coord = LocationCoordinates(coordinates: newCoordinates)
         if let selected = selectedPin {
             mapView.removeAnnotation(selected)
+            selectedPin = annotation
+            mapView.addAnnotation(annotation)
+            bottomSheetDelegate?.didUpdateTapCoordinates(coord)
+            return
         }
         selectedPin = annotation
         mapView.addAnnotation(annotation)
-        router?.presentAddNewBenchViewController(coordinate: newCoordinates, nil)
+        router?.presentAddNewBenchViewController(coordinate: coord, nil)
     }
     @IBAction func mapTapped(_ sender: UITapGestureRecognizer) {
         bottomSheetDelegate?.didTapOutside()
+        if let selected = selectedPin {
+            mapView.removeAnnotation(selected)
+            return
+        }
 //        guard sender.state == .ended else {
 //            return
 //        }

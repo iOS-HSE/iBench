@@ -37,6 +37,9 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGray6Color"/>
                                         <state key="normal" backgroundImage="gear" catalog="system"/>
+                                        <connections>
+                                            <action selector="settingsTapped" destination="Cf4-Ae-9Mp" eventType="touchUpInside" id="JJh-ZU-z20"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="iBench.marine"/>
@@ -63,6 +66,9 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGray6Color"/>
                                         <state key="normal" backgroundImage="house.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="homeButtonTapped" destination="Cf4-Ae-9Mp" eventType="touchUpInside" id="urq-Hf-pFQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="iBench.marine"/>
@@ -89,6 +95,9 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGray6Color"/>
                                         <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchTapped" destination="Cf4-Ae-9Mp" eventType="touchUpInside" id="gke-tX-ngx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="iBench.marine"/>
@@ -115,6 +124,9 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGray6Color"/>
                                         <state key="normal" backgroundImage="location.north.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="userLocationTapped" destination="Cf4-Ae-9Mp" eventType="touchUpInside" id="Fwf-us-fT3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="iBench.marine"/>
