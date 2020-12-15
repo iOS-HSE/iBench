@@ -38,6 +38,7 @@
 		759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ACC06250A20560071EF7B /* AppDelegate.swift */; };
 		759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC0F250A205C0071EF7B /* Assets.xcassets */; };
 		759ACC13250A205C0071EF7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC11250A205C0071EF7B /* LaunchScreen.storyboard */; };
+		75A3C0282588D34F006CA4A0 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A3C0272588D34F006CA4A0 /* BottomSheetViewController.swift */; };
 		75B7D7C52587C0FE0076EE23 /* MapFlowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7D7C42587C0FE0076EE23 /* MapFlowRouter.swift */; };
 		75B7D7CF2587DCB10076EE23 /* AddNewBenchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7D7CE2587DCB10076EE23 /* AddNewBenchViewController.swift */; };
 		75B7D7D92587E17E0076EE23 /* UIView+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7D7D82587E17E0076EE23 /* UIView+TopViewController.swift */; };
@@ -103,6 +104,7 @@
 		759ACC0F250A205C0071EF7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		759ACC12250A205C0071EF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		759ACC14250A205C0071EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75A3C0272588D34F006CA4A0 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		75B7D7C42587C0FE0076EE23 /* MapFlowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFlowRouter.swift; sourceTree = "<group>"; };
 		75B7D7CE2587DCB10076EE23 /* AddNewBenchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBenchViewController.swift; sourceTree = "<group>"; };
 		75B7D7D82587E17E0076EE23 /* UIView+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TopViewController.swift"; sourceTree = "<group>"; };
@@ -165,16 +167,13 @@
 			path = SignInViewController;
 			sourceTree = "<group>";
 		};
-		755A02742556DE3B009ABE2B /* Extensions */ = {
+		755A02742556DE3B009ABE2B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				755A02752556DE43009ABE2B /* UIStoryboard+UIViewController.swift */,
-				755A02792556DE6F009ABE2B /* UINavigationController+Completion.swift */,
-				7578459D255EFF8E00DB9DA0 /* UIColor+iBench.swift */,
-				75653148256F803700549FD3 /* UIViewController+Alerts.swift */,
-				75F31786257280FE00090E0E /* UIActivityIndicatorView+IsActive.swift */,
+				75A3C0272588D34F006CA4A0 /* BottomSheetViewController.swift */,
 			);
-			path = Extensions;
+			name = Common;
+			path = ../Common;
 			sourceTree = "<group>";
 		};
 		755A02892556E1DA009ABE2B /* Managers */ = {
@@ -301,7 +300,6 @@
 			children = (
 				759ACC06250A20560071EF7B /* AppDelegate.swift */,
 				75E2DE5C250FBE1C000B10BC /* Views */,
-				755A02742556DE3B009ABE2B /* Extensions */,
 				75E2DE46250FBAEC000B10BC /* Modules */,
 			);
 			path = UI;
@@ -366,6 +364,7 @@
 		75E2DE5C250FBE1C000B10BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				755A02742556DE3B009ABE2B /* Common */,
 				75E2DE5D250FBE26000B10BC /* Extensions */,
 			);
 			path = Views;
@@ -380,6 +379,11 @@
 				755A02802556DF33009ABE2B /* NibLoadable.swift */,
 				755A02832556DF41009ABE2B /* UIView+NibLoadable.swift */,
 				75B7D7D82587E17E0076EE23 /* UIView+TopViewController.swift */,
+				755A02752556DE43009ABE2B /* UIStoryboard+UIViewController.swift */,
+				755A02792556DE6F009ABE2B /* UINavigationController+Completion.swift */,
+				7578459D255EFF8E00DB9DA0 /* UIColor+iBench.swift */,
+				75653148256F803700549FD3 /* UIViewController+Alerts.swift */,
+				75F31786257280FE00090E0E /* UIActivityIndicatorView+IsActive.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -619,6 +623,7 @@
 				75E2DE63250FBE8A000B10BC /* UIView+Attributes.swift in Sources */,
 				757845DE255F053600DB9DA0 /* AuthenticationError.swift in Sources */,
 				755A02762556DE43009ABE2B /* UIStoryboard+UIViewController.swift in Sources */,
+				75A3C0282588D34F006CA4A0 /* BottomSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
