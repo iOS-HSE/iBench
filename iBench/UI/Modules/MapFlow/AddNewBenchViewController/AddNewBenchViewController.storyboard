@@ -125,7 +125,7 @@
                                         <constraint firstItem="O6E-l6-Xfh" firstAttribute="top" secondItem="5DJ-Ix-4cy" secondAttribute="top" constant="40" id="s1a-Zw-YJ8"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="extraLight"/>
+                                <blurEffect style="systemUltraThinMaterial"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
