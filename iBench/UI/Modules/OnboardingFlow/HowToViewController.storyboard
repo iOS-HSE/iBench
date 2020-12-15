@@ -76,7 +76,7 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="id2" id="xfT-JT-XxH">
                                         <rect key="frame" x="414" y="0.0" width="414" height="802"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hvo-D2-RFh">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="hvo-D2-RFh">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -91,9 +91,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="iThirdScreen" id="8iq-17-g5c">
-                                        <rect key="frame" x="621" y="802" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="828" y="0.0" width="414" height="802"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="BUt-fO-sQA">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C3K-ju-Min">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>

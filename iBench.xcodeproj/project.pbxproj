@@ -35,6 +35,9 @@
 		757845E8255F084B00DB9DA0 /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E7255F084B00DB9DA0 /* Listener.swift */; };
 		757845EB255F085100DB9DA0 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EA255F085100DB9DA0 /* Signal.swift */; };
 		757845ED255F085700DB9DA0 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EC255F085700DB9DA0 /* Property.swift */; };
+		7586CDBD2589231A0030D7A1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586CDBC2589231A0030D7A1 /* OnboardingViewController.swift */; };
+		7586CDC12589235C0030D7A1 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586CDBF2589235C0030D7A1 /* HowToViewController.swift */; };
+		7586CDC22589235C0030D7A1 /* HowToViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7586CDC02589235C0030D7A1 /* HowToViewController.storyboard */; };
 		759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ACC06250A20560071EF7B /* AppDelegate.swift */; };
 		759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC0F250A205C0071EF7B /* Assets.xcassets */; };
 		759ACC13250A205C0071EF7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 759ACC11250A205C0071EF7B /* LaunchScreen.storyboard */; };
@@ -94,6 +97,9 @@
 		757845E7255F084B00DB9DA0 /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 		757845EA255F085100DB9DA0 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		757845EC255F085700DB9DA0 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		7586CDBC2589231A0030D7A1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		7586CDBF2589235C0030D7A1 /* HowToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
+		7586CDC02589235C0030D7A1 /* HowToViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HowToViewController.storyboard; sourceTree = "<group>"; };
 		759ACC03250A20560071EF7B /* iBench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBench.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		759ACC06250A20560071EF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		759ACC0F250A205C0071EF7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,6 +251,16 @@
 			path = Bindings;
 			sourceTree = "<group>";
 		};
+		7586CDBB2589231A0030D7A1 /* OnboardingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				7586CDBC2589231A0030D7A1 /* OnboardingViewController.swift */,
+				7586CDBF2589235C0030D7A1 /* HowToViewController.swift */,
+				7586CDC02589235C0030D7A1 /* HowToViewController.storyboard */,
+			);
+			path = OnboardingFlow;
+			sourceTree = "<group>";
+		};
 		759ACBFA250A20560071EF7B = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +313,7 @@
 				75653157256F960400549FD3 /* BaseRouter.swift */,
 				75784575255EFCE900DB9DA0 /* BaseViewModel.swift */,
 				759ACC11250A205C0071EF7B /* LaunchScreen.storyboard */,
+				7586CDBB2589231A0030D7A1 /* OnboardingFlow */,
 				7578456C255EFC3400DB9DA0 /* AuthenticationFlow */,
 				75E81B15257A5AC100218EB0 /* MapFlow */,
 			);
@@ -477,6 +494,7 @@
 				755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */,
 				754763E125864C7D00A29645 /* SignInViewController.storyboard in Resources */,
 				759ACC13250A205C0071EF7B /* LaunchScreen.storyboard in Resources */,
+				7586CDC22589235C0030D7A1 /* HowToViewController.storyboard in Resources */,
 				759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +589,7 @@
 				75F317932572866300090E0E /* PersistantStoreService+LaunchesCounting.swift in Sources */,
 				757845E4255F066E00DB9DA0 /* CurrentUser.swift in Sources */,
 				75F3178B257285D900090E0E /* PersistantStoreService.swift in Sources */,
+				7586CDC12589235C0030D7A1 /* HowToViewController.swift in Sources */,
 				75784571255EFCB400DB9DA0 /* BaseViewController.swift in Sources */,
 				757845ED255F085700DB9DA0 /* Property.swift in Sources */,
 				75653154256F95B700549FD3 /* AuthenticationFlowRouter.swift in Sources */,
@@ -586,6 +605,7 @@
 				754763DE25864C7400A29645 /* SignInViewController.swift in Sources */,
 				756576D825682F50005E250A /* UserLocationService.swift in Sources */,
 				75E81B19257A5BA600218EB0 /* MapViewController.swift in Sources */,
+				7586CDBD2589231A0030D7A1 /* OnboardingViewController.swift in Sources */,
 				755A027A2556DE6F009ABE2B /* UINavigationController+Completion.swift in Sources */,
 				75E81B43257A6A0600218EB0 /* BenchObject.swift in Sources */,
 				757845E1255F056B00DB9DA0 /* Validators.swift in Sources */,
