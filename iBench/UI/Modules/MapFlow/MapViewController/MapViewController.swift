@@ -62,6 +62,7 @@ class MapViewController: BaseViewController {
     }
     
     private func setupMapView() {
+        mapView.delegate = self
         mapView.showsCompass = false
         mapView.userTrackingMode = .follow
     }
@@ -106,9 +107,9 @@ class MapViewController: BaseViewController {
         guard gestureRecognizer.state == .began else {
             return
         }
+        mapView.deselectAnnotation(nil, animated: true)
         let touchPoint = gestureRecognizer.location(in: mapView)
         let newCoordinates = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        print(newCoordinates)
         let annotation = MKPointAnnotation()
         annotation.coordinate = newCoordinates
         let coord = LocationCoordinates(coordinates: newCoordinates)
@@ -116,36 +117,27 @@ class MapViewController: BaseViewController {
             mapView.removeAnnotation(selected)
             selectedPin = annotation
             mapView.addAnnotation(annotation)
-            bottomSheetDelegate?.didUpdateTapCoordinates(coord)
+        }
+        if let delegate = bottomSheetDelegate {
+            delegate.didUpdateTapCoordinates(coord)
+            if selectedPin == nil {
+                selectedPin = annotation
+                mapView.addAnnotation(annotation)
+            }
             return
         }
         selectedPin = annotation
         mapView.addAnnotation(annotation)
         router?.presentAddNewBenchViewController(coordinate: coord, nil)
     }
+    
     @IBAction func mapTapped(_ sender: UITapGestureRecognizer) {
+        mapView.deselectAnnotation(nil, animated: true)
         bottomSheetDelegate?.didTapOutside()
         if let selected = selectedPin {
             mapView.removeAnnotation(selected)
             return
         }
-//        guard sender.state == .ended else {
-//            return
-//        }
-//        guard let childVC = self.children.first else {
-//            return
-//        }
-        
-//        UIView.animate(withDuration: 0.4,
-//                       delay: 0,
-//                       options: .curveEaseInOut) {
-//            childVC.view.frame.origin.y = self.view.frame.maxY
-//            self.view.layoutIfNeeded()
-//            childVC.view.layoutIfNeeded()
-//        } completion: { (_) in
-//            childVC.view.removeFromSuperview()
-//            childVC.removeFromParent()
-//        }
     }
 }
 

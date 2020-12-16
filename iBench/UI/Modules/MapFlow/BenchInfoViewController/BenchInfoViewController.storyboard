@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TJj-aR-wFt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TJj-aR-wFt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -65,7 +65,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="tff-EC-PbA"/>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemGray6Color"/>
-                                                    <state key="normal" image="pencil" catalog="system"/>
+                                                    <state key="normal" image="pencil"/>
                                                     <connections>
                                                         <action selector="editButtonTapped" destination="TJj-aR-wFt" eventType="touchUpInside" id="hk0-Bv-OWT"/>
                                                     </connections>
@@ -97,7 +97,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="RdV-kK-R17"/>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemGray6Color"/>
-                                                    <state key="normal" image="arrow.up.right.diamond.fill" catalog="system"/>
+                                                    <state key="normal" image="arrow.triangle.turn.up.right.diamond.fill"/>
                                                     <connections>
                                                         <action selector="routeToBenchButtonTapped" destination="TJj-aR-wFt" eventType="touchUpInside" id="yj1-qC-y07"/>
                                                     </connections>
@@ -130,7 +130,7 @@
                                         <constraint firstItem="ffj-AD-V5M" firstAttribute="leading" secondItem="SLx-fP-SwC" secondAttribute="leading" constant="30" id="pqP-Yo-Ouf"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="extraLight"/>
+                                <blurEffect style="regular"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -148,7 +148,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="1yk-6H-Fnf" id="v4e-lA-lDe"/>
                         <outlet property="commentLabel" destination="Ayt-Z9-RRS" id="L6g-hh-o7t"/>
+                        <outlet property="containerView" destination="ffj-AD-V5M" id="RtQ-Gq-TpS"/>
                         <outlet property="editButton" destination="Lhx-hg-pp8" id="ntp-yz-IXf"/>
                         <outlet property="ratingLabel" destination="m3X-iL-gPP" id="YLY-qT-e0K"/>
                         <outlet property="userAddedLabel" destination="JIu-QP-6b9" id="PM4-R0-UbU"/>
@@ -160,8 +162,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.up.right.diamond.fill" catalog="system" width="128" height="122"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="arrow.triangle.turn.up.right.diamond.fill" width="15" height="15"/>
+        <image name="pencil" width="11" height="11"/>
         <namedColor name="iBench.marine">
             <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -31,7 +31,7 @@
 		7578459E255EFF8F00DB9DA0 /* UIColor+iBench.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578459D255EFF8E00DB9DA0 /* UIColor+iBench.swift */; };
 		757845DE255F053600DB9DA0 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845DD255F053600DB9DA0 /* AuthenticationError.swift */; };
 		757845E1255F056B00DB9DA0 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E0255F056B00DB9DA0 /* Validators.swift */; };
-		757845E4255F066E00DB9DA0 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E3255F066E00DB9DA0 /* CurrentUser.swift */; };
+		757845E4255F066E00DB9DA0 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E3255F066E00DB9DA0 /* UserObject.swift */; };
 		757845E8255F084B00DB9DA0 /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E7255F084B00DB9DA0 /* Listener.swift */; };
 		757845EB255F085100DB9DA0 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EA255F085100DB9DA0 /* Signal.swift */; };
 		757845ED255F085700DB9DA0 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EC255F085700DB9DA0 /* Property.swift */; };
@@ -102,7 +102,7 @@
 		7578459D255EFF8E00DB9DA0 /* UIColor+iBench.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+iBench.swift"; sourceTree = "<group>"; };
 		757845DD255F053600DB9DA0 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		757845E0255F056B00DB9DA0 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
-		757845E3255F066E00DB9DA0 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		757845E3255F066E00DB9DA0 /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
 		757845E7255F084B00DB9DA0 /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 		757845EA255F085100DB9DA0 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		757845EC255F085700DB9DA0 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				755A028D2556E264009ABE2B /* CurrentUserManager.swift */,
-				757845E3255F066E00DB9DA0 /* CurrentUser.swift */,
+				757845E3255F066E00DB9DA0 /* UserObject.swift */,
 			);
 			path = CurrentUserManager;
 			sourceTree = "<group>";
@@ -630,7 +630,7 @@
 				75B7D7C52587C0FE0076EE23 /* MapFlowRouter.swift in Sources */,
 				759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */,
 				75F317932572866300090E0E /* PersistantStoreService+LaunchesCounting.swift in Sources */,
-				757845E4255F066E00DB9DA0 /* CurrentUser.swift in Sources */,
+				757845E4255F066E00DB9DA0 /* UserObject.swift in Sources */,
 				75F3178B257285D900090E0E /* PersistantStoreService.swift in Sources */,
 				75784571255EFCB400DB9DA0 /* BaseViewController.swift in Sources */,
 				75A3C02C2588D8CA006CA4A0 /* RatingView.swift in Sources */,

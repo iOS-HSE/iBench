@@ -9,21 +9,27 @@
 import UIKit
 
 protocol AddNewBenchRouting {
-    func navigateBack(from: UIViewController, completion: (() -> Void)?)
+//    func navigateBack(from: UIViewController, completion: (() -> Void)?)
+    func presentBenchInfoViewController(object: BenchObject, _ completion: (() -> Void)?)
 }
 
 protocol AddNewBenchViewModeling: BaseViewModeling {
-    var coordinates: LocationCoordinates { get set }
+    var coordinates: LocationCoordinates? { get set }
+    var benchObject: BenchObject? { get set }
     var comment: String? { get set }
     var rating: Int? { get set }
+    
+    var isEditingMode: Bool { get }
     
     var didAddBenchSuccessfully: (() -> Void)? { get set }
     
     func addBench()
+    func saveBenchChanges()
 }
 
 class AddNewBenchViewController: BottomSheetViewController {
     
+    @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var textViewHeightAnchor: NSLayoutConstraint!
@@ -74,6 +80,9 @@ class AddNewBenchViewController: BottomSheetViewController {
         segmentedControlValueChanged(ratingSegmentedControl)
         setupGestures()
         setupTextView()
+        if viewModel?.isEditingMode ?? false {
+            setupEditingMode()
+        }
     }
     
     private func setupGestures() {
@@ -87,11 +96,20 @@ class AddNewBenchViewController: BottomSheetViewController {
         commentTextView.delegate = self
     }
     
-    private func update(){
+    private func setupEditingMode() {
+        commentTextView.text = viewModel?.benchObject?.comment
+        commentTextView.textColor = .black
+        
+        ratingSegmentedControl.selectedSegmentIndex = (Int(viewModel?.benchObject?.rating ?? 3) - 1)
+        
+    }
+    
+    private func update() {
         guard isViewLoaded else {
             return
         }
         updateContainerView()
+        updateConfirmButton()
     }
     
     private func updateContainerView() {
@@ -100,8 +118,16 @@ class AddNewBenchViewController: BottomSheetViewController {
         activityIndicator.isActive = isLoading
     }
     
+    private func updateConfirmButton() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        let imageName = viewModel.isEditingMode ? "checkmark" : "plus"
+        confirmButton.setImage(UIImage(named: imageName), for: .normal)
+    }
+    
     @IBAction func addTapped() {
-        viewModel?.addBench()
+        (viewModel?.isEditingMode ?? false) ? viewModel?.saveBenchChanges() : viewModel?.addBench()
     }
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -115,7 +141,9 @@ class AddNewBenchViewController: BottomSheetViewController {
 extension AddNewBenchViewController: BottomSheetBenchesDelegate {
     
     func didUpdateBenchLocation(_ bench: BenchObject) {
-        // do nothing because it is for other vc
+        collapseViewControllerWithoutPan {
+            self.router?.presentBenchInfoViewController(object: bench, nil)
+        }
     }
     
     func didUpdateTapCoordinates(_ coordinates: LocationCoordinates) {

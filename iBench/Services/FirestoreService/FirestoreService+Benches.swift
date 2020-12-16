@@ -92,7 +92,9 @@ extension FirestoreService: FirestoreBenchesServiceable {
                 completion(FirestoreError.tooManyBenches(bench.id) as NSError?)
                 return
             }
-            benchDocument.reference.setData(bench.dictionaryRepresentation)
+            benchDocument.reference.setData(bench.dictionaryRepresentation) { (error) in
+                completion(error as NSError?)
+            }
         }
     }
 }

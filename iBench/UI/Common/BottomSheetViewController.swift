@@ -29,13 +29,13 @@ class BottomSheetViewController: BaseViewController {
         }
     }
     
-    func collapseViewControllerWithoutPan() {
+    func collapseViewControllerWithoutPan(_ completion: (() -> Void)? = nil) {
         let toCoord = UIScreen.main.bounds.height
-        let diff = abs(self.view.frame.origin.x - toCoord)
-        moveSheetVertically(to: UIScreen.main.bounds.height,
+        let diff = abs(self.view.frame.origin.y - toCoord)
+        moveSheetVertically(to: toCoord,
                             speed: diff,
                             removeFromParent: true,
-                            completion: nil)
+                            completion: completion)
     }
     
     func moveSheetVertically(to yCoord: CGFloat,

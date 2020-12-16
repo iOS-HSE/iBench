@@ -91,7 +91,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="LU8-Xb-C3g"/>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemGray6Color"/>
-                                                    <state key="normal" image="plus" catalog="system"/>
+                                                    <state key="normal" image="plus"/>
                                                     <connections>
                                                         <action selector="addTapped" destination="OS9-eu-oUl" eventType="touchUpInside" id="xNJ-iD-gS5"/>
                                                     </connections>
@@ -150,6 +150,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="mNd-R6-Eph" id="4GH-hU-2Hd"/>
                         <outlet property="commentTextView" destination="B1n-vt-zP6" id="mKC-fM-DT2"/>
+                        <outlet property="confirmButton" destination="gE9-hz-XyI" id="kcb-PH-GL3"/>
                         <outlet property="containerView" destination="O6E-l6-Xfh" id="1Tr-2k-mwh"/>
                         <outlet property="ratingSegmentedControl" destination="dl3-qD-uZm" id="JDn-KY-erv"/>
                         <outlet property="textViewHeightAnchor" destination="6uu-f4-vF1" id="iTX-Vl-dTT"/>
@@ -161,7 +162,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus" width="11" height="11"/>
         <namedColor name="iBench.marine">
             <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

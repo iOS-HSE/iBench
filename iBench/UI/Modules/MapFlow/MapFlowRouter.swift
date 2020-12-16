@@ -41,6 +41,7 @@ extension MapFlowRouter: MapRouting {
         }
         let childVC = BenchInfoViewController.initFromItsStoryboard()
         childVC.viewModel = BenchInfoViewModel(benchObject: object)
+        childVC.router = self
         mapVC.bottomSheetDelegate = childVC
         add(bottomSheetVC: childVC, to: mapVC)
         completion?()
@@ -52,6 +53,21 @@ extension MapFlowRouter: MapRouting {
         }
         let childVC = AddNewBenchViewController.initFromItsStoryboard()
         childVC.viewModel = AddNewBenchViewModel(coordinates: coordinate)
+        childVC.router = self
+        mapVC.bottomSheetDelegate = childVC
+        add(bottomSheetVC: childVC, to: mapVC)
+        completion?()
+    }
+}
+
+extension MapFlowRouter: BenchInfoRouting, AddNewBenchRouting {
+    func presentAddNewBenchViewController(benchObject: BenchObject, _ completion: (() -> Void)?) {
+        guard let mapVC = getTopViewController() as? MapViewController else {
+            return
+        }
+        let childVC = AddNewBenchViewController.initFromItsStoryboard()
+        childVC.viewModel = AddNewBenchViewModel(benchObject: benchObject)
+        childVC.router = self
         mapVC.bottomSheetDelegate = childVC
         add(bottomSheetVC: childVC, to: mapVC)
         completion?()
