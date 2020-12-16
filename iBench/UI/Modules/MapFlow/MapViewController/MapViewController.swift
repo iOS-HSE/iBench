@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol MapRouting {
-    func presentBenchInfoViewController(object: BenchObject, mapPreview: UIImage,_ completion: (() -> Void)?)
+    func presentBenchInfoViewController(object: BenchObject,_ completion: (() -> Void)?)
     func presentAddNewBenchViewController(coordinate: LocationCoordinates, _ completion: (() -> Void)?)
 }
 
@@ -67,6 +67,9 @@ class MapViewController: BaseViewController {
     }
     
     private func update() {
+        guard isViewLoaded else {
+            return
+        }
         updateMapView()
     }
     
@@ -150,27 +153,10 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let benchAnnotation = view.annotation as? BenchAnnotation else {
             return
-        }
-        let coords = benchAnnotation.coordinate
+        }        
         
-        let options = MKMapSnapshotter.Options()
-        options.region = MKCoordinateRegion(center: coords , latitudinalMeters: 500, longitudinalMeters: 500)
-        let height = UIScreen.main.bounds.height * 0.2
-        let width = UIScreen.main.bounds.width
-        options.size = CGSize(width: width, height: height)
-        let snapshotter = MKMapSnapshotter(options: options)
+        self.router?.presentBenchInfoViewController(object: benchAnnotation.benchObject, nil)
         
-        snapshotter.start { (snapshot, error) in
-            guard error == nil, let snapshot = snapshot else {
-                return
-            }
-            
-            let snapshotImage = snapshot.image
-            self.router?.presentBenchInfoViewController(object: benchAnnotation.benchObject,
-                                                        mapPreview: snapshotImage,
-                                                        nil)
-            
-        }
     }
     
 }

@@ -66,12 +66,12 @@ class AddNewBenchViewController: BottomSheetViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanViewController(_:)))
-        self.view.addGestureRecognizer(panGesture)
         setup()
     }
     
     private func setup() {
+        // to initialize default rating
+        segmentedControlValueChanged(ratingSegmentedControl)
         setupGestures()
         setupTextView()
     }
@@ -113,14 +113,6 @@ class AddNewBenchViewController: BottomSheetViewController {
 }
 
 extension AddNewBenchViewController: BottomSheetBenchesDelegate {
-    private func collapseViewControllerWithoutPan() {
-        let toCoord = UIScreen.main.bounds.height
-        let diff = abs(self.view.frame.origin.x - toCoord)
-        moveSheetVertically(to: UIScreen.main.bounds.height,
-                            speed: diff,
-                            removeFromParent: true,
-                            completion: nil)
-    }
     
     func didUpdateBenchLocation(_ bench: BenchObject) {
         // do nothing because it is for other vc

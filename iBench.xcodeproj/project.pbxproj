@@ -35,6 +35,9 @@
 		757845E8255F084B00DB9DA0 /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E7255F084B00DB9DA0 /* Listener.swift */; };
 		757845EB255F085100DB9DA0 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EA255F085100DB9DA0 /* Signal.swift */; };
 		757845ED255F085700DB9DA0 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EC255F085700DB9DA0 /* Property.swift */; };
+		7586CDC82589256C0030D7A1 /* BenchInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586CDC72589256C0030D7A1 /* BenchInfoViewController.swift */; };
+		7586CDCC258926CF0030D7A1 /* BenchInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7586CDCB258926CF0030D7A1 /* BenchInfoViewController.storyboard */; };
+		7586CDCF258932E20030D7A1 /* BenchInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586CDCE258932E20030D7A1 /* BenchInfoViewModel.swift */; };
 		7593C60A2588EA930078CC44 /* AddNewBenchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7593C6092588EA930078CC44 /* AddNewBenchViewModel.swift */; };
 		7593C60D2588EAE20078CC44 /* LocationCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7593C60C2588EAE20078CC44 /* LocationCoordinates.swift */; };
 		759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759ACC06250A20560071EF7B /* AppDelegate.swift */; };
@@ -103,6 +106,9 @@
 		757845E7255F084B00DB9DA0 /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 		757845EA255F085100DB9DA0 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		757845EC255F085700DB9DA0 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		7586CDC72589256C0030D7A1 /* BenchInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchInfoViewController.swift; sourceTree = "<group>"; };
+		7586CDCB258926CF0030D7A1 /* BenchInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BenchInfoViewController.storyboard; sourceTree = "<group>"; };
+		7586CDCE258932E20030D7A1 /* BenchInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchInfoViewModel.swift; sourceTree = "<group>"; };
 		7593C6092588EA930078CC44 /* AddNewBenchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBenchViewModel.swift; sourceTree = "<group>"; };
 		7593C60C2588EAE20078CC44 /* LocationCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinates.swift; sourceTree = "<group>"; };
 		759ACC03250A20560071EF7B /* iBench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBench.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +267,16 @@
 			path = Bindings;
 			sourceTree = "<group>";
 		};
+		7586CDC6258925540030D7A1 /* BenchInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7586CDCE258932E20030D7A1 /* BenchInfoViewModel.swift */,
+				7586CDC72589256C0030D7A1 /* BenchInfoViewController.swift */,
+				7586CDCB258926CF0030D7A1 /* BenchInfoViewController.storyboard */,
+			);
+			path = BenchInfoViewController;
+			sourceTree = "<group>";
+		};
 		759ACBFA250A20560071EF7B = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +422,7 @@
 				75B7D7C42587C0FE0076EE23 /* MapFlowRouter.swift */,
 				75E81B17257A5B9500218EB0 /* MapViewController */,
 				75B7D7CD2587DC990076EE23 /* AddNewBenchViewController */,
+				7586CDC6258925540030D7A1 /* BenchInfoViewController */,
 			);
 			path = MapFlow;
 			sourceTree = "<group>";
@@ -512,6 +529,7 @@
 				75B7D7DD2587E2E40076EE23 /* AddNewBenchViewController.storyboard in Resources */,
 				7578457E255EFDB300DB9DA0 /* RegisterViewController.storyboard in Resources */,
 				755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */,
+				7586CDCC258926CF0030D7A1 /* BenchInfoViewController.storyboard in Resources */,
 				754763E125864C7D00A29645 /* SignInViewController.storyboard in Resources */,
 				759ACC13250A205C0071EF7B /* LaunchScreen.storyboard in Resources */,
 				759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */,
@@ -600,12 +618,14 @@
 				75E81B46257A75FF00218EB0 /* MapViewModel.swift in Sources */,
 				755A028B2556E226009ABE2B /* FirebaseAuthenticationService.swift in Sources */,
 				75F3179625728D2E00090E0E /* PersistantStoreService+User.swift in Sources */,
+				7586CDC82589256C0030D7A1 /* BenchInfoViewController.swift in Sources */,
 				75B7D7CF2587DCB10076EE23 /* AddNewBenchViewController.swift in Sources */,
 				7578456E255EFC4800DB9DA0 /* RegisterViewController.swift in Sources */,
 				75E2DE4C250FBC88000B10BC /* NetworkClient.swift in Sources */,
 				75653150256F901500549FD3 /* FirestoreError.swift in Sources */,
 				757845E8255F084B00DB9DA0 /* Listener.swift in Sources */,
 				75E81B3D257A682D00218EB0 /* FirestoreService+User.swift in Sources */,
+				7586CDCF258932E20030D7A1 /* BenchInfoViewModel.swift in Sources */,
 				75E2DE49250FBB98000B10BC /* NameDescribable.swift in Sources */,
 				75B7D7C52587C0FE0076EE23 /* MapFlowRouter.swift in Sources */,
 				759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */,

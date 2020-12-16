@@ -40,7 +40,9 @@ extension AddNewBenchViewModel: AddNewBenchViewModeling {
                                       rating: Float(rating),
                                       comment: comment,
                                       userAddedId: currentUserId)
+        isLoading = true
         firestoreService.addBench(benchObject) { [weak self] (error) in
+            self?.isLoading = false
             if let error = error {
                 self?.didGetError?(error.localizedDescription)
                 return

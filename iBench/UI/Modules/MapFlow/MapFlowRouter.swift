@@ -22,8 +22,28 @@ class MapFlowRouter {
 }
 
 extension MapFlowRouter: MapRouting {
-    func presentBenchInfoViewController(object: BenchObject, mapPreview: UIImage, _ completion: (() -> Void)?) {
+    private func add(bottomSheetVC: BottomSheetViewController, to parentVC: UIViewController) {
+        parentVC.addChild(bottomSheetVC)
+        parentVC.view.addSubview(bottomSheetVC.view)
+        bottomSheetVC.didMove(toParent: parentVC)
         
+        let height = parentVC.view.frame.height
+        let width  = parentVC.view.frame.width
+        bottomSheetVC.view.frame = CGRect(x: 0,
+                                    y: parentVC.view.frame.maxY,
+                                    width: width,
+                                    height: height)
+    }
+    
+    func presentBenchInfoViewController(object: BenchObject, _ completion: (() -> Void)?) {
+        guard let mapVC = getTopViewController() as? MapViewController else {
+            return
+        }
+        let childVC = BenchInfoViewController.initFromItsStoryboard()
+        childVC.viewModel = BenchInfoViewModel(benchObject: object)
+        mapVC.bottomSheetDelegate = childVC
+        add(bottomSheetVC: childVC, to: mapVC)
+        completion?()
     }
     
     func presentAddNewBenchViewController(coordinate: LocationCoordinates, _ completion: (() -> Void)?) {
@@ -33,16 +53,7 @@ extension MapFlowRouter: MapRouting {
         let childVC = AddNewBenchViewController.initFromItsStoryboard()
         childVC.viewModel = AddNewBenchViewModel(coordinates: coordinate)
         mapVC.bottomSheetDelegate = childVC
-        mapVC.addChild(childVC)
-        mapVC.view.addSubview(childVC.view)
-        childVC.didMove(toParent: mapVC)
-        
-        let height = mapVC.view.frame.height
-        let width  = mapVC.view.frame.width
-        childVC.view.frame = CGRect(x: 0,
-                                    y: mapVC.view.frame.maxY,
-                                    width: width,
-                                    height: height)
+        add(bottomSheetVC: childVC, to: mapVC)
         completion?()
     }
 }
