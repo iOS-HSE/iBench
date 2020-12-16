@@ -68,48 +68,121 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="Welcome Cell" translatesAutoresizingMaskIntoConstraints="NO" id="vYp-4a-0x5" userLabel="Welcome Cell">
-                                        <rect key="frame" x="0.0" y="7" width="414" height="794"/>
+                                        <rect key="frame" x="0.0" y="6" width="415" height="796"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rCx-IT-olV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="794"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="796"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXL-hm-7Q5">
-                                                    <rect key="frame" x="56" y="376.66666666666669" width="302" height="41"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXL-hm-7Q5">
+                                                    <rect key="frame" x="56.666666666666657" y="129.66666666666666" width="301.66666666666674" height="40.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="iBench.marine"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-3" id="MfY-BA-sFz">
+                                                    <rect key="frame" x="109" y="302" width="197" height="192"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGg-s7-Ond">
+                                                    <rect key="frame" x="24" y="216" width="366" height="44"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="С помощью этого приложения Вам станет проще найти лавочку на улицах города">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="17"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MXL-hm-7Q5" firstAttribute="centerX" secondItem="rCx-IT-olV" secondAttribute="centerX" id="4bD-12-gFh"/>
-                                                <constraint firstItem="MXL-hm-7Q5" firstAttribute="centerY" secondItem="rCx-IT-olV" secondAttribute="centerY" id="PiR-og-7Il"/>
+                                                <constraint firstItem="LGg-s7-Ond" firstAttribute="centerX" secondItem="rCx-IT-olV" secondAttribute="centerX" id="30T-SU-cMX"/>
+                                                <constraint firstItem="MfY-BA-sFz" firstAttribute="centerX" secondItem="rCx-IT-olV" secondAttribute="centerX" id="Cbu-RQ-ObF"/>
+                                                <constraint firstItem="MXL-hm-7Q5" firstAttribute="centerX" secondItem="rCx-IT-olV" secondAttribute="centerX" id="I8F-aX-VEu"/>
+                                                <constraint firstItem="LGg-s7-Ond" firstAttribute="firstBaseline" secondItem="MfY-BA-sFz" secondAttribute="firstBaseline" constant="-70" id="JIY-KW-bWy"/>
+                                                <constraint firstItem="MXL-hm-7Q5" firstAttribute="firstBaseline" secondItem="LGg-s7-Ond" secondAttribute="firstBaseline" constant="-70" id="aTw-hM-AQa"/>
+                                                <constraint firstItem="MfY-BA-sFz" firstAttribute="centerY" secondItem="rCx-IT-olV" secondAttribute="centerY" id="dn4-Jb-ess"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="id2" id="xfT-JT-XxH">
-                                        <rect key="frame" x="414" y="7" width="414" height="794"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Second Screen" id="xfT-JT-XxH">
+                                        <rect key="frame" x="415" y="7" width="414" height="794"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hvo-D2-RFh">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="794"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrQ-cm-ILR">
-                                                    <rect key="frame" x="127" y="93" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Поиск лавочек" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrQ-cm-ILR">
+                                                    <rect key="frame" x="92" y="107.33333333333337" width="230" height="41"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <color key="textColor" name="iBench.marine"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htX-jo-WvG">
+                                                    <rect key="frame" x="24" y="193" width="366" height="66"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Находите с помощью нашего приложения лавочки и отдыхайте на них вместе с друзьями или в гордом одиночестве">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="17"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-il-IP1">
+                                                    <rect key="frame" x="109" y="301" width="197" height="192"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RAd-il-IP1" firstAttribute="centerY" secondItem="hvo-D2-RFh" secondAttribute="centerY" id="5ck-Q1-BIH"/>
+                                                <constraint firstItem="htX-jo-WvG" firstAttribute="centerX" secondItem="hvo-D2-RFh" secondAttribute="centerX" id="5do-2V-jea"/>
+                                                <constraint firstItem="htX-jo-WvG" firstAttribute="firstBaseline" secondItem="RAd-il-IP1" secondAttribute="firstBaseline" constant="-92" id="9Nr-id-nsu"/>
+                                                <constraint firstItem="RAd-il-IP1" firstAttribute="centerX" secondItem="hvo-D2-RFh" secondAttribute="centerX" id="TJA-1i-S90"/>
+                                                <constraint firstItem="qrQ-cm-ILR" firstAttribute="centerX" secondItem="hvo-D2-RFh" secondAttribute="centerX" id="cDj-yd-gw4"/>
+                                                <constraint firstItem="qrQ-cm-ILR" firstAttribute="firstBaseline" secondItem="htX-jo-WvG" secondAttribute="firstBaseline" constant="-70" id="iMI-js-5dF"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Third Screen" id="8iq-17-g5c">
+                                        <rect key="frame" x="829" y="7" width="414" height="794"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C3K-ju-Min">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="794"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dl9-nz-IHS">
+                                                    <rect key="frame" x="24" y="193" width="366" height="66"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Отметьте лавочку, которую Вы нашли самостоятельно. Тогда и другие смогут устроить небольшие посиделки">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="17"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image-4" translatesAutoresizingMaskIntoConstraints="NO" id="YXl-1s-Qed">
+                                                    <rect key="frame" x="109" y="301" width="197" height="192"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Делитесь с другими" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atf-CU-c8J">
+                                                    <rect key="frame" x="51" y="107" width="313" height="41"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <color key="textColor" name="iBench.marine"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="iThirdScreen" id="8iq-17-g5c">
-                                        <rect key="frame" x="828" y="7" width="414" height="794"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="C3K-ju-Min">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="794"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <constraints>
+                                                <constraint firstItem="YXl-1s-Qed" firstAttribute="centerX" secondItem="C3K-ju-Min" secondAttribute="centerX" id="3QD-mR-O5z"/>
+                                                <constraint firstItem="dl9-nz-IHS" firstAttribute="centerX" secondItem="C3K-ju-Min" secondAttribute="centerX" id="5oK-xE-HEQ"/>
+                                                <constraint firstItem="YXl-1s-Qed" firstAttribute="centerY" secondItem="C3K-ju-Min" secondAttribute="centerY" id="MAa-7v-8op"/>
+                                                <constraint firstItem="Atf-CU-c8J" firstAttribute="firstBaseline" secondItem="dl9-nz-IHS" secondAttribute="firstBaseline" constant="-70" id="McO-q4-83v"/>
+                                                <constraint firstItem="Atf-CU-c8J" firstAttribute="centerX" secondItem="C3K-ju-Min" secondAttribute="centerX" id="mGd-Ky-f9Q"/>
+                                                <constraint firstItem="dl9-nz-IHS" firstAttribute="firstBaseline" secondItem="YXl-1s-Qed" secondAttribute="firstBaseline" constant="-92" id="pJs-pS-HOU"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
@@ -146,6 +219,9 @@
     </scenes>
     <color key="tintColor" name="iBench.marine"/>
     <resources>
+        <image name="Image-2" width="169" height="169"/>
+        <image name="Image-3" width="191" height="191"/>
+        <image name="Image-4" width="241" height="240.5"/>
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <namedColor name="iBench.marine">
             <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
