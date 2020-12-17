@@ -65,7 +65,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="tff-EC-PbA"/>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemGray6Color"/>
-                                                    <state key="normal" image="pencil"/>
+                                                    <state key="normal" image="edit"/>
                                                     <connections>
                                                         <action selector="editButtonTapped" destination="TJj-aR-wFt" eventType="touchUpInside" id="hk0-Bv-OWT"/>
                                                     </connections>
@@ -97,7 +97,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="RdV-kK-R17"/>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemGray6Color"/>
-                                                    <state key="normal" image="arrow.triangle.turn.up.right.diamond.fill"/>
+                                                    <state key="normal" image="route"/>
                                                     <connections>
                                                         <action selector="routeToBenchButtonTapped" destination="TJj-aR-wFt" eventType="touchUpInside" id="yj1-qC-y07"/>
                                                     </connections>
@@ -162,8 +162,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.triangle.turn.up.right.diamond.fill" width="15" height="15"/>
-        <image name="pencil" width="11" height="11"/>
+        <image name="edit" width="981" height="986"/>
+        <image name="route" width="512" height="512"/>
         <namedColor name="iBench.marine">
             <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

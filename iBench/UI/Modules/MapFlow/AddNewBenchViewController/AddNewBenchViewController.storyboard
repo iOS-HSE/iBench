@@ -162,7 +162,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" width="11" height="11"/>
+        <image name="plus" width="1200" height="1200"/>
         <namedColor name="iBench.marine">
             <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
