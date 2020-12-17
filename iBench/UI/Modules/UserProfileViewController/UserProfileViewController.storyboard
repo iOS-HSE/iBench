@@ -14,16 +14,16 @@
         <scene sceneID="ADB-CX-vlm">
             <objects>
                 <viewController id="4DK-YF-ZwU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="WcW-f4-RlQ">
+                    <view key="view" contentMode="scaleToFill" id="WcW-f4-RlQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" id="gD6-Ov-AYf">
+                            <view contentMode="scaleToFill" id="gD6-Ov-AYf">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" id="TAk-US-bng">
-                                        <rect key="frame" x="0.0" y="35" width="414" height="44"/>
+                                    <navigationBar contentMode="scaleToFill" translucent="NO" id="TAk-US-bng">
+                                        <rect key="frame" x="0.0" y="15" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem largeTitleDisplayMode="never" id="zMA-ul-ahQ">
@@ -38,32 +38,46 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" name="iBench.marine"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="person.circle.fill" catalog="system" id="t03-X7-gUU">
-                                <rect key="frame" x="85" y="151" width="241" height="178"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Профиль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guS-WX-a9K">
+                                <rect key="frame" x="136.66666666666666" y="111" width="140.99999999999997" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" name="iBench.marine"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" id="t03-X7-gUU">
+                                <rect key="frame" x="85" y="183" width="241" height="178"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="iBench.marine"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C33-oG-lCQ">
-                                <rect key="frame" x="155" y="381" width="102" height="27"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C33-oG-lCQ">
+                                <rect key="frame" x="156" y="385.33333333333331" width="102" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="6mZ-2e-M8N"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавлено лавочек: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt4-zH-JyA">
-                                <rect key="frame" x="105" y="436" width="204" height="24"/>
+                                <rect key="frame" x="105" y="436.33333333333331" width="204" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="vlW-wc-EVB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оставлено комментариев:  0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBk-Bf-e3B">
-                                <rect key="frame" x="74" y="488" width="267" height="24"/>
+                                <rect key="frame" x="73.666666666666686" y="484.33333333333331" width="267" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="267" id="dEw-vo-gdd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="HJt-Y4-L8a">
-                                <rect key="frame" x="124" y="825" width="164" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="HJt-Y4-L8a">
+                                <rect key="frame" x="124" y="829" width="164" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" title="Сменить пользователя">
                                     <color key="titleColor" name="iBench.marine"/>
@@ -73,11 +87,16 @@
                         <viewLayoutGuide key="safeArea" id="Dve-i5-OUu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Dt4-zH-JyA" firstAttribute="top" secondItem="C33-oG-lCQ" secondAttribute="bottom" constant="28" id="QoF-BD-Xl2"/>
+                            <constraint firstItem="Dt4-zH-JyA" firstAttribute="top" secondItem="C33-oG-lCQ" secondAttribute="bottom" constant="24" id="QoF-BD-Xl2"/>
+                            <constraint firstItem="Dt4-zH-JyA" firstAttribute="centerX" secondItem="gD6-Ov-AYf" secondAttribute="centerX" id="RHw-qJ-vug"/>
                             <constraint firstItem="Dt4-zH-JyA" firstAttribute="centerX" secondItem="Dve-i5-OUu" secondAttribute="centerX" id="Swv-Uf-kba"/>
+                            <constraint firstItem="C33-oG-lCQ" firstAttribute="centerX" secondItem="gD6-Ov-AYf" secondAttribute="centerX" id="UhN-nD-r3O"/>
                             <constraint firstItem="dBk-Bf-e3B" firstAttribute="centerX" secondItem="Dve-i5-OUu" secondAttribute="centerX" id="VBF-9g-1D4"/>
-                            <constraint firstItem="C33-oG-lCQ" firstAttribute="top" secondItem="t03-X7-gUU" secondAttribute="bottom" constant="28" id="g9O-Nv-h6O"/>
-                            <constraint firstItem="dBk-Bf-e3B" firstAttribute="top" secondItem="Dt4-zH-JyA" secondAttribute="bottom" constant="28" id="kUe-nS-dxT"/>
+                            <constraint firstItem="C33-oG-lCQ" firstAttribute="top" secondItem="t03-X7-gUU" secondAttribute="bottom" constant="24" id="g9O-Nv-h6O"/>
+                            <constraint firstItem="dBk-Bf-e3B" firstAttribute="top" secondItem="Dt4-zH-JyA" secondAttribute="bottom" constant="24" id="kUe-nS-dxT"/>
+                            <constraint firstItem="guS-WX-a9K" firstAttribute="top" secondItem="gD6-Ov-AYf" secondAttribute="bottom" constant="37" id="nvq-8s-boI"/>
+                            <constraint firstItem="t03-X7-gUU" firstAttribute="top" secondItem="guS-WX-a9K" secondAttribute="bottom" constant="39" id="ufh-LD-n3K"/>
+                            <constraint firstItem="guS-WX-a9K" firstAttribute="centerX" secondItem="gD6-Ov-AYf" secondAttribute="centerX" id="xrt-3I-OEh"/>
                         </constraints>
                     </view>
                 </viewController>

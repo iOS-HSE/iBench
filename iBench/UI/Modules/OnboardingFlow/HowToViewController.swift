@@ -15,8 +15,8 @@ class HowToViewController: BaseViewController {
     
     var cellsIds = [
         "Welcome Cell",
-        "id2",
-        "iThirdScreen"
+        "Second Screen",
+        "Third Screen"
     ]
     
     private var currentPageIndex = 0 {
