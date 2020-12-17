@@ -1,5 +1,5 @@
 //
-//  CurrentUser.swift
+//  UserObject.swift
 //  iBench
 //
 //  Created by Андрей Журавлев on 13.11.2020.
@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import GoogleSignIn
 
-struct CurrentUser: Codable {
+struct UserObject: Codable {
     var name: String
     var id: String
     let email: String?
@@ -52,6 +52,6 @@ struct CurrentUser: Codable {
     }
 }
 
-extension CurrentUser: Equatable {
+extension UserObject: Equatable {
     
 }

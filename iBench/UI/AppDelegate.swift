@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = CurrentUserManager.shared
         
+        UserLocationService.shared.askUserPermissionForWhenInUseAuthorizationIfNeeded()
+        _ = UserLocationService.shared.startUpdatingLocation()
+        
         PersistantStoreService.shared.incrementLaunchesCount()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -35,7 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //route to mapVIewController
             let vc = MapViewController.initFromItsStoryboard()
             vc.viewModel = MapViewModel()
-            initialVC = vc
+            let router = MapFlowRouter(initialVC: vc)
+            vc.router = router
+            initialVC = router.navigationController
         } else {
             let vc = RegisterViewController.initFromItsStoryboard()
             let router = AuthenticationFlowRouter(initialVC: vc)
