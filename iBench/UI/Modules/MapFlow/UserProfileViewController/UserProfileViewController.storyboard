@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4DK-YF-ZwU">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Profile View Controller-->
+        <scene sceneID="ADB-CX-vlm">
+            <objects>
+                <viewController id="4DK-YF-ZwU" customClass="UserProfileViewController" customModule="iBench" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WcW-f4-RlQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="gD6-Ov-AYf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translucent="NO" id="TAk-US-bng">
+                                        <rect key="frame" x="0.0" y="15" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <navigationItem largeTitleDisplayMode="never" id="zMA-ul-ahQ">
+                                                <barButtonItem key="leftBarButtonItem" title="Back" image="arrow.backward" catalog="system" id="2dk-30-jbU">
+                                                    <connections>
+                                                        <action selector="backTapped" destination="4DK-YF-ZwU" id="bpe-RF-fzq"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                        <connections>
+                                            <outlet property="delegate" destination="gD6-Ov-AYf" id="zgT-gZ-thC"/>
+                                        </connections>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" name="iBench.marine"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Профиль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guS-WX-a9K">
+                                <rect key="frame" x="136.66666666666666" y="111.00000000000001" width="140.99999999999997" height="40.666666666666671"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" name="iBench.marine"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t03-X7-gUU">
+                                <rect key="frame" x="85.666666666666671" y="191.66666666666669" width="242.66666666666663" height="176.66666666666669"/>
+                                <color key="tintColor" name="iBench.marine"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="t03-X7-gUU" secondAttribute="height" multiplier="241:177" id="MYf-v6-a2L"/>
+                                    <constraint firstAttribute="height" constant="178" id="dx8-dE-zTd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C33-oG-lCQ">
+                                <rect key="frame" x="156" y="392.66666666666669" width="102" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="6mZ-2e-M8N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавлено лавочек: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt4-zH-JyA">
+                                <rect key="frame" x="105" y="443.66666666666669" width="204" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="vlW-wc-EVB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оставлено комментариев:  0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBk-Bf-e3B">
+                                <rect key="frame" x="73.666666666666686" y="491.66666666666669" width="267" height="24.000000000000057"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="267" id="dEw-vo-gdd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="HJt-Y4-L8a">
+                                <rect key="frame" x="123" y="829" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Сменить пользователя">
+                                    <color key="titleColor" name="iBench.marine"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeUserTapped" destination="4DK-YF-ZwU" eventType="touchUpInside" id="Jar-wr-HTb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dve-i5-OUu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="t03-X7-gUU" firstAttribute="centerX" secondItem="WcW-f4-RlQ" secondAttribute="centerX" id="Qgd-Zj-pd1"/>
+                            <constraint firstItem="Dt4-zH-JyA" firstAttribute="top" secondItem="C33-oG-lCQ" secondAttribute="bottom" constant="24" id="QoF-BD-Xl2"/>
+                            <constraint firstItem="Dt4-zH-JyA" firstAttribute="centerX" secondItem="gD6-Ov-AYf" secondAttribute="centerX" id="RHw-qJ-vug"/>
+                            <constraint firstItem="Dt4-zH-JyA" firstAttribute="centerX" secondItem="Dve-i5-OUu" secondAttribute="centerX" id="Swv-Uf-kba"/>
+                            <constraint firstItem="C33-oG-lCQ" firstAttribute="centerX" secondItem="gD6-Ov-AYf" secondAttribute="centerX" id="UhN-nD-r3O"/>
+                            <constraint firstItem="dBk-Bf-e3B" firstAttribute="centerX" secondItem="Dve-i5-OUu" secondAttribute="centerX" id="VBF-9g-1D4"/>
+                            <constraint firstItem="C33-oG-lCQ" firstAttribute="top" secondItem="t03-X7-gUU" secondAttribute="bottom" constant="24" id="g9O-Nv-h6O"/>
+                            <constraint firstItem="dBk-Bf-e3B" firstAttribute="top" secondItem="Dt4-zH-JyA" secondAttribute="bottom" constant="24" id="kUe-nS-dxT"/>
+                            <constraint firstItem="guS-WX-a9K" firstAttribute="top" secondItem="gD6-Ov-AYf" secondAttribute="bottom" constant="37" id="nvq-8s-boI"/>
+                            <constraint firstItem="t03-X7-gUU" firstAttribute="top" secondItem="guS-WX-a9K" secondAttribute="bottom" constant="39" id="ufh-LD-n3K"/>
+                            <constraint firstItem="guS-WX-a9K" firstAttribute="centerX" secondItem="gD6-Ov-AYf" secondAttribute="centerX" id="xrt-3I-OEh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addedBenchesLabel" destination="Dt4-zH-JyA" id="LH6-I1-mg6"/>
+                        <outlet property="leftCommentsLabel" destination="dBk-Bf-e3B" id="RwT-NK-HSb"/>
+                        <outlet property="usernameLabel" destination="C33-oG-lCQ" id="MSG-Y2-EkR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eky-cu-4dR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="111.16071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="iBench.marine">
+            <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

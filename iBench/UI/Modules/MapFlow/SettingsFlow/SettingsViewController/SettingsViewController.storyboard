@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y4m-Np-Vac">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="YX8-aX-hSU">
+            <objects>
+                <viewController id="Y4m-Np-Vac" customClass="SettingsViewController" customModule="iBench" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9N2-SR-dxW">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ftk-eb-BRr">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="74"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translucent="NO" id="FYk-af-5Br">
+                                        <rect key="frame" x="-1" y="30" width="395" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <navigationItem largeTitleDisplayMode="never" id="vIZ-iz-EMx">
+                                                <barButtonItem key="leftBarButtonItem" title="Back" image="arrow.backward" catalog="system" id="Aon-xv-Mrw">
+                                                    <connections>
+                                                        <action selector="backButtonTapped:" destination="Y4m-Np-Vac" id="obE-WE-R8N"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ftk-eb-BRr" id="Vhd-ti-Sqj"/>
+                                        </connections>
+                                    </navigationBar>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="6eF-cV-l7B"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" name="iBench.marine"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="IxQ-sf-g0r"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxz-gz-mpN">
+                                <rect key="frame" x="111.00000000000001" y="124.00000000000001" width="168.33333333333337" height="40.666666666666671"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" name="iBench.marine"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="-5" height="-1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="v93-FV-Zxv">
+                                <rect key="frame" x="46" y="317" width="298" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPu-87-aiq">
+                                        <rect key="frame" x="0.0" y="0.0" width="203" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ox-VT-wb8">
+                                        <rect key="frame" x="218" y="0.0" width="80" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="p5L-ho-mtZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Изменить"/>
+                                        <connections>
+                                            <action selector="changeNameButtonTapped" destination="Y4m-Np-Vac" eventType="touchUpInside" id="bO8-C1-0np"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nHM-IU-hCP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dxz-gz-mpN" firstAttribute="centerX" secondItem="9N2-SR-dxW" secondAttribute="centerX" id="ETV-QI-gWD"/>
+                            <constraint firstItem="Ftk-eb-BRr" firstAttribute="leading" secondItem="nHM-IU-hCP" secondAttribute="leading" id="NAN-x1-ous"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v93-FV-Zxv" secondAttribute="trailing" constant="30" id="QxO-Nh-No5"/>
+                            <constraint firstItem="Dxz-gz-mpN" firstAttribute="top" secondItem="Ftk-eb-BRr" secondAttribute="bottom" constant="50.000000000000227" id="TtS-fg-Ikg"/>
+                            <constraint firstItem="Ftk-eb-BRr" firstAttribute="top" secondItem="9N2-SR-dxW" secondAttribute="top" id="Zf4-oy-Vzx"/>
+                            <constraint firstItem="Ftk-eb-BRr" firstAttribute="centerX" secondItem="nHM-IU-hCP" secondAttribute="centerX" id="abC-8J-5O4"/>
+                            <constraint firstItem="v93-FV-Zxv" firstAttribute="leading" secondItem="9N2-SR-dxW" secondAttribute="leadingMargin" constant="30" id="d7H-6j-qSw"/>
+                            <constraint firstItem="Ftk-eb-BRr" firstAttribute="trailing" secondItem="nHM-IU-hCP" secondAttribute="trailing" id="iGV-KT-iAU"/>
+                            <constraint firstItem="v93-FV-Zxv" firstAttribute="top" secondItem="Dxz-gz-mpN" secondAttribute="bottom" constant="152.33333333333331" id="m79-ue-zyk"/>
+                            <constraint firstItem="v93-FV-Zxv" firstAttribute="centerX" secondItem="nHM-IU-hCP" secondAttribute="centerX" id="qpQ-xN-rZI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="XPu-87-aiq" id="ogd-9K-e9S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJe-DV-Kwc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297.10144927536237" y="106.47321428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <namedColor name="iBench.marine">
+            <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

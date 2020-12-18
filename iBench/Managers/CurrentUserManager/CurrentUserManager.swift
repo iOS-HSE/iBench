@@ -58,11 +58,11 @@ class CurrentUserManager: NSObject {
 
 extension CurrentUserManager: CurrentUserManaging {
     func createUser(name: String?, email: String?, password: String?, _ completion: @escaping (Error?) -> Void) {
-        authenticationService.register(withEmail: email, password: password) { [weak self] (result) in
+        authenticationService.register(withEmail: email, password: password, name: name) { [weak self] (result) in
             switch result {
                 case .success(let user):
-                    var currentUser = UserObject(firebaseUser: user)
-                    currentUser.name = name ?? "NA"
+                    let currentUser = UserObject(firebaseUser: user)
+//                    currentUser.name = name ?? "NA"
                     self?.firestoreService.addUser(currentUser) { (error) in
                         if let error = error {
                             completion(error)
@@ -147,6 +147,7 @@ extension CurrentUserManager: CurrentUserManaging {
             return
         }
         userPersistantStoreService.userObject = nil
+        completion?(nil)
     }
     
     var isSignedIn: Bool {

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6664606C258BB460006077D6 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6664606B258BB460006077D6 /* UserProfileViewModel.swift */; };
+		66646070258BB480006077D6 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6664606F258BB480006077D6 /* UserProfileViewController.swift */; };
+		66646073258BB48D006077D6 /* UserProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66646072258BB48D006077D6 /* UserProfileViewController.storyboard */; };
+		6B1D6016258BF4AF009833B1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D6012258BF4AF009833B1 /* MapViewController.swift */; };
+		6B1D6017258BF4AF009833B1 /* BenchAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D6013258BF4AF009833B1 /* BenchAnnotation.swift */; };
+		6B1D6018258BF4AF009833B1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D6014258BF4AF009833B1 /* MapViewModel.swift */; };
+		6B1D6019258BF4AF009833B1 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B1D6015258BF4AF009833B1 /* MapViewController.storyboard */; };
+		6B1D6023258C1518009833B1 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B1D6020258C1518009833B1 /* SettingsViewController.storyboard */; };
+		6B1D6024258C1518009833B1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D6021258C1518009833B1 /* SettingsViewModel.swift */; };
+		6B1D6025258C1518009833B1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D6022258C1518009833B1 /* SettingsViewController.swift */; };
 		754763DE25864C7400A29645 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754763DD25864C7400A29645 /* SignInViewController.swift */; };
 		754763E125864C7D00A29645 /* SignInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754763E025864C7D00A29645 /* SignInViewController.storyboard */; };
 		754763E725865E4200A29645 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754763E625865E4200A29645 /* SignInViewModel.swift */; };
@@ -27,6 +37,7 @@
 		75653154256F95B700549FD3 /* AuthenticationFlowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75653153256F95B700549FD3 /* AuthenticationFlowRouter.swift */; };
 		75653158256F960400549FD3 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75653157256F960400549FD3 /* BaseRouter.swift */; };
 		756576D825682F50005E250A /* UserLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756576D725682F50005E250A /* UserLocationService.swift */; };
+		756E6897258D439A00101442 /* HowToRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E6896258D439A00101442 /* HowToRouting.swift */; };
 		7578456E255EFC4800DB9DA0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578456D255EFC4800DB9DA0 /* RegisterViewController.swift */; };
 		75784571255EFCB400DB9DA0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75784570255EFCB400DB9DA0 /* BaseViewController.swift */; };
 		75784576255EFCE900DB9DA0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75784575255EFCE900DB9DA0 /* BaseViewModel.swift */; };
@@ -39,6 +50,8 @@
 		757845E8255F084B00DB9DA0 /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845E7255F084B00DB9DA0 /* Listener.swift */; };
 		757845EB255F085100DB9DA0 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EA255F085100DB9DA0 /* Signal.swift */; };
 		757845ED255F085700DB9DA0 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757845EC255F085700DB9DA0 /* Property.swift */; };
+		7586CDC12589235C0030D7A1 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586CDBF2589235C0030D7A1 /* HowToViewController.swift */; };
+		7586CDC22589235C0030D7A1 /* HowToViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7586CDC02589235C0030D7A1 /* HowToViewController.storyboard */; };
 		7586CDC82589256C0030D7A1 /* BenchInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586CDC72589256C0030D7A1 /* BenchInfoViewController.swift */; };
 		7586CDCC258926CF0030D7A1 /* BenchInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7586CDCB258926CF0030D7A1 /* BenchInfoViewController.storyboard */; };
 		7586CDCF258932E20030D7A1 /* BenchInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586CDCE258932E20030D7A1 /* BenchInfoViewModel.swift */; };
@@ -65,13 +78,9 @@
 		75E2DE5F250FBE3C000B10BC /* UILabel+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2DE5E250FBE3C000B10BC /* UILabel+Rotation.swift */; };
 		75E2DE61250FBE5D000B10BC /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2DE60250FBE5D000B10BC /* UIView+Toast.swift */; };
 		75E2DE63250FBE8A000B10BC /* UIView+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2DE62250FBE8A000B10BC /* UIView+Attributes.swift */; };
-		75E81B19257A5BA600218EB0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E81B18257A5BA600218EB0 /* MapViewController.swift */; };
-		75E81B1C257A5BAF00218EB0 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E81B1B257A5BAF00218EB0 /* MapViewController.storyboard */; };
-		75E81B3A257A676D00218EB0 /* BenchAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E81B39257A676D00218EB0 /* BenchAnnotation.swift */; };
 		75E81B3D257A682D00218EB0 /* FirestoreService+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E81B3C257A682D00218EB0 /* FirestoreService+User.swift */; };
 		75E81B40257A690E00218EB0 /* FirestoreService+Benches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E81B3F257A690E00218EB0 /* FirestoreService+Benches.swift */; };
 		75E81B43257A6A0600218EB0 /* BenchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E81B42257A6A0600218EB0 /* BenchObject.swift */; };
-		75E81B46257A75FF00218EB0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E81B45257A75FF00218EB0 /* MapViewModel.swift */; };
 		75F31787257280FE00090E0E /* UIActivityIndicatorView+IsActive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F31786257280FE00090E0E /* UIActivityIndicatorView+IsActive.swift */; };
 		75F3178B257285D900090E0E /* PersistantStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F3178A257285D900090E0E /* PersistantStoreService.swift */; };
 		75F317902572864400090E0E /* PersistantStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F3178F2572864400090E0E /* PersistantStorage.swift */; };
@@ -82,6 +91,16 @@
 
 /* Begin PBXFileReference section */
 		3A8E868742046BB8FAAEB5F2 /* Pods-iBench.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBench.debug.xcconfig"; path = "Target Support Files/Pods-iBench/Pods-iBench.debug.xcconfig"; sourceTree = "<group>"; };
+		6664606B258BB460006077D6 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		6664606F258BB480006077D6 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		66646072258BB48D006077D6 /* UserProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfileViewController.storyboard; sourceTree = "<group>"; };
+		6B1D6012258BF4AF009833B1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6B1D6013258BF4AF009833B1 /* BenchAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BenchAnnotation.swift; sourceTree = "<group>"; };
+		6B1D6014258BF4AF009833B1 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		6B1D6015258BF4AF009833B1 /* MapViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
+		6B1D6020258C1518009833B1 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		6B1D6021258C1518009833B1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		6B1D6022258C1518009833B1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		754763DD25864C7400A29645 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		754763E025864C7D00A29645 /* SignInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInViewController.storyboard; sourceTree = "<group>"; };
 		754763E625865E4200A29645 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -102,6 +121,7 @@
 		75653153256F95B700549FD3 /* AuthenticationFlowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFlowRouter.swift; sourceTree = "<group>"; };
 		75653157256F960400549FD3 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		756576D725682F50005E250A /* UserLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationService.swift; sourceTree = "<group>"; };
+		756E6896258D439A00101442 /* HowToRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToRouting.swift; sourceTree = "<group>"; };
 		7578456D255EFC4800DB9DA0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		75784570255EFCB400DB9DA0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		75784575255EFCE900DB9DA0 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +134,8 @@
 		757845E7255F084B00DB9DA0 /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 		757845EA255F085100DB9DA0 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		757845EC255F085700DB9DA0 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		7586CDBF2589235C0030D7A1 /* HowToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
+		7586CDC02589235C0030D7A1 /* HowToViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HowToViewController.storyboard; sourceTree = "<group>"; };
 		7586CDC72589256C0030D7A1 /* BenchInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchInfoViewController.swift; sourceTree = "<group>"; };
 		7586CDCB258926CF0030D7A1 /* BenchInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BenchInfoViewController.storyboard; sourceTree = "<group>"; };
 		7586CDCE258932E20030D7A1 /* BenchInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchInfoViewModel.swift; sourceTree = "<group>"; };
@@ -142,13 +164,9 @@
 		75E2DE5E250FBE3C000B10BC /* UILabel+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Rotation.swift"; sourceTree = "<group>"; };
 		75E2DE60250FBE5D000B10BC /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
 		75E2DE62250FBE8A000B10BC /* UIView+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Attributes.swift"; sourceTree = "<group>"; };
-		75E81B18257A5BA600218EB0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		75E81B1B257A5BAF00218EB0 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
-		75E81B39257A676D00218EB0 /* BenchAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchAnnotation.swift; sourceTree = "<group>"; };
 		75E81B3C257A682D00218EB0 /* FirestoreService+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirestoreService+User.swift"; sourceTree = "<group>"; };
 		75E81B3F257A690E00218EB0 /* FirestoreService+Benches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirestoreService+Benches.swift"; sourceTree = "<group>"; };
 		75E81B42257A6A0600218EB0 /* BenchObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchObject.swift; sourceTree = "<group>"; };
-		75E81B45257A75FF00218EB0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		75F31786257280FE00090E0E /* UIActivityIndicatorView+IsActive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+IsActive.swift"; sourceTree = "<group>"; };
 		75F3178A257285D900090E0E /* PersistantStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantStoreService.swift; sourceTree = "<group>"; };
 		75F3178F2572864400090E0E /* PersistantStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantStorage.swift; sourceTree = "<group>"; };
@@ -177,6 +195,45 @@
 				FC73E5FD49A66052BD3099D2 /* Pods-iBench.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6664606A258BB373006077D6 /* UserProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6664606B258BB460006077D6 /* UserProfileViewModel.swift */,
+				6664606F258BB480006077D6 /* UserProfileViewController.swift */,
+				66646072258BB48D006077D6 /* UserProfileViewController.storyboard */,
+			);
+			path = UserProfileViewController;
+			sourceTree = "<group>";
+		};
+		6B1D6011258BF4AF009833B1 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6B1D6012258BF4AF009833B1 /* MapViewController.swift */,
+				6B1D6013258BF4AF009833B1 /* BenchAnnotation.swift */,
+				6B1D6014258BF4AF009833B1 /* MapViewModel.swift */,
+				6B1D6015258BF4AF009833B1 /* MapViewController.storyboard */,
+			);
+			path = MapViewController;
+			sourceTree = "<group>";
+		};
+		6B1D601E258C1518009833B1 /* SettingsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				6B1D601F258C1518009833B1 /* SettingsViewController */,
+			);
+			path = SettingsFlow;
+			sourceTree = "<group>";
+		};
+		6B1D601F258C1518009833B1 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6B1D6021258C1518009833B1 /* SettingsViewModel.swift */,
+				6B1D6022258C1518009833B1 /* SettingsViewController.swift */,
+				6B1D6020258C1518009833B1 /* SettingsViewController.storyboard */,
+			);
+			path = SettingsViewController;
 			sourceTree = "<group>";
 		};
 		754763DC25864C4C00A29645 /* SignInViewController */ = {
@@ -286,6 +343,16 @@
 			path = Bindings;
 			sourceTree = "<group>";
 		};
+		7586CDBB2589231A0030D7A1 /* OnboardingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				756E6896258D439A00101442 /* HowToRouting.swift */,
+				7586CDBF2589235C0030D7A1 /* HowToViewController.swift */,
+				7586CDC02589235C0030D7A1 /* HowToViewController.storyboard */,
+			);
+			path = OnboardingFlow;
+			sourceTree = "<group>";
+		};
 		7586CDC6258925540030D7A1 /* BenchInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +424,7 @@
 				75653157256F960400549FD3 /* BaseRouter.swift */,
 				75784575255EFCE900DB9DA0 /* BaseViewModel.swift */,
 				759ACC11250A205C0071EF7B /* LaunchScreen.storyboard */,
+				7586CDBB2589231A0030D7A1 /* OnboardingFlow */,
 				7578456C255EFC3400DB9DA0 /* AuthenticationFlow */,
 				75E81B15257A5AC100218EB0 /* MapFlow */,
 			);
@@ -439,23 +507,14 @@
 			isa = PBXGroup;
 			children = (
 				75B7D7C42587C0FE0076EE23 /* MapFlowRouter.swift */,
-				75E81B17257A5B9500218EB0 /* MapViewController */,
+				6B1D6011258BF4AF009833B1 /* MapViewController */,
+				6B1D601E258C1518009833B1 /* SettingsFlow */,
+				6664606A258BB373006077D6 /* UserProfileViewController */,
 				75B7D7CD2587DC990076EE23 /* AddNewBenchViewController */,
 				7586CDC6258925540030D7A1 /* BenchInfoViewController */,
 				756103A7258B23F4001415CF /* SearchViewController */,
 			);
 			path = MapFlow;
-			sourceTree = "<group>";
-		};
-		75E81B17257A5B9500218EB0 /* MapViewController */ = {
-			isa = PBXGroup;
-			children = (
-				75E81B45257A75FF00218EB0 /* MapViewModel.swift */,
-				75E81B18257A5BA600218EB0 /* MapViewController.swift */,
-				75E81B1B257A5BAF00218EB0 /* MapViewController.storyboard */,
-				75E81B39257A676D00218EB0 /* BenchAnnotation.swift */,
-			);
-			path = MapViewController;
 			sourceTree = "<group>";
 		};
 		75F31789257285CA00090E0E /* PersistantStoreService */ = {
@@ -545,14 +604,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E81B1C257A5BAF00218EB0 /* MapViewController.storyboard in Resources */,
+				6B1D6019258BF4AF009833B1 /* MapViewController.storyboard in Resources */,
 				75B7D7DD2587E2E40076EE23 /* AddNewBenchViewController.storyboard in Resources */,
 				756103AD258B2436001415CF /* SearchViewController.storyboard in Resources */,
 				7578457E255EFDB300DB9DA0 /* RegisterViewController.storyboard in Resources */,
+				66646073258BB48D006077D6 /* UserProfileViewController.storyboard in Resources */,
 				755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */,
 				7586CDCC258926CF0030D7A1 /* BenchInfoViewController.storyboard in Resources */,
 				754763E125864C7D00A29645 /* SignInViewController.storyboard in Resources */,
 				759ACC13250A205C0071EF7B /* LaunchScreen.storyboard in Resources */,
+				7586CDC22589235C0030D7A1 /* HowToViewController.storyboard in Resources */,
+				6B1D6023258C1518009833B1 /* SettingsViewController.storyboard in Resources */,
 				759ACC10250A205C0071EF7B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,11 +696,9 @@
 				755A02842556DF41009ABE2B /* UIView+NibLoadable.swift in Sources */,
 				75B7D7D92587E17E0076EE23 /* UIView+TopViewController.swift in Sources */,
 				75E2DE4F250FBCB9000B10BC /* RequestResponseDefaultLogger.swift in Sources */,
-				75E81B3A257A676D00218EB0 /* BenchAnnotation.swift in Sources */,
 				75E2DE53250FBD48000B10BC /* NetworkResponse.swift in Sources */,
 				75E2DE59250FBDAE000B10BC /* NetworkLogging.swift in Sources */,
 				75E2DE51250FBCFA000B10BC /* LoggingURLProtocol.swift in Sources */,
-				75E81B46257A75FF00218EB0 /* MapViewModel.swift in Sources */,
 				756103A9258B2413001415CF /* SearchViewController.swift in Sources */,
 				755A028B2556E226009ABE2B /* FirebaseAuthenticationService.swift in Sources */,
 				75F3179625728D2E00090E0E /* PersistantStoreService+User.swift in Sources */,
@@ -649,13 +709,16 @@
 				75653150256F901500549FD3 /* FirestoreError.swift in Sources */,
 				757845E8255F084B00DB9DA0 /* Listener.swift in Sources */,
 				75E81B3D257A682D00218EB0 /* FirestoreService+User.swift in Sources */,
+				756E6897258D439A00101442 /* HowToRouting.swift in Sources */,
 				7586CDCF258932E20030D7A1 /* BenchInfoViewModel.swift in Sources */,
 				75E2DE49250FBB98000B10BC /* NameDescribable.swift in Sources */,
 				75B7D7C52587C0FE0076EE23 /* MapFlowRouter.swift in Sources */,
 				759ACC07250A20560071EF7B /* AppDelegate.swift in Sources */,
+				66646070258BB480006077D6 /* UserProfileViewController.swift in Sources */,
 				75F317932572866300090E0E /* PersistantStoreService+LaunchesCounting.swift in Sources */,
 				757845E4255F066E00DB9DA0 /* UserObject.swift in Sources */,
 				75F3178B257285D900090E0E /* PersistantStoreService.swift in Sources */,
+				7586CDC12589235C0030D7A1 /* HowToViewController.swift in Sources */,
 				75784571255EFCB400DB9DA0 /* BaseViewController.swift in Sources */,
 				75A3C02C2588D8CA006CA4A0 /* RatingView.swift in Sources */,
 				757845ED255F085700DB9DA0 /* Property.swift in Sources */,
@@ -664,25 +727,30 @@
 				75E2DE57250FBD71000B10BC /* HTTPMethod.swift in Sources */,
 				75E81B40257A690E00218EB0 /* FirestoreService+Benches.swift in Sources */,
 				7578457B255EFD5200DB9DA0 /* RegisterViewModel.swift in Sources */,
+				6664606C258BB460006077D6 /* UserProfileViewModel.swift in Sources */,
 				75F31787257280FE00090E0E /* UIActivityIndicatorView+IsActive.swift in Sources */,
+				6B1D6016258BF4AF009833B1 /* MapViewController.swift in Sources */,
 				7593C60D2588EAE20078CC44 /* LocationCoordinates.swift in Sources */,
 				75653149256F803700549FD3 /* UIViewController+Alerts.swift in Sources */,
 				7565314D256F83F800549FD3 /* FirestoreService.swift in Sources */,
 				7578459E255EFF8F00DB9DA0 /* UIColor+iBench.swift in Sources */,
 				754763E725865E4200A29645 /* SignInViewModel.swift in Sources */,
+				6B1D6024258C1518009833B1 /* SettingsViewModel.swift in Sources */,
 				7593C60A2588EA930078CC44 /* AddNewBenchViewModel.swift in Sources */,
 				754763DE25864C7400A29645 /* SignInViewController.swift in Sources */,
 				756576D825682F50005E250A /* UserLocationService.swift in Sources */,
-				75E81B19257A5BA600218EB0 /* MapViewController.swift in Sources */,
 				755A027A2556DE6F009ABE2B /* UINavigationController+Completion.swift in Sources */,
 				75E81B43257A6A0600218EB0 /* BenchObject.swift in Sources */,
+				6B1D6018258BF4AF009833B1 /* MapViewModel.swift in Sources */,
 				757845E1255F056B00DB9DA0 /* Validators.swift in Sources */,
 				75E2DE61250FBE5D000B10BC /* UIView+Toast.swift in Sources */,
 				755A028E2556E264009ABE2B /* CurrentUserManager.swift in Sources */,
 				75E2DE5F250FBE3C000B10BC /* UILabel+Rotation.swift in Sources */,
 				75E2DE63250FBE8A000B10BC /* UIView+Attributes.swift in Sources */,
 				757845DE255F053600DB9DA0 /* AuthenticationError.swift in Sources */,
+				6B1D6017258BF4AF009833B1 /* BenchAnnotation.swift in Sources */,
 				755A02762556DE43009ABE2B /* UIStoryboard+UIViewController.swift in Sources */,
+				6B1D6025258C1518009833B1 /* SettingsViewController.swift in Sources */,
 				75A3C0282588D34F006CA4A0 /* BottomSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,8 @@ protocol MapRouting {
     func presentBenchInfoViewController(object: BenchObject,_ completion: (() -> Void)?)
     func presentAddNewBenchViewController(coordinate: LocationCoordinates, _ completion: (() -> Void)?)
     func presentSearchViewController(_ completion: (() -> Void)?)
+    func presentSettingsViewController(_ completion: (() -> Void)?)
+    func presentUserProfileViewController(_ completion: (() -> Void)?)
 }
 
 protocol BottomSheetBenchesDelegate: class {
@@ -88,7 +90,7 @@ class MapViewController: BaseViewController {
     }
     
     @IBAction func settingsTapped() {
-        
+        router?.presentSettingsViewController(nil)
     }
     
     @IBAction func searchTapped() {
@@ -96,7 +98,7 @@ class MapViewController: BaseViewController {
     }
     
     @IBAction func homeButtonTapped() {
-        
+        router?.presentUserProfileViewController(nil)
     }
     
     @IBAction func userLocationTapped() {
