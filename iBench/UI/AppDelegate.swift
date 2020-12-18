@@ -29,8 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         if PersistantStoreService.shared.isFirstLaunch {
-            //onboarding preparations
-            //return
+            let vc = HowToViewController.initFromItsStoryboard()
+            let router = HowToRouter(initialVC: vc)
+            vc.router = router
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+            return true
         }
         
         let initialVC: UIViewController

@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol HowToRouting {
+    func presentRegisterViewController(_ completion: (() -> Void)?)
+}
+
 class HowToViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    
+    var router: HowToRouting?
     
     var cellsIds = [
         "Welcome Cell",
@@ -56,6 +62,7 @@ class HowToViewController: BaseViewController {
     
     @IBAction func skipTap(_ sender: Any) {
         //present authentication screen
+        router?.presentRegisterViewController(nil)
     }
     
     @IBAction func nextTap(_ sender: Any) {
@@ -67,6 +74,7 @@ class HowToViewController: BaseViewController {
         }
         
         //present authentication screen
+        router?.presentRegisterViewController(nil)
     }
 }
 
