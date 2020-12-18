@@ -12,6 +12,7 @@ import MapKit
 protocol MapRouting {
     func presentBenchInfoViewController(object: BenchObject,_ completion: (() -> Void)?)
     func presentAddNewBenchViewController(coordinate: LocationCoordinates, _ completion: (() -> Void)?)
+    func presentSearchViewController(_ completion: (() -> Void)?)
 }
 
 protocol BottomSheetBenchesDelegate: class {
@@ -81,9 +82,8 @@ class MapViewController: BaseViewController {
         mapView.addAnnotations(benchAnnotations)
     }
     
-    private func centerOnUserLocation() {
-        let userLoc = mapView.userLocation.coordinate
-        let region = MKCoordinateRegion(center: userLoc, latitudinalMeters: 300, longitudinalMeters: 300)
+    private func centerMap(on location: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: 300, longitudinalMeters: 300)
         mapView.setRegion(region, animated: true)
     }
     
@@ -92,7 +92,7 @@ class MapViewController: BaseViewController {
     }
     
     @IBAction func searchTapped() {
-        
+        router?.presentSearchViewController(nil)
     }
     
     @IBAction func homeButtonTapped() {
@@ -100,7 +100,7 @@ class MapViewController: BaseViewController {
     }
     
     @IBAction func userLocationTapped() {
-        centerOnUserLocation()
+        centerMap(on: mapView.userLocation.coordinate)
     }
     
     @IBAction func mapLongTapped(_ gestureRecognizer: UILongPressGestureRecognizer) {
@@ -151,4 +151,15 @@ extension MapViewController: MKMapViewDelegate {
         
     }
     
+}
+
+extension MapViewController: SearchDelegate {
+    func didsSelectBenchObject(object: BenchObject) {
+        let annotations = mapView.annotations.compactMap { $0 as? BenchAnnotation }
+        guard let annotation = annotations.first(where: { $0.benchObject.id == object.id }) else {
+            return
+        }
+        centerMap(on: annotation.coordinate)
+        mapView.selectAnnotation(annotation, animated: true)
+    }
 }

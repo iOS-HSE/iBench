@@ -10,6 +10,7 @@
 		754763DE25864C7400A29645 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754763DD25864C7400A29645 /* SignInViewController.swift */; };
 		754763E125864C7D00A29645 /* SignInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754763E025864C7D00A29645 /* SignInViewController.storyboard */; };
 		754763E725865E4200A29645 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754763E625865E4200A29645 /* SignInViewModel.swift */; };
+		7556811F258CEB2400619F10 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7556811E258CEB2400619F10 /* SearchTableViewCell.swift */; };
 		755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 755A00DC2556D32A009ABE2B /* GoogleService-Info.plist */; };
 		755A02762556DE43009ABE2B /* UIStoryboard+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02752556DE43009ABE2B /* UIStoryboard+UIViewController.swift */; };
 		755A027A2556DE6F009ABE2B /* UINavigationController+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02792556DE6F009ABE2B /* UINavigationController+Completion.swift */; };
@@ -17,6 +18,9 @@
 		755A02842556DF41009ABE2B /* UIView+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A02832556DF41009ABE2B /* UIView+NibLoadable.swift */; };
 		755A028B2556E226009ABE2B /* FirebaseAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A028A2556E226009ABE2B /* FirebaseAuthenticationService.swift */; };
 		755A028E2556E264009ABE2B /* CurrentUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A028D2556E264009ABE2B /* CurrentUserManager.swift */; };
+		756103A9258B2413001415CF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756103A8258B2413001415CF /* SearchViewController.swift */; };
+		756103AD258B2436001415CF /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756103AC258B2436001415CF /* SearchViewController.storyboard */; };
+		756103B1258B4920001415CF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756103B0258B4920001415CF /* SearchViewModel.swift */; };
 		75653149256F803700549FD3 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75653148256F803700549FD3 /* UIViewController+Alerts.swift */; };
 		7565314D256F83F800549FD3 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565314C256F83F800549FD3 /* FirestoreService.swift */; };
 		75653150256F901500549FD3 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565314F256F901500549FD3 /* FirestoreError.swift */; };
@@ -81,6 +85,7 @@
 		754763DD25864C7400A29645 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		754763E025864C7D00A29645 /* SignInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInViewController.storyboard; sourceTree = "<group>"; };
 		754763E625865E4200A29645 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		7556811E258CEB2400619F10 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		755A00DC2556D32A009ABE2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		755A02752556DE43009ABE2B /* UIStoryboard+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+UIViewController.swift"; sourceTree = "<group>"; };
 		755A02792556DE6F009ABE2B /* UINavigationController+Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Completion.swift"; sourceTree = "<group>"; };
@@ -88,6 +93,9 @@
 		755A02832556DF41009ABE2B /* UIView+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoadable.swift"; sourceTree = "<group>"; };
 		755A028A2556E226009ABE2B /* FirebaseAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationService.swift; sourceTree = "<group>"; };
 		755A028D2556E264009ABE2B /* CurrentUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserManager.swift; sourceTree = "<group>"; };
+		756103A8258B2413001415CF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		756103AC258B2436001415CF /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		756103B0258B4920001415CF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		75653148256F803700549FD3 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		7565314C256F83F800549FD3 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		7565314F256F901500549FD3 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
@@ -197,6 +205,17 @@
 				756576D425682F28005E250A /* CurrentUserManager */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		756103A7258B23F4001415CF /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				756103B0258B4920001415CF /* SearchViewModel.swift */,
+				756103A8258B2413001415CF /* SearchViewController.swift */,
+				756103AC258B2436001415CF /* SearchViewController.storyboard */,
+				7556811E258CEB2400619F10 /* SearchTableViewCell.swift */,
+			);
+			path = SearchViewController;
 			sourceTree = "<group>";
 		};
 		7565314B256F83E000549FD3 /* FirestoreService */ = {
@@ -423,6 +442,7 @@
 				75E81B17257A5B9500218EB0 /* MapViewController */,
 				75B7D7CD2587DC990076EE23 /* AddNewBenchViewController */,
 				7586CDC6258925540030D7A1 /* BenchInfoViewController */,
+				756103A7258B23F4001415CF /* SearchViewController */,
 			);
 			path = MapFlow;
 			sourceTree = "<group>";
@@ -527,6 +547,7 @@
 			files = (
 				75E81B1C257A5BAF00218EB0 /* MapViewController.storyboard in Resources */,
 				75B7D7DD2587E2E40076EE23 /* AddNewBenchViewController.storyboard in Resources */,
+				756103AD258B2436001415CF /* SearchViewController.storyboard in Resources */,
 				7578457E255EFDB300DB9DA0 /* RegisterViewController.storyboard in Resources */,
 				755A00DD2556D32A009ABE2B /* GoogleService-Info.plist in Resources */,
 				7586CDCC258926CF0030D7A1 /* BenchInfoViewController.storyboard in Resources */,
@@ -608,6 +629,8 @@
 				757845EB255F085100DB9DA0 /* Signal.swift in Sources */,
 				75653158256F960400549FD3 /* BaseRouter.swift in Sources */,
 				75784576255EFCE900DB9DA0 /* BaseViewModel.swift in Sources */,
+				756103B1258B4920001415CF /* SearchViewModel.swift in Sources */,
+				7556811F258CEB2400619F10 /* SearchTableViewCell.swift in Sources */,
 				755A02842556DF41009ABE2B /* UIView+NibLoadable.swift in Sources */,
 				75B7D7D92587E17E0076EE23 /* UIView+TopViewController.swift in Sources */,
 				75E2DE4F250FBCB9000B10BC /* RequestResponseDefaultLogger.swift in Sources */,
@@ -616,6 +639,7 @@
 				75E2DE59250FBDAE000B10BC /* NetworkLogging.swift in Sources */,
 				75E2DE51250FBCFA000B10BC /* LoggingURLProtocol.swift in Sources */,
 				75E81B46257A75FF00218EB0 /* MapViewModel.swift in Sources */,
+				756103A9258B2413001415CF /* SearchViewController.swift in Sources */,
 				755A028B2556E226009ABE2B /* FirebaseAuthenticationService.swift in Sources */,
 				75F3179625728D2E00090E0E /* PersistantStoreService+User.swift in Sources */,
 				7586CDC82589256C0030D7A1 /* BenchInfoViewController.swift in Sources */,

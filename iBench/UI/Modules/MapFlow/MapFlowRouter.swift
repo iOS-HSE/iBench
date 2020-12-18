@@ -36,7 +36,7 @@ extension MapFlowRouter: MapRouting {
     }
     
     func presentBenchInfoViewController(object: BenchObject, _ completion: (() -> Void)?) {
-        guard let mapVC = getTopViewController() as? MapViewController else {
+        guard let mapVC = navigationController.topViewController as? MapViewController else {
             return
         }
         let childVC = BenchInfoViewController.initFromItsStoryboard()
@@ -48,7 +48,7 @@ extension MapFlowRouter: MapRouting {
     }
     
     func presentAddNewBenchViewController(coordinate: LocationCoordinates, _ completion: (() -> Void)?) {
-        guard let mapVC = getTopViewController() as? MapViewController else {
+        guard let mapVC = navigationController.topViewController as? MapViewController else {
             return
         }
         let childVC = AddNewBenchViewController.initFromItsStoryboard()
@@ -57,6 +57,19 @@ extension MapFlowRouter: MapRouting {
         mapVC.bottomSheetDelegate = childVC
         add(bottomSheetVC: childVC, to: mapVC)
         completion?()
+    }
+    
+    func presentSearchViewController(_ completion: (() -> Void)?) {
+        
+        let searchVC = SearchViewController.initFromItsStoryboard()
+        searchVC.viewModel = SearchViewModel()
+        searchVC.router = self
+        if let mapVC = navigationController.topViewController as? MapViewController {
+            searchVC.delegate = mapVC
+        }
+        
+//        searchVC.modalPresentationStyle = .over
+        navigationController.pushViewController(searchVC, animated: true, completion)
     }
 }
 
@@ -71,5 +84,14 @@ extension MapFlowRouter: BenchInfoRouting, AddNewBenchRouting {
         mapVC.bottomSheetDelegate = childVC
         add(bottomSheetVC: childVC, to: mapVC)
         completion?()
+    }
+}
+
+extension MapFlowRouter: SearchRouting {
+    func navigateBack(from vc: UIViewController, _ completion: (() -> Void)?) {
+        if let navigationTopVC = navigationController.topViewController,
+           vc == navigationTopVC {
+            navigationController.popViewController(animated: true, completion)
+        }
     }
 }
