@@ -71,6 +71,20 @@ extension MapFlowRouter: MapRouting {
 //        searchVC.modalPresentationStyle = .over
         navigationController.pushViewController(searchVC, animated: true, completion)
     }
+    
+    func presentSettingsViewController(_ completion: (() -> Void)?) {
+        let settingsVC = SettingsViewController.initFromItsStoryboard()
+        settingsVC.viewModel = SettingsViewModel()
+        settingsVC.router = self
+        navigationController.pushViewController(settingsVC, animated: true, completion)
+    }
+    
+    func presentUserProfileViewController(_ completion: (() -> Void)?) {
+        let profileVC = UserProfileViewController.initFromItsStoryboard()
+        profileVC.viewModel = UserProfileViewModel()
+        profileVC.router = self
+        navigationController.pushViewController(profileVC, animated: true, completion)
+    }
 }
 
 extension MapFlowRouter: BenchInfoRouting, AddNewBenchRouting {
@@ -87,11 +101,21 @@ extension MapFlowRouter: BenchInfoRouting, AddNewBenchRouting {
     }
 }
 
-extension MapFlowRouter: SearchRouting {
+extension MapFlowRouter: SearchRouting, SettingsRouting {
     func navigateBack(from vc: UIViewController, _ completion: (() -> Void)?) {
         if let navigationTopVC = navigationController.topViewController,
            vc == navigationTopVC {
             navigationController.popViewController(animated: true, completion)
         }
+    }
+}
+
+extension MapFlowRouter: UserProfileRouting {
+    func presentAuthenticateViewController(_ completion: (() -> Void)?) {
+        let vc = SignInViewController.initFromItsStoryboard()
+        vc.viewModel = SignInViewModel()
+        let router = AuthenticationFlowRouter(initialVC: vc)
+        vc.router = router
+        navigationController.view.window?.rootViewController = router.navigationController
     }
 }

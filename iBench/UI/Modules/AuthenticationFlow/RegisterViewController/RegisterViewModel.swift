@@ -57,6 +57,7 @@ extension RegisterViewModel: RegisterViewModeling {
                 self.didGetError?(message)
                 return
             }
+            self.didRegisterSuccessfully?()
         }
     }
 }

@@ -56,6 +56,7 @@ extension SignInViewModel: SignInViewModeling {
                 self.didGetError?(message)
                 return
             }
+            self.didSignedInSuccessfully?()
         }
     }
 }

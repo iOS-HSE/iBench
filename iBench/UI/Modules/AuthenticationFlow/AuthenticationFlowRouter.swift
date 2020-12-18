@@ -27,6 +27,7 @@ extension AuthenticationFlowRouter: RegisterRouting {
         let vc = MapViewController.initFromItsStoryboard()
         vc.viewModel = MapViewModel()
         let router = MapFlowRouter(initialVC: vc)
+        vc.router = router
         navigationController.view.window?.rootViewController = router.navigationController
     }
     

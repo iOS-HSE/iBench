@@ -15,7 +15,7 @@ protocol FirebaseAuthenticationServiceable {
     var userRegistared: Bool { get }
     
     func googleLogin(user: GIDGoogleUser!, error: Error!, completion: @escaping (Result<User, Error>) -> Void)
-    func register(withEmail email: String?, password: String?, completion: @escaping (Result<User, Error>) -> ())
+    func register(withEmail email: String?, password: String?, name: String?, completion: @escaping (Result<User, Error>) -> ())
     func login(withEmail email: String?, password: String?, completion: @escaping (Result<User, Error>) -> ())
     func signOut() -> Error?
 }
@@ -69,7 +69,7 @@ extension FirebaseAuthenticationService: FirebaseAuthenticationServiceable {
         }
     }
     
-    func register(withEmail email: String?, password: String?, completion: @escaping (Result<User, Error>) -> ()) {
+    func register(withEmail email: String?, password: String?, name: String?, completion: @escaping (Result<User, Error>) -> ()) {
         guard Validators.isFilled(email: email, password: password) else {
             completion(.failure(AuthError.notFilled))
             return
@@ -85,7 +85,17 @@ extension FirebaseAuthenticationService: FirebaseAuthenticationServiceable {
                 completion(.failure(error!))
                 return
             }
-            completion(.success(result.user))
+            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+            changeRequest?.displayName = name
+            changeRequest?.commitChanges(completion: { (error) in
+                if error != nil {
+                    completion(.success(result.user))
+                    return
+                }
+                completion(.success(self.currentUser ?? result.user))
+            })
+            
+//            completion(.success(result.user))
         }
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SettingsRouting {
-    func navigateBack(_ completion: (() -> Void)?)
+    func navigateBack(from vc: UIViewController, _ completion: (() -> Void)?)
 }
 
 protocol SettingsViewModeling: BaseViewModeling {
@@ -49,11 +49,14 @@ class SettingsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        update()
     }
     
     private func update() {
-        nameField.text = viewModel.name
+        guard isViewLoaded else {
+            return
+        }
+        nameField.text = viewModel.currentUser?.name
     }
     
     func showUserNameAlert() {
@@ -72,9 +75,13 @@ class SettingsViewController: BaseViewController {
     @objc func textFieldEditingChanged(_ sender: UITextField) {
         viewModel.name = sender.text
     }
-
+    
+    @IBAction func changeNameButtonTapped() {
+        showUserNameAlert()
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        router?.navigateBack(from: self, nil)
+    }
+    
 }
-
-//extension SettingsViewController: UITextFieldDelegate {
-//
-//}

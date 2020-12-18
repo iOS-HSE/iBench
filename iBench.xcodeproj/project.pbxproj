@@ -229,9 +229,9 @@
 		6B1D601F258C1518009833B1 /* SettingsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				6B1D6020258C1518009833B1 /* SettingsViewController.storyboard */,
 				6B1D6021258C1518009833B1 /* SettingsViewModel.swift */,
 				6B1D6022258C1518009833B1 /* SettingsViewController.swift */,
+				6B1D6020258C1518009833B1 /* SettingsViewController.storyboard */,
 			);
 			path = SettingsViewController;
 			sourceTree = "<group>";
@@ -426,9 +426,7 @@
 				759ACC11250A205C0071EF7B /* LaunchScreen.storyboard */,
 				7586CDBB2589231A0030D7A1 /* OnboardingFlow */,
 				7578456C255EFC3400DB9DA0 /* AuthenticationFlow */,
-				6B1D601E258C1518009833B1 /* SettingsFlow */,
 				75E81B15257A5AC100218EB0 /* MapFlow */,
-				6664606A258BB373006077D6 /* UserProfileViewController */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -510,6 +508,8 @@
 			children = (
 				75B7D7C42587C0FE0076EE23 /* MapFlowRouter.swift */,
 				6B1D6011258BF4AF009833B1 /* MapViewController */,
+				6B1D601E258C1518009833B1 /* SettingsFlow */,
+				6664606A258BB373006077D6 /* UserProfileViewController */,
 				75B7D7CD2587DC990076EE23 /* AddNewBenchViewController */,
 				7586CDC6258925540030D7A1 /* BenchInfoViewController */,
 				756103A7258B23F4001415CF /* SearchViewController */,
@@ -699,7 +699,6 @@
 				75E2DE53250FBD48000B10BC /* NetworkResponse.swift in Sources */,
 				75E2DE59250FBDAE000B10BC /* NetworkLogging.swift in Sources */,
 				75E2DE51250FBCFA000B10BC /* LoggingURLProtocol.swift in Sources */,
-				75E81B46257A75FF00218EB0 /* MapViewModel.swift in Sources */,
 				756103A9258B2413001415CF /* SearchViewController.swift in Sources */,
 				755A028B2556E226009ABE2B /* FirebaseAuthenticationService.swift in Sources */,
 				75F3179625728D2E00090E0E /* PersistantStoreService+User.swift in Sources */,
