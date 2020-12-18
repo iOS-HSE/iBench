@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,15 +15,15 @@
             <objects>
                 <viewController id="Y4m-Np-Vac" customClass="SettingsViewController" customModule="iBench" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" ambiguous="YES" id="9N2-SR-dxW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" id="Ftk-eb-BRr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="70"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translucent="NO" id="FYk-af-5Br">
-                                        <rect key="frame" x="0.0" y="-3" width="323" height="43"/>
+                                        <rect key="frame" x="0.0" y="27" width="394" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem largeTitleDisplayMode="never" id="vIZ-iz-EMx">
@@ -40,7 +40,7 @@
                                 <color key="tintColor" name="iBench.marine"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dxz-gz-mpN">
-                                <rect key="frame" x="69" y="124" width="182" height="41"/>
+                                <rect key="frame" x="104" y="124" width="182" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" name="iBench.marine"/>
@@ -53,7 +53,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="148" translatesAutoresizingMaskIntoConstraints="NO" id="v93-FV-Zxv">
-                                <rect key="frame" x="24.5" y="317.5" width="271" height="30"/>
+                                <rect key="frame" x="59.666666666666657" y="317.33333333333331" width="271" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPu-87-aiq">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
@@ -65,7 +65,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ox-VT-wb8">
-                                        <rect key="frame" x="200" y="0.0" width="71" height="30"/>
+                                        <rect key="frame" x="200.00000000000003" y="0.0" width="70.999999999999972" height="30"/>
                                         <state key="normal" title="Изменить"/>
                                     </button>
                                 </subviews>
@@ -80,7 +80,6 @@
                             <constraint firstItem="Dxz-gz-mpN" firstAttribute="centerX" secondItem="nHM-IU-hCP" secondAttribute="centerX" id="7qN-8g-vZX"/>
                             <constraint firstItem="Dxz-gz-mpN" firstAttribute="top" secondItem="Ftk-eb-BRr" secondAttribute="bottom" constant="50.000000000000227" id="TtS-fg-Ikg"/>
                             <constraint firstItem="Ftk-eb-BRr" firstAttribute="centerX" secondItem="nHM-IU-hCP" secondAttribute="centerX" id="abC-8J-5O4"/>
-                            <constraint firstItem="nHM-IU-hCP" firstAttribute="top" secondItem="Ftk-eb-BRr" secondAttribute="top" constant="44" id="jd9-3I-q3c"/>
                             <constraint firstItem="v93-FV-Zxv" firstAttribute="top" secondItem="Dxz-gz-mpN" secondAttribute="bottom" constant="152.33333333333331" id="m79-ue-zyk"/>
                             <constraint firstItem="v93-FV-Zxv" firstAttribute="centerX" secondItem="nHM-IU-hCP" secondAttribute="centerX" id="qpQ-xN-rZI"/>
                         </constraints>
