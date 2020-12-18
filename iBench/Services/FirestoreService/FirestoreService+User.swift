@@ -33,28 +33,37 @@ extension FirestoreService: FirestoreUserServiceable {
     func updateUsername(userId: String, _ userName: String, completion: @escaping UserResultResponse) {
         let usersRef = self.usersRef
         let docRef = usersRef.document(userId)
-        docRef.getDocument { (snapshot, error) in
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = userName
+        changeRequest?.commitChanges(completion: { (error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            if snapshot == nil {
-                completion(.success(nil))
-            }
-            guard let snapshot = snapshot,
-                  var currentData = UserObject(document: snapshot) else {
-                completion(.failure(FirestoreError.badData))
-                return
-            }
-            currentData.name = userName
-            docRef.setData(currentData.dictionaryRepresentation) { (error) in
+            docRef.getDocument { (snapshot, error) in
                 if let error = error {
                     completion(.failure(error))
                     return
                 }
-                completion(.success(currentData))
+                if snapshot == nil {
+                    completion(.success(nil))
+                }
+                guard let snapshot = snapshot,
+                      var currentData = UserObject(document: snapshot) else {
+                    completion(.failure(FirestoreError.badData))
+                    return
+                }
+                currentData.name = userName
+                docRef.setData(currentData.dictionaryRepresentation) { (error) in
+                    if let error = error {
+                        completion(.failure(error))
+                        return
+                    }
+                    completion(.success(currentData))
+                }
             }
-        }
+        })
+        
     }
     
     func getUserFromDataBase(userId: String, completion: @escaping UserResultResponse) {
