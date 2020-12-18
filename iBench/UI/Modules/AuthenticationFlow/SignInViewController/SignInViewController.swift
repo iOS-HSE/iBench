@@ -83,6 +83,9 @@ class SignInViewController: BaseViewController {
     }
     
     private func update() {
+        guard isViewLoaded else {
+            return
+        }
         updateActivityIndicator()
         updateSignInButton()
     }

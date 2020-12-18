@@ -17,13 +17,16 @@ class MapViewModel: BaseViewModel {
     }
     
     private let firestoreService: FirestoreBenchesServiceable
+    private let locationService: UserLocationServiceable
     
     private var benchesListener: ListenerRegistration?
     
     init(
-        firestoreService: FirestoreBenchesServiceable = FirestoreService.shared
+        firestoreService: FirestoreBenchesServiceable = FirestoreService.shared,
+        locationService: UserLocationServiceable = UserLocationService.shared
     ) {
         self.firestoreService = firestoreService
+        self.locationService = locationService
         super.init()
         
         benchesListener = firestoreService.getBenchesListener({ [weak self] (result) in

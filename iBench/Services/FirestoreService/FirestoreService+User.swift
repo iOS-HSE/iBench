@@ -9,10 +9,10 @@
 import Foundation
 import Firebase
 
-typealias UserResultResponse = (Result<CurrentUser?, Error>) -> Void
+typealias UserResultResponse = (Result<UserObject?, Error>) -> Void
 
 protocol FirestoreUserServiceable {
-    func addUser(_ user: CurrentUser, completion: @escaping ((_ errorMessage: Error?) -> Void))
+    func addUser(_ user: UserObject, completion: @escaping ((_ errorMessage: Error?) -> Void))
     func updateUsername(userId: String, _ userName: String, completion: @escaping UserResultResponse)
     func getUserFromDataBase(userId: String, completion: @escaping UserResultResponse)
 }
@@ -23,7 +23,7 @@ extension FirestoreService: FirestoreUserServiceable {
         return firestore.collection(FirestorePathKeys.users)
     }
     
-    func addUser(_ user: CurrentUser, completion: @escaping ((Error?) -> Void)) {
+    func addUser(_ user: UserObject, completion: @escaping ((Error?) -> Void)) {
         let usersRef = self.usersRef
         usersRef.document(user.id).setData(user.dictionaryRepresentation) { (error) in
             completion(error)
@@ -42,7 +42,7 @@ extension FirestoreService: FirestoreUserServiceable {
                 completion(.success(nil))
             }
             guard let snapshot = snapshot,
-                  var currentData = CurrentUser(document: snapshot) else {
+                  var currentData = UserObject(document: snapshot) else {
                 completion(.failure(FirestoreError.badData))
                 return
             }
@@ -58,17 +58,38 @@ extension FirestoreService: FirestoreUserServiceable {
     }
     
     func getUserFromDataBase(userId: String, completion: @escaping UserResultResponse) {
-        let usersRef = self.usersRef
-        usersRef.document(userId).getDocument { (snapshot, error) in
+//        let usersRef = self.usersRef
+//        usersRef.document(userId).getDocument { (snapshot, error) in
+//            if let error = error {
+//                completion(.failure(error))
+//                return
+//            }
+//            if snapshot == nil {
+//                completion(.success(nil))
+//            }
+//            let currentData = CurrentUser(document: snapshot!)
+//            completion(.success(currentData))
+//        }
+        let query = usersRef.whereField("id", isEqualTo: userId)
+        query.getDocuments { (snapshot, error) in
             if let error = error {
                 completion(.failure(error))
+            }
+            guard let snapshot = snapshot,
+                  !snapshot.documents.isEmpty else {
+                completion(.failure(FirestoreError.userNotFound(userId)))
                 return
             }
-            if snapshot == nil {
-                completion(.success(nil))
+            guard snapshot.documents.count == 1,
+                  let userDocument = snapshot.documents.first else {
+                completion(.failure(FirestoreError.tooManyUsers(userId)))
+                return
             }
-            let currentData = CurrentUser(document: snapshot!)
-            completion(.success(currentData))
+            guard let userObject = UserObject(document: userDocument) else {
+                completion(.failure(FirestoreError.badData))
+                return
+            }
+            completion(.success(userObject))
         }
     }
 }

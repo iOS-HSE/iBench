@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TJj-aR-wFt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bench Info View Controller-->
+        <scene sceneID="Da2-GR-fdf">
+            <objects>
+                <viewController id="TJj-aR-wFt" customClass="BenchInfoViewController" customModule="iBench" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2yD-zQ-8RP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6E0-2X-yLc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SLx-fP-SwC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ffj-AD-V5M">
+                                            <rect key="frame" x="30" y="80" width="354" height="111.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3X-iL-gPP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayt-Z9-RRS">
+                                                    <rect key="frame" x="0.0" y="45.5" width="354" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIu-QP-6b9">
+                                                    <rect key="frame" x="0.0" y="91" width="354" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="m3X-iL-gPP" firstAttribute="leading" secondItem="ffj-AD-V5M" secondAttribute="leading" id="0Ub-Gt-yOj"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ayt-Z9-RRS" secondAttribute="trailing" id="6Gz-hh-UHn"/>
+                                                <constraint firstAttribute="trailing" secondItem="m3X-iL-gPP" secondAttribute="trailing" id="9XB-uT-tNv"/>
+                                                <constraint firstItem="Ayt-Z9-RRS" firstAttribute="leading" secondItem="ffj-AD-V5M" secondAttribute="leading" id="YI2-rb-jLB"/>
+                                                <constraint firstItem="JIu-QP-6b9" firstAttribute="leading" secondItem="ffj-AD-V5M" secondAttribute="leading" id="h3M-G2-KSq"/>
+                                                <constraint firstAttribute="trailing" secondItem="JIu-QP-6b9" secondAttribute="trailing" id="ycO-cC-YfO"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hli-w1-cxP" userLabel="Settings Container View" customClass="DesignableView" customModule="iBench" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhx-hg-pp8">
+                                                    <rect key="frame" x="5" y="5" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="GUE-IP-NVs"/>
+                                                        <constraint firstAttribute="width" constant="30" id="tff-EC-PbA"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemGray6Color"/>
+                                                    <state key="normal" image="edit"/>
+                                                    <connections>
+                                                        <action selector="editButtonTapped" destination="TJj-aR-wFt" eventType="touchUpInside" id="hk0-Bv-OWT"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" name="iBench.marine"/>
+                                            <constraints>
+                                                <constraint firstItem="Lhx-hg-pp8" firstAttribute="centerX" secondItem="hli-w1-cxP" secondAttribute="centerX" id="IrL-n9-TXT"/>
+                                                <constraint firstAttribute="width" constant="40" id="eWU-kt-gC0"/>
+                                                <constraint firstItem="Lhx-hg-pp8" firstAttribute="centerY" secondItem="hli-w1-cxP" secondAttribute="centerY" id="sUV-vc-a7J"/>
+                                                <constraint firstAttribute="height" constant="40" id="wn5-gF-kaJ"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1yk-6H-Fnf">
+                                            <rect key="frame" x="197" y="126" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7j-xh-lF4" userLabel="Settings Container View" customClass="DesignableView" customModule="iBench" customModuleProvider="target">
+                                            <rect key="frame" x="354" y="20" width="40" height="40"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1G-n9-Ygd">
+                                                    <rect key="frame" x="5" y="5" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="8xZ-2l-Oif"/>
+                                                        <constraint firstAttribute="height" constant="30" id="RdV-kK-R17"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemGray6Color"/>
+                                                    <state key="normal" image="route"/>
+                                                    <connections>
+                                                        <action selector="routeToBenchButtonTapped" destination="TJj-aR-wFt" eventType="touchUpInside" id="yj1-qC-y07"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" name="iBench.marine"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="8AN-va-s6N"/>
+                                                <constraint firstItem="T1G-n9-Ygd" firstAttribute="centerY" secondItem="s7j-xh-lF4" secondAttribute="centerY" id="AqQ-TV-Qua"/>
+                                                <constraint firstAttribute="width" constant="40" id="Arw-Nt-xwh"/>
+                                                <constraint firstItem="T1G-n9-Ygd" firstAttribute="centerX" secondItem="s7j-xh-lF4" secondAttribute="centerX" id="RY9-LP-SgL"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1yk-6H-Fnf" firstAttribute="centerX" secondItem="ffj-AD-V5M" secondAttribute="centerX" id="0RJ-9s-uIn"/>
+                                        <constraint firstAttribute="trailing" secondItem="s7j-xh-lF4" secondAttribute="trailing" constant="20" id="1Yz-8l-sYU"/>
+                                        <constraint firstAttribute="trailing" secondItem="ffj-AD-V5M" secondAttribute="trailing" constant="30" id="DG5-br-LBG"/>
+                                        <constraint firstItem="hli-w1-cxP" firstAttribute="leading" secondItem="SLx-fP-SwC" secondAttribute="leading" constant="20" id="Vvg-Q5-rGA"/>
+                                        <constraint firstItem="1yk-6H-Fnf" firstAttribute="centerY" secondItem="ffj-AD-V5M" secondAttribute="centerY" id="cRk-iZ-gsC"/>
+                                        <constraint firstItem="ffj-AD-V5M" firstAttribute="centerX" secondItem="SLx-fP-SwC" secondAttribute="centerX" id="kUM-Ga-jru"/>
+                                        <constraint firstItem="s7j-xh-lF4" firstAttribute="top" secondItem="SLx-fP-SwC" secondAttribute="top" constant="20" id="lqB-z0-BDh"/>
+                                        <constraint firstItem="ffj-AD-V5M" firstAttribute="top" secondItem="SLx-fP-SwC" secondAttribute="top" constant="80" id="mAb-Ym-ssc"/>
+                                        <constraint firstItem="hli-w1-cxP" firstAttribute="top" secondItem="SLx-fP-SwC" secondAttribute="top" constant="20" id="oAA-ca-J96"/>
+                                        <constraint firstItem="ffj-AD-V5M" firstAttribute="leading" secondItem="SLx-fP-SwC" secondAttribute="leading" constant="30" id="pqP-Yo-Ouf"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="z8h-eh-yuA"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6E0-2X-yLc" firstAttribute="leading" secondItem="z8h-eh-yuA" secondAttribute="leading" id="9En-s8-JNa"/>
+                            <constraint firstAttribute="bottom" secondItem="6E0-2X-yLc" secondAttribute="bottom" id="KIg-zM-hhM"/>
+                            <constraint firstItem="6E0-2X-yLc" firstAttribute="top" secondItem="2yD-zQ-8RP" secondAttribute="top" id="VLU-iE-Q8m"/>
+                            <constraint firstItem="6E0-2X-yLc" firstAttribute="trailing" secondItem="z8h-eh-yuA" secondAttribute="trailing" id="bm6-jS-lug"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="1yk-6H-Fnf" id="v4e-lA-lDe"/>
+                        <outlet property="commentLabel" destination="Ayt-Z9-RRS" id="L6g-hh-o7t"/>
+                        <outlet property="containerView" destination="ffj-AD-V5M" id="RtQ-Gq-TpS"/>
+                        <outlet property="editButton" destination="Lhx-hg-pp8" id="ntp-yz-IXf"/>
+                        <outlet property="ratingLabel" destination="m3X-iL-gPP" id="YLY-qT-e0K"/>
+                        <outlet property="userAddedLabel" destination="JIu-QP-6b9" id="PM4-R0-UbU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgt-U6-dOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-307" y="-66"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="edit" width="981" height="986"/>
+        <image name="route" width="512" height="512"/>
+        <namedColor name="iBench.marine">
+            <color red="0.396078431372549" green="0.70588235294117652" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -11,7 +11,7 @@ import Firebase
 import GoogleSignIn
 
 protocol CurrentUserManaging {
-    var currentUser: Emitter<CurrentUser?> { get }
+    var currentUser: Emitter<UserObject?> { get }
     var didAuthenticateSuccessfully: Emitter<Bool> { get }
     
     var isSignedIn: Bool { get }
@@ -20,6 +20,7 @@ protocol CurrentUserManaging {
     func login(email: String?, password: String?, _ compleiton: @escaping (_ error: Error?) -> Void)
     func googleAuthenticate(googleUser: GIDGoogleUser!, error: Error!, completion: @escaping (_ error: Error?) -> Void)
     func updateName(name: String, _ completion: @escaping (_ errorMessage: String?) -> Void)
+    func logOut(_ completion: ((_ error: NSError?) -> Void)?)
     
     func mapErrorMessage(for error: NSError) -> String
 }
@@ -30,7 +31,7 @@ class CurrentUserManager: NSObject {
     private let firestoreService: FirestoreUserServiceable
     private let userPersistantStoreService: PersistantStoreUserServiceable
     
-    let currentUser = Emitter<CurrentUser?>(nil)
+    let currentUser = Emitter<UserObject?>(nil)
     let didAuthenticateSuccessfully = Emitter<Bool>(false)
     
     static let shared = CurrentUserManager()
@@ -42,9 +43,10 @@ class CurrentUserManager: NSObject {
         self.authenticationService = authenticationService
         self.firestoreService = firestoreService
         self.userPersistantStoreService = persistantStoreService
+        currentUser.value = userPersistantStoreService.userObject
     }
     
-    private func setCurrentUser(_ user: CurrentUser?) {
+    private func setCurrentUser(_ user: UserObject?) {
         let oldValue = currentUser.value
         currentUser.value = user
         userPersistantStoreService.userObject = user
@@ -59,7 +61,7 @@ extension CurrentUserManager: CurrentUserManaging {
         authenticationService.register(withEmail: email, password: password) { [weak self] (result) in
             switch result {
                 case .success(let user):
-                    var currentUser = CurrentUser(firebaseUser: user)
+                    var currentUser = UserObject(firebaseUser: user)
                     currentUser.name = name ?? "NA"
                     self?.firestoreService.addUser(currentUser) { (error) in
                         if let error = error {
@@ -79,7 +81,7 @@ extension CurrentUserManager: CurrentUserManaging {
         authenticationService.login(withEmail: email, password: password) { [weak self] (result) in
             switch result{
                 case .success(let user):
-                    let currentUser = CurrentUser(firebaseUser: user)
+                    let currentUser = UserObject(firebaseUser: user)
                     self?.setCurrentUser(currentUser)
                     compleiton(nil)
                 case .failure(let error):
@@ -100,7 +102,7 @@ extension CurrentUserManager: CurrentUserManaging {
                             case .success(let currentUser):
                                 if currentUser == nil {
                                     let currentId = self.authenticationService.currentUser?.uid
-                                    let currentGoogleUser = CurrentUser(googleUser: googleUser, id: currentId)
+                                    let currentGoogleUser = UserObject(googleUser: googleUser, id: currentId)
                                     self.firestoreService.addUser(currentGoogleUser) { (error) in
                                         if let error = error {
                                             completion(error)
@@ -137,6 +139,14 @@ extension CurrentUserManager: CurrentUserManaging {
                     completion(error.localizedDescription)
             }
         }
+    }
+    
+    func logOut(_ completion: ((NSError?) -> Void)?) {
+        if let error = authenticationService.signOut() {
+            completion?(error as NSError?)
+            return
+        }
+        userPersistantStoreService.userObject = nil
     }
     
     var isSignedIn: Bool {

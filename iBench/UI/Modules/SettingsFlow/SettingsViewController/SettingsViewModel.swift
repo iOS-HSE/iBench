@@ -9,7 +9,7 @@
 import Foundation
 
 class SettingsViewModel: BaseViewModel {
-    var currentUser: CurrentUser? {
+    var currentUser: UserObject? {
         didSet {
             didChange?()
         }

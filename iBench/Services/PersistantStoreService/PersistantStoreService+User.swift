@@ -9,16 +9,16 @@
 import Foundation
 
 protocol PersistantStoreUserServiceable: class {
-    var userObject: CurrentUser? { get set }
+    var userObject: UserObject? { get set }
 }
 
 extension PersistantStoreService: PersistantStoreUserServiceable {
-    var userObject: CurrentUser? {
+    var userObject: UserObject? {
         get {
             guard let data = keyValueStorage.object(forKey: Self.userObjectKey) as? Data else {
                 return nil
             }
-            guard let object = try? PropertyListDecoder().decode(CurrentUser.self, from: data) else {
+            guard let object = try? PropertyListDecoder().decode(UserObject.self, from: data) else {
                 return nil
             }
             return object

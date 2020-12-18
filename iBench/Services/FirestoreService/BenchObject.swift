@@ -14,21 +14,20 @@ struct BenchObject: Equatable {
     let lat: Double
     let lon: Double
     let rating: Float?
+    var ratesCount: Int
     let comment: String?
     let userAddedId: String
     let addedAt: Int
     let photoUrl: String?
     
     var dictionaryRepresentation: [String: Any] {
-        var dict = [
+        var dict: [String: Any] = [
             "id": id,
             "lat": lat,
             "lon": lon,
-            "rating": rating as Any,
-//            "comment": comment,
             "userAddedId": userAddedId,
             "addedAt": addedAt,
-//            "photoUrl": photoUrl
+            "ratesCount": ratesCount,
         ]
         if let comment = comment {
             dict["comment"] = comment
@@ -36,13 +35,17 @@ struct BenchObject: Equatable {
         if let photoUrl = photoUrl {
             dict["photoUrl"] = photoUrl
         }
+        if let rating = rating {
+            dict["rating"] = rating
+        }
         return dict
     }
     
     init(id: String = UUID().uuidString,
          lat: Double,
          lon: Double,
-         rating: Float? = 0,
+         rating: Float? = nil,
+         ratesCount: Int = 0,
          comment: String? = nil,
          userAddedId: String,
          addedAt: Int = Int(Date().timeIntervalSince1970),
@@ -55,6 +58,7 @@ struct BenchObject: Equatable {
         self.userAddedId = userAddedId
         self.addedAt = addedAt
         self.photoUrl = photoUrl
+        self.ratesCount = ratesCount
     }
     
     init?(document: DocumentSnapshot) {
@@ -69,7 +73,16 @@ struct BenchObject: Equatable {
         let rating = data?["rating"] as? Float
         let comment = data?["comment"] as? String
         let photoUrl = data?["photoUrl"] as? String
+        let ratesCount = data?["ratesCount"] as? Int ?? 0
         
-        self.init(id: id, lat: lat, lon: lon, rating: rating, comment: comment, userAddedId: userAddedId, addedAt: addedAt, photoUrl: photoUrl)
+        self.init(id: id,
+                  lat: lat,
+                  lon: lon,
+                  rating: rating,
+                  ratesCount: ratesCount,
+                  comment: comment,
+                  userAddedId: userAddedId,
+                  addedAt: addedAt,
+                  photoUrl: photoUrl)
     }
 }

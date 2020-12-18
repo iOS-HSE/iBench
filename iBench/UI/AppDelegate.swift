@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = CurrentUserManager.shared
         
+        UserLocationService.shared.askUserPermissionForWhenInUseAuthorizationIfNeeded()
+        _ = UserLocationService.shared.startUpdatingLocation()
+        
         PersistantStoreService.shared.incrementLaunchesCount()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -31,22 +34,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let initialVC: UIViewController
-//        if CurrentUserManager.shared.isSignedIn {
-//            //route to mapVIewController
-//            let vc = MapViewController.initFromItsStoryboard()
-//            vc.viewModel = MapViewModel()
-//            initialVC = vc
-//        } else {
-//            let vc = RegisterViewController.initFromItsStoryboard()
-//            let router = AuthenticationFlowRouter(initialVC: vc)
-//            vc.router = router
-//            vc.viewModel = RegisterViewModel()
-//            initialVC = router.navigationController
-//        }
+        if CurrentUserManager.shared.isSignedIn {
+            //route to mapVIewController
+            let vc = MapViewController.initFromItsStoryboard()
+            vc.viewModel = MapViewModel()
+            let router = MapFlowRouter(initialVC: vc)
+            vc.router = router
+            initialVC = router.navigationController
+        } else {
+            let vc = RegisterViewController.initFromItsStoryboard()
+            let router = AuthenticationFlowRouter(initialVC: vc)
+            vc.router = router
+            vc.viewModel = RegisterViewModel()
+            initialVC = router.navigationController
+        }
         
-        let vc = HowToViewController.initFromItsStoryboard()
-        initialVC = vc
-        
+        //let vc = HowToViewController.initFromItsStoryboard()
+        //initialVC = vc
+
         window?.rootViewController = initialVC
         window?.makeKeyAndVisible()
         

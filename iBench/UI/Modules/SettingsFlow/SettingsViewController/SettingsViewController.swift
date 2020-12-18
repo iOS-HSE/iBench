@@ -13,7 +13,7 @@ protocol SettingsRouting {
 }
 
 protocol SettingsViewModeling: BaseViewModeling {
-    var currentUser: CurrentUser? { get }
+    var currentUser: UserObject? { get }
     var name: String? { get set }
     
     var didChangeNameSuccessfully: (() -> Void)?  { get set }

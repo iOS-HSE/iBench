@@ -16,6 +16,7 @@ protocol UserLocationServiceable: class {
     func stopUpdatingLocation()
     
     func askUserPermissionForWhenInUseAuthorizationIfNeeded()
+    func getDistanceFromUserLocation(to coordinates: LocationCoordinates) -> Double?
     //    func askUserForPreciseLocationOnce() // maybe will be needed later
     var isUserPermissionForLocationTrackingGranted: Bool { get }
     var isUserPermissionForLocationTrackingDenied: Bool { get }
@@ -89,6 +90,20 @@ extension UserLocationService: UserLocationServiceable {
     
     func stopUpdatingLocation() {
         locationManager.stopUpdatingLocation()
+    }
+    
+    func getDistanceFromUserLocation(to coordinates: LocationCoordinates) -> Double? {
+        guard let userLocation = locationManager.location else {
+            return nil
+        }
+        let clCoord = CLLocationCoordinate2D(latitude: coordinates.lat, longitude: coordinates.lon)
+        let location = CLLocation(coordinate: clCoord,
+                                  altitude: 0,
+                                  horizontalAccuracy: kCLLocationAccuracyBest,
+                                  verticalAccuracy: kCLLocationAccuracyBest,
+                                  timestamp: Date())
+        let distance = userLocation.distance(from: location)
+        return distance
     }
     
     var isEnabled: Bool {
